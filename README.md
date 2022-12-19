@@ -1,22 +1,12 @@
-<div align="center">
-    <img src="docs/_static/logo-light.png">
-</div>
+#MOLFLOW
 
----
-
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/molflow/molflow/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/molflow/molflow/tree/main)
-
-molflow is a unified framework for privacy-preserving data intelligence and machine learning. To achieve this goal,
+molflow is a unified framework for molecular dynamics simulation data intelligence and machine learning. To achieve this goal,
 it provides:
 
-- An abstract device layer consists of plain devices and secret devices which encapsulate various cryptographic protocols.
+- An abstract device layer consists of molecular simulation devices which encapsulate MD and QM simulation tools.
 - A device flow layer modeling higher algorithms as device object flow and DAG.
-- An algorithm layer to do data analysis and machine learning with horizontal or vertical partitioned data.
+- An algorithm layer to do data analysis and machine learning with MD/QM data.
 - A workflow layer that seamlessly integrates data processing, model training, and hyperparameter tuning.
-
-<div align="center">
-    <img src="docs/_static/molflow_arch.svg">
-</div>
 
 ## Install
 
