@@ -23,7 +23,7 @@ msgstr "决策树模型"
 
 #: ../../components/mpc_ml/decision_tree.rst:4
 msgid ""
-"With the help of Secret Sharing, a secure multi-party computation "
+"With the help of Molecule Sharing, a secure multi-party computation "
 "technique, molflow implements provably secure gradient boosting model "
 ":py:meth:`~molflow.ml.boost.ss_xgb_v.model.Xgb` to support both "
 "regression and binary classification machine learning tasks."

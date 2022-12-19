@@ -73,7 +73,7 @@ msgstr "隐语提供了 SS-SGD/HESS-SGD 两种可证安全实现："
 
 #: ../../components/mpc_ml/linear_model.rst:26
 msgid ""
-"SS-SGD: SS-SGD is short for secret sharing SGD training, uses Secret "
+"SS-SGD: SS-SGD is short for secret sharing SGD training, uses Molecule "
 "Sharing to calculate the gradient."
 msgstr "SS-SGD: SS-SGD 是 secret sharing SGD training 的缩写，使用秘密分享协议计算下降梯度。"
 
@@ -85,13 +85,13 @@ msgstr "HESS-SGD: HESS-SGD 是 HE & secret sharing SGD training 的缩写，使�
 
 #: ../../components/mpc_ml/linear_model.rst:30
 msgid ""
-"Secret Sharing is sensitive to bandwidth and latency, and the homomorphic"
+"Molecule Sharing is sensitive to bandwidth and latency, and the homomorphic"
 " encryption scheme consumes more CPU power."
-msgstr "Secret Sharing对带宽和延迟比较敏感，而同态加密方案会消耗更多的cpu算力。"
+msgstr "Molecule Sharing对带宽和延迟比较敏感，而同态加密方案会消耗更多的cpu算力。"
 
 #: ../../components/mpc_ml/linear_model.rst:32
 msgid ""
-"Secret Sharing can complete the modeling faster with LAN or 10 Gigabit "
+"Molecule Sharing can complete the modeling faster with LAN or 10 Gigabit "
 "network, and with limited bandwidth and high latency network environment "
 "can use HE to improve the modeling speed."
 msgstr "局域网/万兆环境下SS能更快的完成建模，带宽受限且延迟较高的网络环境可以用HE提高建模速度。"
@@ -185,17 +185,17 @@ msgstr "Step 1: 初始化数据集"
 msgid ""
 "The data provider infeed their dataset into secret sharing and vertically"
 " concatenates them as X."
-msgstr "数据提供方分别将数据集Secret Share进入密态，并在密态下concatenate为X。"
+msgstr "数据提供方分别将数据集Molecule Share进入密态，并在密态下concatenate为X。"
 
 #: ../../components/mpc_ml/linear_model.rst:169
-msgid "The data provide holds Y infeed it into Secret Sharing."
-msgstr "Y数据持有方将Y Secret Share进入密态."
+msgid "The data provide holds Y infeed it into Molecule Sharing."
+msgstr "Y数据持有方将Y Molecule Share进入密态."
 
 #: ../../components/mpc_ml/linear_model.rst:170
 msgid ""
-"Initialize weights w to the initial value set in parameter under Secret "
+"Initialize weights w to the initial value set in parameter under Molecule "
 "Sharing."
-msgstr "在Secret Sharing下初始化w为设定的初始值。"
+msgstr "在Molecule Sharing下初始化w为设定的初始值。"
 
 #: ../../components/mpc_ml/linear_model.rst:171
 #: ../../components/mpc_ml/linear_model.rst:316
@@ -241,7 +241,7 @@ msgid ""
 "Step 3: Output - At this time, weights w is in the secret sharing. You "
 "can output reveal (w) as plaintext or directly save the secret sharing as"
 " needed."
-msgstr "Step 3：输出模型，此时w处在Secret Sharing状态。根据需要可以将reveal (w)为明文输出或直接保存密态分片。"
+msgstr "Step 3：输出模型，此时w处在Molecule Sharing状态。根据需要可以将reveal (w)为明文输出或直接保存密态分片。"
 
 #: ../../components/mpc_ml/linear_model.rst:186
 #: ../../components/mpc_ml/linear_model.rst:345
@@ -250,12 +250,12 @@ msgstr "安全性分析"
 
 #: ../../components/mpc_ml/linear_model.rst:188
 msgid ""
-"The X/Y/W participating in the calculation are kept in the Secret Sharing"
+"The X/Y/W participating in the calculation are kept in the Molecule Sharing"
 " from the beginning. And there is no reveal operation in the calculation "
 "process, so it is impossible to infer the information of the plaintext "
 "data through the interactive data in the calculation."
 msgstr ""
-"参与计算的X/Y/W从一开始就保持在Secret Sharing状态进行联合运算，并且在运算过程中不存在reveal操作, "
+"参与计算的X/Y/W从一开始就保持在Molecule Sharing状态进行联合运算，并且在运算过程中不存在reveal操作, "
 "所以通过计算中交互的数据是无法推断出明文数据的信息。"
 
 #: ../../components/mpc_ml/linear_model.rst:193
@@ -267,11 +267,11 @@ msgid ""
 "The HESS-SGD module "
 ":py:meth:`~molflow.ml.linear.hess_sgd.model.HESSLogisticRegression` "
 "implements provably secure linear regression using homomorphic encryption"
-" and Secret Sharing."
+" and Molecule Sharing."
 msgstr ""
 "HESS-SGD模块 "
 ":py:meth:`~molflow.ml.linear.hess_sgd.model.HESSLogisticRegression` "
-"混合使用同态加密和Secret Sharing实现了可证安全的线性回归."
+"混合使用同态加密和Molecule Sharing实现了可证安全的线性回归."
 
 #: ../../components/mpc_ml/linear_model.rst:198
 msgid ""
@@ -280,12 +280,12 @@ msgid ""
 "homomorphic calculation implementation. Due to the asymmetric nature of "
 "homomorphic encryption, currently HESS-SGD only supports 2PC. The "
 "algorithm implementation reference is `<When Homomorphic Encryption "
-"Marries Secret Sharing: Secure Large-Scale Sparse Logistic Regression and"
+"Marries Molecule Sharing: Secure Large-Scale Sparse Logistic Regression and"
 " Applications in Risk Control> <https://arxiv.org/pdf/2008.08753.pdf>`_, "
 "and some engineering optimizations are carried out."
 msgstr ""
 "和SS-SGD最大的区别在于：将SS-SGD中通讯开销最大的梯度计算替换为纯本地的同态计算实现。由于同态加密的非对称特性，目前HESS-"
-"SGD只支持2方计算。算法实现参考 `<When Homomorphic Encryption Marries Secret Sharing: "
+"SGD只支持2方计算。算法实现参考 `<When Homomorphic Encryption Marries Molecule Sharing: "
 "Secure Large-Scale Sparse Logistic Regression and Applications in Risk "
 "Control> <https://arxiv.org/pdf/2008.08753.pdf>`_，并进行一些工程优化改造。"
 
@@ -338,8 +338,8 @@ msgid ""
 msgstr "使用Bob的pk加密x1 -> hx1，密文保存在Alice。使用Alice的pk加密x2 -> hx2，密文保存在Bob。"
 
 #: ../../components/mpc_ml/linear_model.rst:327
-msgid "Bob infeed y into Secret Sharing <y>"
-msgstr "Bob通过Secret Sharing共享 <y>"
+msgid "Bob infeed y into Molecule Sharing <y>"
+msgstr "Bob通过Molecule Sharing共享 <y>"
 
 #: ../../components/mpc_ml/linear_model.rst:328
 msgid ""
@@ -433,11 +433,11 @@ msgid ""
 "it can be guaranteed that no plaintext information can be returned by "
 "analyzing the data exchanged between nodes."
 msgstr ""
-"Secret "
+"Molecule "
 "Sharing密态下的分享和联合计算过程中存在的交互。这些过程的安全性依赖于使用的mpc协议，以默认的ABY3协议为例，在SPU节点无共谋的情况下，可以保证通过分析节点间交互的数据，无法返推出任何明文信息。"
 
 #: ../../components/mpc_ml/linear_model.rst:362
 msgid ""
-"The final output result <w> is stored in the Secret Sharing state, and "
+"The final output result <w> is stored in the Molecule Sharing state, and "
 "any w-related information cannot be reversed before reveal <w>."
-msgstr "最终输出的结果保存在Secret Sharing密态下，在reveal前无法反推出任何w相关信息。"
+msgstr "最终输出的结果保存在Molecule Sharing密态下，在reveal前无法反推出任何w相关信息。"

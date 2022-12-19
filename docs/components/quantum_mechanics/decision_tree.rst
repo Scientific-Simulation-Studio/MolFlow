@@ -1,7 +1,7 @@
 Decision Trees
 ==============
 
-With the help of Secret Sharing, a secure multi-party computation technique,
+With the help of Molecule Sharing, a secure multi-party computation technique,
 molflow implements provably secure gradient boosting model
 :py:meth:`~molflow.ml.boost.ss_xgb_v.model.Xgb`
 to support both regression and binary classification machine learning tasks.

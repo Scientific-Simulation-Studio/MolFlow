@@ -73,7 +73,7 @@ def to(device: Device, data: Any, spu_vis: str = 'secret'):
         device (Device): Target device.
         data (Any): DeviceObject or plaintext data.
         spu_vis (str): Deivce object visibility, SPU device only.
-          secret: Secret sharing with protocol spdz-2k, aby3, etc.
+          secret: Molecule sharing with protocol spdz-2k, aby3, etc.
           public: Public sharing, which means data will be replicated to each node.
 
     Returns:

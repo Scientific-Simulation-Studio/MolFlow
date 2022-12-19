@@ -3,16 +3,20 @@
 molflow can be deployed on a single host or on multiple nodes.
 
 ## Standalone Mode
+
 Use `molflow.init` directly to run molflow in standalone mode.
 
 ```python
 >>> import molflow as sf
 >>> sf.init(['alice', 'bob', 'carol'], num_cpus=8, log_to_driver=True)
 ```
+
 ## Cluster Mode
+
 The following is an example showing how to build a cluster consisting of alice and bob on multiple nodes.
 
 ### Start head node
+
 Start a head node on your first machine with the tag "alice".
 
 ---
@@ -27,6 +31,7 @@ Start a head node on your first machine with the tag "alice".
 4. It's ok to remove these environments for testing if in an intranet.
 
 5. `{"alice": 8}` means that alice can run up to 8 workers at the same time. Just feel free to change it if you like.
+
 ---
 
 ```bash
@@ -44,6 +49,7 @@ Head node starts successfully if you see "Ray runtime started." in the screen ou
 Now we have a cluster with a head node only, let us start more nodes.
 
 ### Start other nodes
+
 Start a node with the tag "bob" on another machine. The node will connect to the head node and join the cluster.
 
 ---
@@ -68,6 +74,7 @@ The node starts successfully if you see "Ray runtime started." in the screen out
 You can repeat the step above to start more nodes with using other parties as resources tag.
 
 ### Start molflow
+
 Now you can start molflow and run your code.
 
 ```python
@@ -83,6 +90,7 @@ Now you can start molflow and run your code.
 ```
 
 ### (optional) How to shut down the cluster
+
 In some cases you would like to shut down the cluster, the following command will help you.
 Remember to run the command on all machines.
 
@@ -102,6 +110,7 @@ In a word, you need to assign different ports for the SPU for now.
 We are working on merging them.
 
 A typical SPU config:
+
 ```python
 import spu
 import molflow as sf
@@ -150,9 +159,8 @@ be careful that it works only in standalone mode because `sf.utils.testing.clust
 
 ---
 
-
-
 ### Suggestions for production
+
 molflow use `ray` as its distribution system.
 You may need to do some more configuration for higher security when using it in production.
 The following actions can help improve security features.
@@ -169,6 +177,7 @@ The following actions can help improve security features.
 
     Ray uses `pickle` in serialization/deserialization which is vulnerable. You can set environment `RAY_SECURITY_CONFIG_PATH=config.yml` to specify an allowlist to restrict serializable objects.
     An example of config.yml could be
+
     ```yaml
     pickle_whitelist:
         builtins:
@@ -178,4 +187,5 @@ The following actions can help improve security features.
         numpy.core.numeric:
         - '*'
     ```
+
     You should not use this demo YAML directly. Configure it to your actual needs.

@@ -102,7 +102,7 @@ setup(
     name='molflow',
     version='0.7.11b3',
     license='Apache 2.0',
-    description='Secret Flow',
+    description='Molecule Flow',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='SCI Center',

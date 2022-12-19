@@ -484,7 +484,7 @@ class VertWoeBinningPyuWorker:
 
     def slave_build_sum_select(self, data: pd.DataFrame) -> np.ndarray:
         '''
-        build select matrix for driver to calculate positive samples by Secret Sharing.
+        build select matrix for driver to calculate positive samples by Molecule Sharing.
         Attributes:
             data: full dataset for this party.
 

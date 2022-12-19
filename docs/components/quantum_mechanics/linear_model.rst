@@ -23,13 +23,13 @@ where
 
 molflow provides two provably security implementations of SGD:
 
-- SS-SGD: SS-SGD is short for secret sharing SGD training, uses Secret Sharing to calculate the gradient.
+- SS-SGD: SS-SGD is short for secret sharing SGD training, uses Molecule Sharing to calculate the gradient.
 
 - HESS-SGD: HESS-SGD is short for HE & secret sharing SGD training, uses homomorphic encryption to calculate the gradient.
 
-Secret Sharing is sensitive to bandwidth and latency, and the homomorphic encryption scheme consumes more CPU power.
+Molecule Sharing is sensitive to bandwidth and latency, and the homomorphic encryption scheme consumes more CPU power.
 
-Secret Sharing can complete the modeling faster with LAN or 10 Gigabit network,
+Molecule Sharing can complete the modeling faster with LAN or 10 Gigabit network,
 and with limited bandwidth and high latency network environment can use HE to improve the modeling speed.
 
 The two implementations have basically the same logic and algorithm security settings other than gradient calculation.
@@ -166,8 +166,8 @@ Taking binary regression as an example, the main process is as follows:
     Step 1: Initialize the dataset
 
     - The data provider infeed their dataset into secret sharing and vertically concatenates them as X.
-    - The data provide holds Y infeed it into Secret Sharing.
-    - Initialize weights w to the initial value set in parameter under Secret Sharing.
+    - The data provide holds Y infeed it into Molecule Sharing.
+    - Initialize weights w to the initial value set in parameter under Molecule Sharing.
     - X.rows must be greater than X.cols, otherwise: 1. model will not converge; 2. Y may leak.
 
     Step 2: Using mini-batch gradient descent, repeat the following steps until the target number of iterations is reached
@@ -185,7 +185,7 @@ Taking binary regression as an example, the main process is as follows:
 Security Analysis
 ++++++++++++++++++
 
-The X/Y/W participating in the calculation are kept in the Secret Sharing from the beginning.
+The X/Y/W participating in the calculation are kept in the Molecule Sharing from the beginning.
 And there is no reveal operation in the calculation process,
 so it is impossible to infer the information of the plaintext data through the interactive data in the calculation.
 
@@ -193,12 +193,12 @@ HESS-SGD
 ---------
 
 The HESS-SGD module :py:meth:`~molflow.ml.linear.hess_sgd.model.HESSLogisticRegression` implements provably
-secure linear regression using homomorphic encryption and Secret Sharing.
+secure linear regression using homomorphic encryption and Molecule Sharing.
 
 The biggest difference from SS-SGD is that the gradient calculation which has the largest communication cost in SS-SGD
 is replaced by locally homomorphic calculation implementation.
 Due to the asymmetric nature of homomorphic encryption, currently HESS-SGD only supports 2PC.
-The algorithm implementation reference is `<When Homomorphic Encryption Marries Secret Sharing:
+The algorithm implementation reference is `<When Homomorphic Encryption Marries Molecule Sharing:
 Secure Large-Scale Sparse Logistic Regression and Applications
 in Risk Control> <https://arxiv.org/pdf/2008.08753.pdf>`_,
 and some engineering optimizations are carried out.
@@ -324,7 +324,7 @@ the main process is as follows:
     - Alice / Bob read x1 / x2, y for current batch as plaintext.
     - Use Bob's pk to encrypt x1 -> hx1, and the ciphertext hx1 is stored in Alice.
       Use Alice's pk to encrypt x2 -> hx2, and the ciphertext hx2 is stored in Bob.
-    - Bob infeed y into Secret Sharing <y>
+    - Bob infeed y into Molecule Sharing <y>
     - Alice locally computes partial predictions hp1 = hx1 * hw1 in homomorphic encryption,
       Bob locally computes partial predictions hp2 = hx2 * hw2 in homomorphic encryption.
     - Convert homomorphic encrypted predictions to secret sharing by H2S operations: H2S(hp1) -> <p1> , H2S(hp2) -> <p2>
@@ -359,4 +359,4 @@ There are two types of data interaction in the calculation process:
   Taking the default ABY3 protocol as an example, in the case of no collusion between SPU nodes,
   it can be guaranteed that no plaintext information can be returned by analyzing the data exchanged between nodes.
 
-The final output result <w> is stored in the Secret Sharing state, and any w-related information cannot be reversed before reveal <w>.
+The final output result <w> is stored in the Molecule Sharing state, and any w-related information cannot be reversed before reveal <w>.
