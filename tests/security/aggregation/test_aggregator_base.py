@@ -1,12 +1,13 @@
 import numpy as np
-import secretflow as sf
+import molflow as sf
 
 
 class TestAggregatorBase:
     def test_sum_on_single_should_ok(self):
         # GIVEN
         a = self.alice(lambda: np.array([[1.0, 2.0, 3], [4.0, 5.0, 6.0]]))()
-        b = self.bob(lambda: np.array([[11.0, 12.0, 13.0], [14, 15.0, 16.0]]))()
+        b = self.bob(lambda: np.array(
+            [[11.0, 12.0, 13.0], [14, 15.0, 16.0]]))()
 
         # WHEN
         sum = sf.reveal(self.aggregator.sum([a, b], axis=0))
@@ -45,7 +46,8 @@ class TestAggregatorBase:
     def test_average_on_single_without_weights_should_ok(self):
         # GIVEN
         a = self.alice(lambda: np.array([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]))()
-        b = self.bob(lambda: np.array([[11.0, 12.0, 13.0], [14.0, 15.0, 16.0]]))()
+        b = self.bob(lambda: np.array(
+            [[11.0, 12.0, 13.0], [14.0, 15.0, 16.0]]))()
 
         # WHEN
         avg = sf.reveal(self.aggregator.average([a, b], axis=0))
@@ -87,7 +89,8 @@ class TestAggregatorBase:
         b = self.bob(lambda: np.array([[11, 12, 13], [14, 15, 16]]))()
 
         # WHEN
-        sum = sf.reveal(self.aggregator.average([a, b], axis=0, weights=[2, 3]))
+        sum = sf.reveal(self.aggregator.average(
+            [a, b], axis=0, weights=[2, 3]))
 
         # THEN
         np.testing.assert_almost_equal(
@@ -110,7 +113,8 @@ class TestAggregatorBase:
         )()
 
         # WHEN
-        avg = sf.reveal(self.aggregator.average([a, b], axis=0, weights=[2, 3]))
+        avg = sf.reveal(self.aggregator.average(
+            [a, b], axis=0, weights=[2, 3]))
 
         # THEN
         np.testing.assert_almost_equal(
@@ -130,7 +134,8 @@ class TestAggregatorBase:
         weights = np.array([[[5, 7, 2]], [[5, 3, 8]]])
 
         # WHEN
-        sum = sf.reveal(self.aggregator.average([a, b], axis=0, weights=weights))
+        sum = sf.reveal(self.aggregator.average(
+            [a, b], axis=0, weights=weights))
 
         # THEN
         np.testing.assert_almost_equal(

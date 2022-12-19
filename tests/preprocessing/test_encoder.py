@@ -4,14 +4,14 @@ from sklearn.preprocessing import LabelEncoder as SkLabelEncoder
 from sklearn.preprocessing import OneHotEncoder as SkOneHotEncoder
 from sklearn.utils.validation import column_or_1d
 
-from secretflow.data.base import Partition, reveal
-from secretflow.data.horizontal.dataframe import HDataFrame
-from secretflow.data.mix.dataframe import MixDataFrame
-from secretflow.data.vertical.dataframe import VDataFrame
-from secretflow.preprocessing.encoder import LabelEncoder, OneHotEncoder
-from secretflow.security.aggregation.plain_aggregator import PlainAggregator
-from secretflow.security.compare.plain_comparator import PlainComparator
-from secretflow.utils.simulation.datasets import load_iris
+from molflow.data.base import Partition, reveal
+from molflow.data.horizontal.dataframe import HDataFrame
+from molflow.data.mix.dataframe import MixDataFrame
+from molflow.data.vertical.dataframe import VDataFrame
+from molflow.preprocessing.encoder import LabelEncoder, OneHotEncoder
+from molflow.security.aggregation.plain_aggregator import PlainAggregator
+from molflow.security.compare.plain_comparator import PlainComparator
+from molflow.utils.simulation.datasets import load_iris
 
 from tests.basecase import DeviceTestCase
 
@@ -70,11 +70,13 @@ class TestLabelEncoder(DeviceTestCase):
         expect_alice = sk_encoder.transform(column_or_1d(self.hdf_alice[['class']]))[
             np.newaxis
         ].T
-        np.testing.assert_equal(reveal(value.partitions[self.alice].data), expect_alice)
+        np.testing.assert_equal(
+            reveal(value.partitions[self.alice].data), expect_alice)
         expect_bob = sk_encoder.transform(column_or_1d(self.hdf_bob[['class']]))[
             np.newaxis
         ].T
-        np.testing.assert_equal(reveal(value.partitions[self.bob].data), expect_bob)
+        np.testing.assert_equal(
+            reveal(value.partitions[self.bob].data), expect_bob)
         self.assertEqual(value.dtypes['class'], np.int64)
 
     def test_on_vdataframe_should_ok(self):
@@ -90,12 +92,14 @@ class TestLabelEncoder(DeviceTestCase):
         expect_alice = sk_encoder.fit_transform(column_or_1d(self.vdf_alice[['a2']]))[
             np.newaxis
         ].T
-        np.testing.assert_equal(reveal(value.partitions[self.alice].data), expect_alice)
+        np.testing.assert_equal(
+            reveal(value.partitions[self.alice].data), expect_alice)
         self.assertEqual(value.dtypes['a2'], np.int64)
 
     def test_on_h_mixdataframe_should_ok(self):
         # GIVEN
-        df = pd.DataFrame({'a1': ['A1', 'B1', None, 'D1', None, 'B4', 'C4', 'D4']})
+        df = pd.DataFrame(
+            {'a1': ['A1', 'B1', None, 'D1', None, 'B4', 'C4', 'D4']})
         h_part0 = VDataFrame(
             {self.alice: Partition(data=self.alice(lambda: df.iloc[:4, :])())}
         )
@@ -124,7 +128,8 @@ class TestLabelEncoder(DeviceTestCase):
 
     def test_on_v_mixdataframe_should_ok(self):
         # GIVEN
-        df = pd.DataFrame({'a1': ['A1', 'B1', None, 'D1', None, 'B4', 'C4', 'D4']})
+        df = pd.DataFrame(
+            {'a1': ['A1', 'B1', None, 'D1', None, 'B4', 'C4', 'D4']})
         v_part0 = HDataFrame(
             {
                 self.alice: Partition(data=self.alice(lambda: df.iloc[:4, :])()),
@@ -230,11 +235,15 @@ class TestOneHotEncoder(DeviceTestCase):
 
         # THEN
         sk_encoder = SkOneHotEncoder()
-        sk_encoder.fit(pd.concat([self.hdf_alice[['class']], self.hdf_bob[['class']]]))
-        expect_alice = sk_encoder.transform(self.hdf_alice[['class']]).toarray()
-        np.testing.assert_equal(reveal(value.partitions[self.alice].data), expect_alice)
+        sk_encoder.fit(
+            pd.concat([self.hdf_alice[['class']], self.hdf_bob[['class']]]))
+        expect_alice = sk_encoder.transform(
+            self.hdf_alice[['class']]).toarray()
+        np.testing.assert_equal(
+            reveal(value.partitions[self.alice].data), expect_alice)
         expect_bob = sk_encoder.transform(self.hdf_bob[['class']]).toarray()
-        np.testing.assert_equal(reveal(value.partitions[self.bob].data), expect_bob)
+        np.testing.assert_equal(
+            reveal(value.partitions[self.bob].data), expect_bob)
 
     def test_on_vdataframe_should_ok(self):
         # GIVEN
@@ -245,10 +254,13 @@ class TestOneHotEncoder(DeviceTestCase):
 
         # THEN
         sk_encoder = SkOneHotEncoder()
-        expect_alice = sk_encoder.fit_transform(self.vdf_alice[['a1', 'a2']]).toarray()
-        np.testing.assert_equal(reveal(value.partitions[self.alice].data), expect_alice)
+        expect_alice = sk_encoder.fit_transform(
+            self.vdf_alice[['a1', 'a2']]).toarray()
+        np.testing.assert_equal(
+            reveal(value.partitions[self.alice].data), expect_alice)
         expect_bob = sk_encoder.fit_transform(self.vdf_bob[['b5']]).toarray()
-        np.testing.assert_equal(reveal(value.partitions[self.bob].data), expect_bob)
+        np.testing.assert_equal(
+            reveal(value.partitions[self.bob].data), expect_bob)
 
     def test_on_h_mixdataframe_should_ok(self):
         # GIVEN
@@ -291,14 +303,18 @@ class TestOneHotEncoder(DeviceTestCase):
                 [
                     pd.concat(
                         [
-                            reveal(value.partitions[0].partitions[self.alice].data),
-                            reveal(value.partitions[1].partitions[self.alice].data),
+                            reveal(
+                                value.partitions[0].partitions[self.alice].data),
+                            reveal(
+                                value.partitions[1].partitions[self.alice].data),
                         ]
                     ),
                     pd.concat(
                         [
-                            reveal(value.partitions[0].partitions[self.bob].data),
-                            reveal(value.partitions[1].partitions[self.bob].data),
+                            reveal(
+                                value.partitions[0].partitions[self.bob].data),
+                            reveal(
+                                value.partitions[1].partitions[self.bob].data),
                         ]
                     ),
                 ],
@@ -352,14 +368,18 @@ class TestOneHotEncoder(DeviceTestCase):
                 [
                     pd.concat(
                         [
-                            reveal(value.partitions[0].partitions[self.alice].data),
-                            reveal(value.partitions[0].partitions[self.bob].data),
+                            reveal(
+                                value.partitions[0].partitions[self.alice].data),
+                            reveal(
+                                value.partitions[0].partitions[self.bob].data),
                         ]
                     ),
                     pd.concat(
                         [
-                            reveal(value.partitions[1].partitions[self.alice].data),
-                            reveal(value.partitions[1].partitions[self.bob].data),
+                            reveal(
+                                value.partitions[1].partitions[self.alice].data),
+                            reveal(
+                                value.partitions[1].partitions[self.bob].data),
                         ]
                     ),
                 ],
@@ -380,17 +400,21 @@ class TestOneHotEncoder(DeviceTestCase):
             sk_encoder.fit_transform(self.vdf_alice[['a1', 'a2']]).toarray(),
             columns=sk_encoder.get_feature_names_out()
         )
-        self.assertTrue(set(expect_alice.columns).issubset(set(df.partitions[self.alice].columns)))
+        self.assertTrue(set(expect_alice.columns).issubset(
+            set(df.partitions[self.alice].columns)))
         alice_columns = expect_alice.columns
-        pd.testing.assert_frame_equal(reveal(df.partitions[self.alice][alice_columns].data), expect_alice)
+        pd.testing.assert_frame_equal(
+            reveal(df.partitions[self.alice][alice_columns].data), expect_alice)
 
         expect_bob = pd.DataFrame(
             sk_encoder.fit_transform(self.vdf_bob[['b5']]).toarray(),
             columns=sk_encoder.get_feature_names_out()
         )
-        self.assertTrue(set(expect_bob.columns).issubset(set(df.partitions[self.bob].columns)))
+        self.assertTrue(set(expect_bob.columns).issubset(
+            set(df.partitions[self.bob].columns)))
         bob_columns = expect_bob.columns
-        pd.testing.assert_frame_equal(reveal(df.partitions[self.bob][bob_columns].data), expect_bob)
+        pd.testing.assert_frame_equal(
+            reveal(df.partitions[self.bob][bob_columns].data), expect_bob)
 
     def test_max_categories_on_vdataframe_should_ok(self):
         # WHEN
@@ -404,17 +428,21 @@ class TestOneHotEncoder(DeviceTestCase):
             sk_encoder.fit_transform(self.vdf_alice[['a1', 'a2']]).toarray(),
             columns=sk_encoder.get_feature_names_out()
         )
-        self.assertTrue(set(expect_alice.columns).issubset(set(df.partitions[self.alice].columns)))
+        self.assertTrue(set(expect_alice.columns).issubset(
+            set(df.partitions[self.alice].columns)))
         alice_columns = expect_alice.columns
-        pd.testing.assert_frame_equal(reveal(df.partitions[self.alice][alice_columns].data), expect_alice)
+        pd.testing.assert_frame_equal(
+            reveal(df.partitions[self.alice][alice_columns].data), expect_alice)
 
         expect_bob = pd.DataFrame(
             sk_encoder.fit_transform(self.vdf_bob[['b5']]).toarray(),
             columns=sk_encoder.get_feature_names_out()
         )
-        self.assertTrue(set(expect_bob.columns).issubset(set(df.partitions[self.bob].columns)))
+        self.assertTrue(set(expect_bob.columns).issubset(
+            set(df.partitions[self.bob].columns)))
         bob_columns = expect_bob.columns
-        pd.testing.assert_frame_equal(reveal(df.partitions[self.bob][bob_columns].data), expect_bob)
+        pd.testing.assert_frame_equal(
+            reveal(df.partitions[self.bob][bob_columns].data), expect_bob)
 
     def test_should_error_on_hdataframe_with_args(self):
         encoder = OneHotEncoder(min_frequency=3)

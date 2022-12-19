@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 10:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -43,7 +43,7 @@ msgstr "安全聚合可以表述为：多个参数方在不暴露各自私有数
 #: ../../developer/algorithm/secure_aggregation.ipynb:44
 msgid ""
 "Secure aggregation is an important concept in federated learning. There "
-"have been many studies in the academic community. SecretFlow has used "
+"have been many studies in the academic community. moleculeflow has used "
 "secure aggregation in horizontal federated gradient/weight aggregation "
 "and data statistics (such as data exploration and preprocessing)."
 msgstr "安全聚合是联邦学习中的重要概念。学术界对此已经有较多研究。隐语在水平联邦学习（梯度/权重聚合）、数据处理（比如数据探查、预处理）等方面使用了安全聚合。"
@@ -57,8 +57,8 @@ msgid "Preparation"
 msgstr "数据准备"
 
 #: ../../developer/algorithm/secure_aggregation.ipynb:60
-msgid "Initialize SecretFlow."
-msgstr "初始化SecretFlow。"
+msgid "Initialize moleculeflow."
+msgstr "初始化moleculeflow。"
 
 #: ../../developer/algorithm/secure_aggregation.ipynb:85
 msgid "Prepare some data for testing."
@@ -74,7 +74,7 @@ msgstr "聚合操作"
 
 #: ../../developer/algorithm/secure_aggregation.ipynb:213
 msgid ""
-"SecretFlow provides a variety of ``Aggregator`` for users to choose from,"
+"moleculeflow provides a variety of ``Aggregator`` for users to choose from,"
 " each ``Aggregator`` provides the function of sum/average."
 msgstr "隐语提供了多种 `Aggregator` 供用户选择，每种 `Aggregator` 均提供了sum（求和）和average（求平均）方法。"
 
@@ -84,9 +84,9 @@ msgstr "基于SPU的安全聚合。"
 
 #: ../../developer/algorithm/secure_aggregation.ipynb:218
 msgid ""
-"`SPU <../design/spu.md>`__ is a security device in SecretFlow, and its "
+"`SPU <../design/spu.md>`__ is a security device in moleculeflow, and its "
 "underlying principle is `MPC <https://en.wikipedia.org/wiki/Secure_multi-"
-"party_computation>`__. The SecretFlow implements SPU-based secure "
+"party_computation>`__. The moleculeflow implements SPU-based secure "
 "aggregation, and the following shows how to use it."
 msgstr ""
 "`SPU <../design/spu.md>`__ 是隐语中的一种安群设备，其基本原理是 `MPC "
@@ -189,7 +189,7 @@ msgstr "**PlainAggregator仅用作测试，请勿在生产中使用。**"
 
 #: ../../developer/algorithm/secure_aggregation.ipynb:459
 msgid ""
-"For simple local simulation, SecretFlow also provides a plaintext "
+"For simple local simulation, moleculeflow also provides a plaintext "
 "aggregator."
 msgstr "为了方便本地模拟，隐语也提供了明文聚合方式。"
 
@@ -199,7 +199,7 @@ msgstr "比较"
 
 #: ../../developer/algorithm/secure_aggregation.ipynb:562
 msgid ""
-"In addition, SecretFlow provides a variety of \\`\\`Comparator\\`\\`\\`, "
+"In addition, moleculeflow provides a variety of \\`\\`Comparator\\`\\`\\`, "
 "providing operations such as maximum (max)/minimum (min). For example, in"
 " horizontal partitioned data scenario, global values can be obtained "
 "through secure comparison without exposing the private information of the"
@@ -214,7 +214,7 @@ msgstr "基于SPU的安全比较"
 
 #: ../../developer/algorithm/secure_aggregation.ipynb:576
 msgid ""
-"SecretFlow implements SPU-based secure comparison, and the following "
+"moleculeflow implements SPU-based secure comparison, and the following "
 "shows how to use it."
 msgstr "隐语基于SPU实现了安全比较，下面将展示如何使用。"
 
@@ -228,7 +228,7 @@ msgstr "**PlainComparator仅作为测试用，请勿在生产中使用。**"
 
 #: ../../developer/algorithm/secure_aggregation.ipynb:681
 msgid ""
-"For simple local simulation, SecretFlow also provides a plaintext "
+"For simple local simulation, moleculeflow also provides a plaintext "
 "comparator."
 msgstr "为了方便本地模拟，隐语也提供了明文比较方式。"
 
@@ -242,7 +242,7 @@ msgstr "总结"
 
 #: ../../developer/algorithm/secure_aggregation.ipynb:806
 msgid ""
-"This article shows the security aggregation of SecretFlow. SecretFlow "
+"This article shows the security aggregation of moleculeflow. moleculeflow "
 "provides a variety of security aggregation, and users can implement "
 "different security policies according to their own needs. For the "
 "plaintext aggregation and compare, it is not recommended to use it in the"

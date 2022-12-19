@@ -1,11 +1,11 @@
-name: Secretflow Issue Template
+name: moleculeflow Issue Template
 description: Thank you for reporting the issue!
 body:
   - type: markdown
     attributes:
       value: |
         Please make sure that you report a code/doc bug, feature request or build/installation bug on GitHub.
-        Please post on our [discussions](https://github.com/secretflow/secretflow/discussions) instead if you want to ask questions or share ideas.
+        Please post on our [discussions](https://github.com/moleculeflow/moleculeflow/discussions) instead if you want to ask questions or share ideas.
   - type: dropdown
     id: issue-type
     attributes:
@@ -26,7 +26,7 @@ body:
     id: source
     attributes:
       label: Source
-      description: Secretflow installed from
+      description: moleculeflow installed from
       options:
         - binary
         - source
@@ -35,16 +35,16 @@ body:
   - type: input
     id: sfversion
     attributes:
-      label: Secretflow Version
-      description: 
-      placeholder: e.g., secretflow 0.6.13b0
+      label: moleculeflow Version
+      description:
+      placeholder: e.g., moleculeflow 0.6.13b0
     validations:
       required: true
   - type: input
     id: OS
     attributes:
       label: OS Platform and Distribution
-      description: 
+      description:
       placeholder: e.g., Linux Ubuntu 18.04
     validations:
       required: true
@@ -52,7 +52,7 @@ body:
     id: Python
     attributes:
       label: Python version
-      description: 
+      description:
       placeholder: e.g., 3.8.13
     validations:
       required: true
@@ -61,7 +61,7 @@ body:
     attributes:
       label: Bazel version
       description: If compiling from source
-      placeholder: 
+      placeholder:
     validations:
       required: false
   - type: input
@@ -69,7 +69,7 @@ body:
     attributes:
       label: GCC/Compiler version
       description: If compiling from source
-      placeholder: 
+      placeholder:
     validations:
       required: false
   - type: textarea
@@ -78,7 +78,7 @@ body:
       label: What happend and What you expected to happen.
       description: Describe the bug, exepcted behavior and relevant log output.
       placeholder: A bug happened!
-      value: 
+      value:
       render: shell
     validations:
       required: true
@@ -88,7 +88,7 @@ body:
       label: Reproduction code to reproduce the issue.
       description: Provide a reproducible code that is the bare minimum necessary to generate the problem.
       placeholder: A short code snippet to reproduce the issue.
-      value: 
+      value:
       render: shell
     validations:
       required: true

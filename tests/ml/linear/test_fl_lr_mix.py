@@ -5,14 +5,14 @@ import spu
 from sklearn.datasets import load_breast_cancer
 from sklearn.metrics import roc_auc_score
 
-import secretflow as sf
-from secretflow.data.base import Partition
-from secretflow.data.mix import MixDataFrame
-from secretflow.data.split import train_test_split
-from secretflow.data.vertical import VDataFrame
-from secretflow.ml.linear.fl_lr_mix import FlLogisticRegressionMix
-from secretflow.preprocessing.scaler import StandardScaler
-from secretflow.security.aggregation import SecureAggregator
+import molflow as sf
+from molflow.data.base import Partition
+from molflow.data.mix import MixDataFrame
+from molflow.data.split import train_test_split
+from molflow.data.vertical import VDataFrame
+from molflow.ml.linear.fl_lr_mix import FlLogisticRegressionMix
+from molflow.preprocessing.scaler import StandardScaler
+from molflow.security.aggregation import SecureAggregator
 
 from tests.basecase import DeviceTestCaseBase
 
@@ -34,9 +34,12 @@ class TestFlLrMix(DeviceTestCaseBase):
                 },
             }
 
-        cls.heu0 = sf.HEU(heu_config('alice', ['bob', 'carol']), spu.spu_pb2.FM128)
-        cls.heu1 = sf.HEU(heu_config('alice', ['bob', 'davy']), spu.spu_pb2.FM128)
-        cls.heu2 = sf.HEU(heu_config('alice', ['bob', 'eric']), spu.spu_pb2.FM128)
+        cls.heu0 = sf.HEU(heu_config(
+            'alice', ['bob', 'carol']), spu.spu_pb2.FM128)
+        cls.heu1 = sf.HEU(heu_config(
+            'alice', ['bob', 'davy']), spu.spu_pb2.FM128)
+        cls.heu2 = sf.HEU(heu_config(
+            'alice', ['bob', 'eric']), spu.spu_pb2.FM128)
 
         features, label = load_breast_cancer(return_X_y=True, as_frame=True)
         label = label.to_frame()
@@ -53,7 +56,8 @@ class TestFlLrMix(DeviceTestCaseBase):
             }
         )
         x = StandardScaler().fit_transform(x)
-        y = VDataFrame(partitions={cls.alice: Partition(cls.alice(lambda: label)())})
+        y = VDataFrame(
+            partitions={cls.alice: Partition(cls.alice(lambda: label)())})
         x1, x = train_test_split(x, train_size=0.35, shuffle=False)
         x2, x3 = train_test_split(x, train_size=0.54, shuffle=False)
         y1, y = train_test_split(y, train_size=0.35, shuffle=False)
@@ -75,9 +79,12 @@ class TestFlLrMix(DeviceTestCaseBase):
 
     def test_model_should_ok_when_fit_dataframe(self):
         # GIVEN
-        aggregator0 = SecureAggregator(self.alice, [self.alice, self.bob, self.carol])
-        aggregator1 = SecureAggregator(self.alice, [self.alice, self.bob, self.davy])
-        aggregator2 = SecureAggregator(self.alice, [self.alice, self.bob, self.eric])
+        aggregator0 = SecureAggregator(
+            self.alice, [self.alice, self.bob, self.carol])
+        aggregator1 = SecureAggregator(
+            self.alice, [self.alice, self.bob, self.davy])
+        aggregator2 = SecureAggregator(
+            self.alice, [self.alice, self.bob, self.eric])
 
         model = FlLogisticRegressionMix()
 

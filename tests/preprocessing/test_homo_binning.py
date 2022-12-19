@@ -2,11 +2,11 @@ import tempfile
 
 import numpy as np
 import pandas as pd
-from secretflow.data.horizontal import read_csv as h_read_csv
-from secretflow.device import reveal
-from secretflow.preprocessing.binning.homo_binning import HomoBinning
-from secretflow.security.aggregation.plain_aggregator import PlainAggregator
-from secretflow.security.compare.plain_comparator import PlainComparator
+from molflow.data.horizontal import read_csv as h_read_csv
+from molflow.device import reveal
+from molflow.preprocessing.binning.homo_binning import HomoBinning
+from molflow.security.aggregation.plain_aggregator import PlainAggregator
+from molflow.security.compare.plain_comparator import PlainComparator
 from tests.basecase import DeviceTestCase
 
 _temp_dir = tempfile.mkdtemp()

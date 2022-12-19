@@ -1,4 +1,4 @@
-from secretflow.security.compare.spu_comparator import SPUComparator
+from molflow.security.compare.spu_comparator import SPUComparator
 from tests.basecase import DeviceTestCase
 from tests.security.compare.test_comparator_base import TestComparatorBase
 

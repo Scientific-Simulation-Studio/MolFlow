@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 from numpy.lib.histograms import histogram
 
-from secretflow.ml.boost.homo_boost.tree_core.splitter import Splitter
+from molflow.ml.boost.homo_boost.tree_core.splitter import Splitter
 
 
 def gen_histogram(data_size, feature_num, use_random=False, data_bin_num=10):
@@ -21,7 +21,8 @@ def gen_histogram(data_size, feature_num, use_random=False, data_bin_num=10):
     bin_split_points = []
     for f_name in header:
         if use_random:
-            bin_split_points.append(np.linspace(0.0, 1.0, data_bin_num + 1)[1:])
+            bin_split_points.append(np.linspace(
+                0.0, 1.0, data_bin_num + 1)[1:])
         else:
             bin_split_points.append(
                 np.linspace(0.0, data_bin_num, data_bin_num + 1)[1:]

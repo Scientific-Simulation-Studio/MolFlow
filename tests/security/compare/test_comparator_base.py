@@ -1,6 +1,6 @@
 import numpy as np
 
-from secretflow import reveal
+from molflow import reveal
 
 
 class TestComparatorBase:
@@ -24,4 +24,5 @@ class TestComparatorBase:
         max = reveal(self.comparator.max([a, b], axis=0))
 
         # THEN
-        np.testing.assert_equal(reveal(max), np.array([[11, 12, 13], [14, 15, 16]]))
+        np.testing.assert_equal(
+            reveal(max), np.array([[11, 12, 13], [14, 15, 16]]))

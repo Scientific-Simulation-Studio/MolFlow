@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-30 17:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -21,16 +21,16 @@ msgid "Deployment"
 msgstr "部署"
 
 #: ../../../DEPLOYMENT.md:3 0f9383458fd64e1c8ef7481ca9323b21
-msgid "SecretFlow can be deployed on a single host or on multiple nodes."
-msgstr "SecretFlow可以单机部署，也可以部署在多个节点上。"
+msgid "moleculeflow can be deployed on a single host or on multiple nodes."
+msgstr "moleculeflow可以单机部署，也可以部署在多个节点上。"
 
 #: ../../../DEPLOYMENT.md:5 961d85cbc3fe461da6f3e169f549a91c
 msgid "Standalone Mode"
 msgstr "单机模式"
 
 #: ../../../DEPLOYMENT.md:6 0a6fc9b5bf8e46598c3aafaa04a4710d
-msgid "Use `secretflow.init` directly to run secretflow in standalone mode."
-msgstr "使用 `secretflow.init` 在单机模式下运行SecretFlow。"
+msgid "Use `moleculeflow.init` directly to run moleculeflow in standalone mode."
+msgstr "使用 `moleculeflow.init` 在单机模式下运行moleculeflow。"
 
 #: ../../../DEPLOYMENT.md:12 1b77bf0398294cdaa19a8cd91fb6ad81
 msgid "Cluster Mode"
@@ -126,12 +126,12 @@ msgid ""
 msgstr "你也可以继续重复上述步骤以启动带有其他参与方标识的节点。"
 
 #: ../../../DEPLOYMENT.md:70 87f6551edffe4216b8b3d6790b6abf23
-msgid "Start SecretFlow"
-msgstr "启动SecretFlow"
+msgid "Start moleculeflow"
+msgstr "启动moleculeflow"
 
 #: ../../../DEPLOYMENT.md:71 28485131b6484743a84bf5ebb7d6b063
-msgid "Now you can start SecretFlow and run your code."
-msgstr "现在你可以启动SecretFlow以运行代码"
+msgid "Now you can start moleculeflow and run your code."
+msgstr "现在你可以启动moleculeflow以运行代码"
 
 #: ../../../DEPLOYMENT.md:85 d638cca2a094416eb3953976ec6e4d17
 msgid "(optional) How to shut down the cluster"
@@ -188,10 +188,10 @@ msgstr "生产环境建议"
 
 #: ../../../DEPLOYMENT.md:153 a71396f1b1d94adfa29e9554974db708
 msgid ""
-"SecretFlow use `ray` as its distribution system. You may need to do some "
+"moleculeflow use `ray` as its distribution system. You may need to do some "
 "more configuration for higher security when using it in production. The "
 "following actions can help improve security features."
-msgstr "SecretFlow使用 `ray` 作为分布式系统。你可能需要额外的配置来做安全加固。以下工作可以提升安全性。"
+msgstr "moleculeflow使用 `ray` 作为分布式系统。你可能需要额外的配置来做安全加固。以下工作可以提升安全性。"
 
 #: ../../../DEPLOYMENT.md:157 6e17bac77eb44694aa5c40ce298d1595
 msgid "Enable tls Authentication."

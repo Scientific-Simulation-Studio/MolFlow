@@ -1,14 +1,14 @@
 import numpy as np
 import pandas as pd
 
-from secretflow import reveal
-from secretflow.data.base import Partition
-from secretflow.data.horizontal.dataframe import HDataFrame
-from secretflow.data.mix import MixDataFrame
-from secretflow.data.vertical import VDataFrame
-from secretflow.security.aggregation import PlainAggregator
-from secretflow.security.compare import PlainComparator
-from secretflow.utils.errors import InvalidArgumentError
+from molflow import reveal
+from molflow.data.base import Partition
+from molflow.data.horizontal.dataframe import HDataFrame
+from molflow.data.mix import MixDataFrame
+from molflow.data.vertical import VDataFrame
+from molflow.security.aggregation import PlainAggregator
+from molflow.security.compare import PlainComparator
+from molflow.utils.errors import InvalidArgumentError
 
 from tests.basecase import DeviceTestCase
 
@@ -92,7 +92,8 @@ class TestHMixDataFrame(DeviceTestCase):
 
         # THEN
         expected = pd.concat(
-            [self.df_part0.min(numeric_only=True), self.df_part1.min(numeric_only=True)]
+            [self.df_part0.min(numeric_only=True),
+             self.df_part1.min(numeric_only=True)]
         )
         pd.testing.assert_series_equal(value_h, expected)
         pd.testing.assert_series_equal(value_v, expected)
@@ -106,7 +107,8 @@ class TestHMixDataFrame(DeviceTestCase):
 
         # THEN
         expected = pd.concat(
-            [self.df_part0.max(numeric_only=True), self.df_part1.max(numeric_only=True)]
+            [self.df_part0.max(numeric_only=True),
+             self.df_part1.max(numeric_only=True)]
         )
         pd.testing.assert_series_equal(value_h, expected)
         pd.testing.assert_series_equal(value_v, expected)
@@ -213,8 +215,10 @@ class TestHMixDataFrame(DeviceTestCase):
             (
                 pd.concat(
                     [
-                        reveal(value_h.partitions[0].partitions[self.alice].data),
-                        reveal(value_h.partitions[1].partitions[self.alice].data),
+                        reveal(
+                            value_h.partitions[0].partitions[self.alice].data),
+                        reveal(
+                            value_h.partitions[1].partitions[self.alice].data),
                     ]
                 )['a1']
                 == 'test'
@@ -224,8 +228,10 @@ class TestHMixDataFrame(DeviceTestCase):
             (
                 pd.concat(
                     [
-                        reveal(value_v.partitions[0].partitions[self.alice].data),
-                        reveal(value_v.partitions[0].partitions[self.bob].data),
+                        reveal(
+                            value_v.partitions[0].partitions[self.alice].data),
+                        reveal(
+                            value_v.partitions[0].partitions[self.bob].data),
                     ]
                 )['a1']
                 == 'test'

@@ -1,9 +1,9 @@
 import pandas as pd
 
-from secretflow import reveal
-from secretflow.utils.errors import InvalidArgumentError
-from secretflow.utils.simulation.data.dataframe import create_df
-from secretflow.utils.simulation.datasets import dataset
+from molflow import reveal
+from molflow.utils.errors import InvalidArgumentError
+from molflow.utils.simulation.data.dataframe import create_df
+from molflow.utils.simulation.datasets import dataset
 
 from tests.basecase import DeviceTestCase
 
@@ -16,12 +16,14 @@ class TestDataFrame(DeviceTestCase):
 
     def test_create_hdataframe_should_ok_when_input_dataframe(self):
         # WHEN
-        hdf = create_df(self.df, parts=[self.alice, self.bob, self.carol], axis=0)
+        hdf = create_df(
+            self.df, parts=[self.alice, self.bob, self.carol], axis=0)
 
         # THEN
         self.assertEqual(len(hdf.partitions), 3)
         pd.testing.assert_frame_equal(
-            self.df, pd.concat([reveal(part.data) for part in hdf.partitions.values()])
+            self.df, pd.concat([reveal(part.data)
+                               for part in hdf.partitions.values()])
         )
 
     def test_create_hdataframe_should_ok_when_input_file(self):
@@ -35,7 +37,8 @@ class TestDataFrame(DeviceTestCase):
         # THEN
         self.assertEqual(len(hdf.partitions), 3)
         pd.testing.assert_frame_equal(
-            self.df, pd.concat([reveal(part.data) for part in hdf.partitions.values()])
+            self.df, pd.concat([reveal(part.data)
+                               for part in hdf.partitions.values()])
         )
 
     def test_create_hdataframe_should_ok_when_specify_indexes(self):
@@ -47,32 +50,38 @@ class TestDataFrame(DeviceTestCase):
         # THEN
         self.assertEqual(len(hdf.partitions), 2)
         pd.testing.assert_frame_equal(
-            self.df, pd.concat([reveal(part.data) for part in hdf.partitions.values()])
+            self.df, pd.concat([reveal(part.data)
+                               for part in hdf.partitions.values()])
         )
 
     def test_create_hdataframe_should_ok_when_specify_percentage(self):
         # WHEN
-        hdf = create_df(self.df, parts={self.alice: 0.3, self.bob: 0.7}, axis=0)
+        hdf = create_df(
+            self.df, parts={self.alice: 0.3, self.bob: 0.7}, axis=0)
 
         # THEN
         self.assertEqual(len(hdf.partitions), 2)
         self.assertEqual(
             len(reveal(hdf.partitions[self.alice].data)), 0.3 * len(self.df)
         )
-        self.assertEqual(len(reveal(hdf.partitions[self.bob].data)), 0.7 * len(self.df))
+        self.assertEqual(
+            len(reveal(hdf.partitions[self.bob].data)), 0.7 * len(self.df))
         pd.testing.assert_frame_equal(
-            self.df, pd.concat([reveal(part.data) for part in hdf.partitions.values()])
+            self.df, pd.concat([reveal(part.data)
+                               for part in hdf.partitions.values()])
         )
 
     def test_create_vdataframe_should_ok(self):
         # WHEN
-        hdf = create_df(self.df, parts=[self.alice, self.bob, self.carol], axis=1)
+        hdf = create_df(
+            self.df, parts=[self.alice, self.bob, self.carol], axis=1)
 
         # THEN
         self.assertEqual(len(hdf.partitions), 3)
         pd.testing.assert_frame_equal(
             self.df,
-            pd.concat([reveal(part.data) for part in hdf.partitions.values()], axis=1),
+            pd.concat([reveal(part.data)
+                      for part in hdf.partitions.values()], axis=1),
         )
 
     def test_create_vdataframe_should_ok_when_input_callable(self):
@@ -87,7 +96,8 @@ class TestDataFrame(DeviceTestCase):
         self.assertEqual(len(hdf.partitions), 3)
         pd.testing.assert_frame_equal(
             self.df,
-            pd.concat([reveal(part.data) for part in hdf.partitions.values()], axis=1),
+            pd.concat([reveal(part.data)
+                      for part in hdf.partitions.values()], axis=1),
         )
 
     def test_create_vdataframe_should_error_when_illegal_source(self):

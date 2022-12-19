@@ -12,13 +12,13 @@ import tempfile
 
 import numpy as np
 
-from secretflow.data.ndarray import load
-from secretflow.ml.nn import SLModel
-from secretflow.security.privacy import DPStrategy, GaussianEmbeddingDP, LabelDP
+from molflow.data.ndarray import load
+from molflow.ml.nn import SLModel
+from molflow.security.privacy import DPStrategy, GaussianEmbeddingDP, LabelDP
 from tests.basecase import DeviceTestCase
-from secretflow.utils.simulation.datasets import load_mnist
-from secretflow.device import reveal
-from secretflow.utils.compressor import RandomSparse, TopkSparse
+from molflow.utils.simulation.datasets import load_mnist
+from molflow.device import reveal
+from molflow.utils.compressor import RandomSparse, TopkSparse
 
 _temp_dir = tempfile.mkdtemp()
 
@@ -172,7 +172,8 @@ class TestSLModelTensorflow(DeviceTestCase):
             batch_size=128,
             random_seed=1234,
         )
-        self.assertAlmostEqual(global_metric['accuracy'], reload_metric['accuracy'], 1)
+        self.assertAlmostEqual(
+            global_metric['accuracy'], reload_metric['accuracy'], 1)
         self.assertAlmostEqual(global_metric['loss'], reload_metric['loss'], 1)
 
     def test_single_output_model(self):
@@ -213,7 +214,8 @@ class TestSLModelTensorflow(DeviceTestCase):
         dp_strategy_alice = DPStrategy(embedding_dp=gaussian_embedding_dp)
         label_dp = LabelDP(eps=64.0)
         dp_strategy_bob = DPStrategy(label_dp=label_dp)
-        dp_strategy_dict = {self.alice: dp_strategy_alice, self.bob: dp_strategy_bob}
+        dp_strategy_dict = {self.alice: dp_strategy_alice,
+                            self.bob: dp_strategy_bob}
         dp_spent_step_freq = 10
 
         print("test dp strategy")
@@ -265,7 +267,8 @@ class TestSLModelTensorflow(DeviceTestCase):
         basenet_output = 2
 
         # keras model
-        base_model = create_base_model(input_shape, 64, output_num=basenet_output)
+        base_model = create_base_model(
+            input_shape, 64, output_num=basenet_output)
         base_model_dict = {
             self.alice: base_model,
             self.bob: base_model,

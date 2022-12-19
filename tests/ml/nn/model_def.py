@@ -7,8 +7,8 @@ from torch.nn import functional as F
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 
-from secretflow.ml.nn.fl.backend.tensorflow.fl_base import BaseModule
-from secretflow.ml.nn.sl.backend.tensorflow.sl_base import SLBaseModule
+from molflow.ml.nn.fl.backend.tensorflow.fl_base import BaseModule
+from molflow.ml.nn.sl.backend.tensorflow.sl_base import SLBaseModule
 
 
 class ConvNet(BaseModule):
@@ -52,7 +52,8 @@ class SLConvNet(SLBaseModule):
 
         # 若有传入embedding, concat后再forward
         if embed_shape_from_other is not None:
-            self.fc = nn.Linear(self.fc_in_dim + embed_shape_from_other, output_shape)
+            self.fc = nn.Linear(
+                self.fc_in_dim + embed_shape_from_other, output_shape)
         else:
             self.fc = nn.Linear(self.fc_in_dim, output_shape)
 

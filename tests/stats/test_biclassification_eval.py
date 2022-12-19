@@ -3,11 +3,11 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import roc_auc_score
 
-from secretflow import reveal
-from secretflow.data import FedNdarray, PartitionWay
-from secretflow.data.base import Partition
-from secretflow.data.vertical import VDataFrame
-from secretflow.stats import BiClassificationEval
+from molflow import reveal
+from molflow.data import FedNdarray, PartitionWay
+from molflow.data.base import Partition
+from molflow.data.vertical import VDataFrame
+from molflow.stats import BiClassificationEval
 from tests.basecase import DeviceTestCase
 
 

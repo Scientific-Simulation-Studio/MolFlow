@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-09 08:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -23,27 +23,27 @@ msgstr "安装"
 
 #: ../../../INSTALLATION.md:3
 msgid ""
-"The simplist way to try SecretFlow is to use [offical docker "
-"image](#option-2-from-docker) which shipps with SecretFlow binary."
-msgstr "最简单的尝试SecretFlow的方式是使用带有SecretFlow的 **官方 docker image** 。"
+"The simplist way to try moleculeflow is to use [offical docker "
+"image](#option-2-from-docker) which shipps with moleculeflow binary."
+msgstr "最简单的尝试moleculeflow的方式是使用带有moleculeflow的 **官方 docker image** 。"
 
 #: ../../../INSTALLATION.md:5
 msgid ""
-"Or you could [install SecretFlow via Python Package Index](#option-1"
+"Or you could [install moleculeflow via Python Package Index](#option-1"
 "-from-pypi)."
-msgstr "或者你也可以 **通过Python Package Index安装SecretFlow** 。"
+msgstr "或者你也可以 **通过Python Package Index安装moleculeflow** 。"
 
 #: ../../../INSTALLATION.md:7
 msgid ""
-"For advanced users, you could [install SecretFlow from source](#option-3"
+"For advanced users, you could [install moleculeflow from source](#option-3"
 "-from-source)."
-msgstr "对于高级用户，你可以 **从源码安装SecretFlow** 。"
+msgstr "对于高级用户，你可以 **从源码安装moleculeflow** 。"
 
 #: ../../../INSTALLATION.md:9
 msgid ""
 "After installation, don't forget to [have a quick try](#a-quick-try) to "
-"check if SecretFlow is good to go."
-msgstr "安装之后，请不要忘记 **快速尝试SecretFlow** 确保安装成功。"
+"check if moleculeflow is good to go."
+msgstr "安装之后，请不要忘记 **快速尝试moleculeflow** 确保安装成功。"
 
 #: ../../../INSTALLATION.md:12
 msgid "Environment"
@@ -71,35 +71,35 @@ msgstr "方式 1: 从pypi"
 
 #: ../../../INSTALLATION.md:22
 msgid ""
-"For users who want to try SecretFlow, you can install [the current "
-"release](https://pypi.org/project/secretflow/)"
-msgstr "请安装 `当前release <https://pypi.org/project/secretflow/>`__ 。"
+"For users who want to try moleculeflow, you can install [the current "
+"release](https://pypi.org/project/moleculeflow/)"
+msgstr "请安装 `当前release <https://pypi.org/project/moleculeflow/>`__ 。"
 
 #: ../../../INSTALLATION.md:24
 msgid ""
-"from [pypi](https://pypi.org/project/secretflow/). Note "
+"from [pypi](https://pypi.org/project/moleculeflow/). Note "
 "that it requires python version == 3.8, you can create a virtual "
 "environment with conda if not satisfied."
-msgstr "通过 `pypi <https://pypi.org/project/secretflow/>`__ 。 请注意"
+msgstr "通过 `pypi <https://pypi.org/project/moleculeflow/>`__ 。 请注意"
 "python版本需要是3.8，你可以用conda构建一个虚拟环境。"
 
 #: ../../../INSTALLATION.md:31
-msgid "After that, please use pip to install SecretFlow."
-msgstr "之后，请使用pip安装SecretFlow。"
+msgid "After that, please use pip to install moleculeflow."
+msgstr "之后，请使用pip安装moleculeflow。"
 
 #: ../../../INSTALLATION.md:38
 msgid "Option 2: from docker"
 msgstr "方式2: 通过docker"
 
 #: ../../../INSTALLATION.md:39
-msgid "You can also use SecretFlow Docker image to give SecretFlow a quick try."
-msgstr "你也可以通过SecretFlow的docker image来尝试SecretFlow。"
+msgid "You can also use moleculeflow Docker image to give moleculeflow a quick try."
+msgstr "你也可以通过moleculeflow的docker image来尝试moleculeflow。"
 
 #: ../../../INSTALLATION.md:41
 msgid ""
-"The latest version can be obtained from [secretflow "
-"tags](https://hub.docker.com/r/secretflow/secretflow-anolis8/tags)."
-msgstr "最新的版本请查看 `secretflow tags <https://hub.docker.com/r/secretflow/secretflow-anolis8/tags>`__ 。"
+"The latest version can be obtained from [moleculeflow "
+"tags](https://hub.docker.com/r/moleculeflow/moleculeflow-anolis8/tags)."
+msgstr "最新的版本请查看 `moleculeflow tags <https://hub.docker.com/r/moleculeflow/moleculeflow-anolis8/tags>`__ 。"
 
 #: ../../../INSTALLATION.md:47
 msgid "for example"
@@ -118,14 +118,14 @@ msgid "Download code and set up Python virtual environment."
 msgstr "下载源码并建立Python虚拟环境"
 
 #: ../../../INSTALLATION.md:71
-msgid "Install SecretFlow"
-msgstr "安装SecretFlow"
+msgid "Install moleculeflow"
+msgstr "安装moleculeflow"
 
 #: ../../../INSTALLATION.md:79
 msgid "A quick try"
 msgstr "快速尝试"
 
 #: ../../../INSTALLATION.md:80
-msgid "Try your first SecretFlow program."
-msgstr "你的第一个SecretFlow程序。"
+msgid "Try your first moleculeflow program."
+msgstr "你的第一个moleculeflow程序。"
 

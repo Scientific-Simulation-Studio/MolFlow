@@ -2,11 +2,11 @@ import numpy as np
 import pandas as pd
 from statsmodels.stats.outliers_influence import variance_inflation_factor as vif
 
-from secretflow.stats import SSVertVIF
-from secretflow.utils.simulation.datasets import load_linear, dataset, create_df
-from secretflow.data.base import Partition
-from secretflow.data.vertical import VDataFrame
-from secretflow.device.driver import wait
+from molflow.stats import SSVertVIF
+from molflow.utils.simulation.datasets import load_linear, dataset, create_df
+from molflow.data.base import Partition
+from molflow.data.vertical import VDataFrame
+from molflow.device.driver import wait
 import sklearn
 
 from tests.basecase import DeviceTestCase, ABY3DeviceTestCase
@@ -37,7 +37,8 @@ class TestVertVIF(DeviceTestCase):
         vdata = load_linear(parts={self.alice: (1, 11), self.bob: (11, 21)}).astype(
             np.float32
         )
-        data = pd.read_csv(dataset('linear'), usecols=[f'x{i}' for i in range(1, 21)])
+        data = pd.read_csv(dataset('linear'), usecols=[
+                           f'x{i}' for i in range(1, 21)])
         self._run_vif(vdata, data)
 
     def test_breast_cancer(self):

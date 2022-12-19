@@ -13,8 +13,8 @@ import numpy as np
 import ray
 import spu
 
-import secretflow as sf
-from secretflow.utils.testing import unused_tcp_port
+import molflow as sf
+from molflow.utils.testing import unused_tcp_port
 
 aby3_cluster_def = {
     'nodes': [
@@ -74,7 +74,8 @@ heu_config = {
 class DeviceTestCaseBase(unittest.TestCase):
     def setUp(self):
         super().setUp()
-        print(f"##### Testing: {self.__class__.__name__}.{self._testMethodName} #####")
+        print(
+            f"##### Testing: {self.__class__.__name__}.{self._testMethodName} #####")
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -106,7 +107,8 @@ class DeviceTestCase(DeviceTestCaseBase):
     def setUpClass(cls) -> None:
         super().setUpClass()
         cls.spu = sf.SPU(semi2k_cluster_def)
-        cls.heu = sf.HEU(heu_config, semi2k_cluster_def['runtime_config']['field'])
+        cls.heu = sf.HEU(
+            heu_config, semi2k_cluster_def['runtime_config']['field'])
 
 
 class ABY3DeviceTestCase(DeviceTestCaseBase):
@@ -114,7 +116,8 @@ class ABY3DeviceTestCase(DeviceTestCaseBase):
     def setUpClass(cls) -> None:
         super().setUpClass()
         cls.spu = sf.SPU(aby3_cluster_def)
-        cls.heu = sf.HEU(heu_config, aby3_cluster_def['runtime_config']['field'])
+        cls.heu = sf.HEU(
+            heu_config, aby3_cluster_def['runtime_config']['field'])
 
 
 def array_equal(a: np.ndarray, b: np.ndarray) -> bool:

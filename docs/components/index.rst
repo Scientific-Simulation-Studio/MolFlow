@@ -6,7 +6,7 @@ Components
 Preprocessing
 -------------
 
-SecretFlow provides serveral common utility functions/classes to change raw
+moleculeflow provides serveral common utility functions/classes to change raw
 features into a representation for more suitable for the downstream pipeline.
 
 .. grid:: 2
@@ -16,15 +16,15 @@ features into a representation for more suitable for the downstream pipeline.
       :link: preprocessing/DataFrame
       :link-type: doc
 
-        Secretflow provides federated data encapsulation in the form of DataFrame.
+        moleculeflow provides federated data encapsulation in the form of DataFrame.
         DataFrame is composed of data blocks of multiple parties and supports horizontal or vertical partitioned data.
 
 
 Private Set Intersection(PSI)
 -----------------------------
 
-SecretFlow SPU now supports ECDH-PSI, KKRT16-PSI, and BC22-PCG-PSI. 
-Please check :ref:`/components/psi.rst` for details. 
+moleculeflow SPU now supports ECDH-PSI, KKRT16-PSI, and BC22-PCG-PSI.
+Please check :ref:`/components/psi.rst` for details.
 
 .. grid:: 2
     :gutter: 2
@@ -33,7 +33,7 @@ Please check :ref:`/components/psi.rst` for details.
       :link: psi
       :link-type: doc
 
-        Private set intersection is a secure multiparty computation cryptographic technique that 
+        Private set intersection is a secure multiparty computation cryptographic technique that
         allows two parties holding sets to compare encrypted versions of these sets in order to
         compute the intersection.
 
@@ -41,7 +41,7 @@ Please check :ref:`/components/psi.rst` for details.
 MPC Machine Learning
 --------------------
 
-SecretFlow provides a variety of MPC modeling capabilities
+moleculeflow provides a variety of MPC modeling capabilities
 through the MPC security protocol and HE homomorphic encryption.
 
 .. grid:: 2
@@ -91,7 +91,7 @@ Federated learning is a machine learning technique that trains an algorithm acro
       :link: federated_learning/mix_federated_learning
       :link-type: doc
 
-        For cases that parts of participants share the same sample ID space but differ in feature space, 
+        For cases that parts of participants share the same sample ID space but differ in feature space,
         where others share the same feature space but differ in sample ID.
 
 .. toctree::

@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 10:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -177,11 +177,11 @@ msgstr "我们指示 alice 和 bob 分别加载训练子集。"
 #: ../../tutorial/lr_with_spu.ipynb:517
 msgid ""
 "Before trainning, we need to pass hyperparamters and all data to SPU "
-"device. SecretFlow provides two methods: - secretflow.to: transfer a "
+"device. moleculeflow provides two methods: - moleculeflow.to: transfer a "
 "PythonObject or DeviceObject to a specific device. - DeviceObject.to: "
 "transfer the DeviceObject to a specific device."
 msgstr ""
-"在训练之前，我们需要将超参数和所有数据传递给 SPU 设备。 SecretFlow 提供两种方法： - secretflow.to：将 "
+"在训练之前，我们需要将超参数和所有数据传递给 SPU 设备。 moleculeflow 提供两种方法： - moleculeflow.to：将 "
 "PythonObject 或 DeviceObject 传输到特定设备。 - DeviceObject.to：将 DeviceObject "
 "传输到特定设备。"
 
@@ -202,10 +202,10 @@ msgstr "揭示结果"
 #: ../../tutorial/lr_with_spu.ipynb:616
 msgid ""
 "In order to check losses and model, we need to convert SPUObject(secret) "
-"to Python object(plaintest). SecretFlow provide ``sf.reveal`` to convert "
+"to Python object(plaintest). moleculeflow provide ``sf.reveal`` to convert "
 "any DeviceObject to Python object."
 msgstr ""
-"为了检查损失和模型，我们需要将 SPUObject(secret) 转换为 Python object(明文)。 SecretFlow 提供 "
+"为了检查损失和模型，我们需要将 SPUObject(secret) 转换为 Python object(明文)。 moleculeflow 提供 "
 "``sf.reveal`` 将任何 DeviceObject 转换为 Python object。"
 
 #: ../../tutorial/lr_with_spu.ipynb:618

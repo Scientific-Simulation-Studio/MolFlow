@@ -1,12 +1,12 @@
 import numpy as np
 
-from secretflow.stats import ScoreCard
+from molflow.stats import ScoreCard
 
 from tests.basecase import DeviceTestCase
 
-from secretflow.data import FedNdarray, PartitionWay
+from molflow.data import FedNdarray, PartitionWay
 
-import secretflow as sf
+import molflow as sf
 
 
 class TestScoreCard(DeviceTestCase):

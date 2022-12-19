@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
 
-from secretflow import reveal
-from secretflow.security.aggregation import PlainAggregator, SPUAggregator
-from secretflow.security.compare import PlainComparator, SPUComparator
-from secretflow.utils.simulation.datasets import load_iris
+from molflow import reveal
+from molflow.security.aggregation import PlainAggregator, SPUAggregator
+from molflow.security.compare import PlainComparator, SPUComparator
+from molflow.utils.simulation.datasets import load_iris
 
 from tests.basecase import DeviceTestCase
 
@@ -46,7 +46,8 @@ class TestHDataFrame(DeviceTestCase):
             mean,
             pd.Series(
                 expected,
-                index=['sepal_length', 'sepal_width', 'petal_length', 'petal_width'],
+                index=['sepal_length', 'sepal_width',
+                       'petal_length', 'petal_width'],
             ),
         )
 
@@ -70,7 +71,8 @@ class TestHDataFrame(DeviceTestCase):
             mean,
             pd.Series(
                 expected,
-                index=['sepal_length', 'sepal_width', 'petal_length', 'petal_width'],
+                index=['sepal_length', 'sepal_width',
+                       'petal_length', 'petal_width'],
             ),
         )
 
@@ -80,7 +82,8 @@ class TestHDataFrame(DeviceTestCase):
 
         # THEN
         expected = np.minimum(
-            self.df_alice.min(numeric_only=True), self.df_bob.min(numeric_only=True)
+            self.df_alice.min(numeric_only=True), self.df_bob.min(
+                numeric_only=True)
         )
         pd.testing.assert_series_equal(min, expected)
 
@@ -90,7 +93,8 @@ class TestHDataFrame(DeviceTestCase):
 
         # THEN
         expected = np.minimum(
-            self.df_alice.min(numeric_only=True), self.df_bob.min(numeric_only=True)
+            self.df_alice.min(numeric_only=True), self.df_bob.min(
+                numeric_only=True)
         )
         pd.testing.assert_series_equal(min, expected)
 
@@ -100,7 +104,8 @@ class TestHDataFrame(DeviceTestCase):
 
         # THEN
         expected = np.maximum(
-            self.df_alice.max(numeric_only=True), self.df_bob.max(numeric_only=True)
+            self.df_alice.max(numeric_only=True), self.df_bob.max(
+                numeric_only=True)
         )
         pd.testing.assert_series_equal(max, expected)
 
@@ -110,7 +115,8 @@ class TestHDataFrame(DeviceTestCase):
 
         # THEN
         expected = np.maximum(
-            self.df_alice.max(numeric_only=True), self.df_bob.max(numeric_only=True)
+            self.df_alice.max(numeric_only=True), self.df_bob.max(
+                numeric_only=True)
         )
         pd.testing.assert_series_equal(max, expected)
 

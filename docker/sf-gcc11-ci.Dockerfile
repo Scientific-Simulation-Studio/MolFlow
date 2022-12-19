@@ -1,7 +1,7 @@
 FROM openanolis/anolisos:8.6-x86_64
 
 
-LABEL maintainer="secretflow-contact@service.alipay.com"
+LABEL maintainer="moleculeflow-contact@service.alipay.com"
 
 # GCC version
 ARG DEVTOOLSET_VERSION=11
@@ -50,7 +50,7 @@ RUN dnf install -y epel-release \
     && yum install -y lcov \
     && yum clean all
 
-# install bazel 
+# install bazel
 RUN wget https://github.com/bazelbuild/bazel/releases/download/5.1.1/bazel-5.1.1-installer-linux-x86_64.sh \
     && chmod +x ./bazel-5.1.1-installer-linux-x86_64.sh && ./bazel-5.1.1-installer-linux-x86_64.sh && rm -f ./bazel-5.1.1-installer-linux-x86_64.sh
 

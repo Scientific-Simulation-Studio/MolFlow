@@ -3,9 +3,9 @@ import pandas as pd
 import os
 import tempfile
 
-from secretflow import reveal
-from secretflow.data.base import Partition
-from secretflow.data.ndarray import (
+from molflow import reveal
+from molflow.data.base import Partition
+from molflow.data.ndarray import (
     load,
     shuffle,
     train_test_split,
@@ -18,11 +18,11 @@ from secretflow.data.ndarray import (
     histogram,
     residual_histogram,
 )
-from secretflow.data.vertical import VDataFrame
-from secretflow.utils.errors import InvalidArgumentError
+from molflow.data.vertical import VDataFrame
+from molflow.utils.errors import InvalidArgumentError
 
 from tests.basecase import DeviceTestCase, array_equal
-from secretflow.utils.simulation.datasets import create_ndarray
+from molflow.utils.simulation.datasets import create_ndarray
 import sklearn.metrics
 
 
@@ -67,7 +67,8 @@ class TestFedNdarray(DeviceTestCase):
         self.assertTrue(
             array_equal(reveal(fed_arr.partitions[self.alice]), self.alice_arr)
         )
-        self.assertTrue(array_equal(reveal(fed_arr.partitions[self.bob]), self.bob_arr))
+        self.assertTrue(array_equal(
+            reveal(fed_arr.partitions[self.bob]), self.bob_arr))
 
     def test_load_pyu_object_should_ok(self):
         # GIVEN
@@ -223,12 +224,14 @@ class TestFedNdarray(DeviceTestCase):
                 self.assertTrue(
                     array_equal(reveal(v.partitions[self.alice]), alice_train)
                 )
-                self.assertTrue(array_equal(reveal(v.partitions[self.bob]), bob_train))
+                self.assertTrue(array_equal(
+                    reveal(v.partitions[self.bob]), bob_train))
             else:
                 self.assertTrue(
                     array_equal(reveal(v.partitions[self.alice]), alice_test)
                 )
-                self.assertTrue(array_equal(reveal(v.partitions[self.bob]), bob_test))
+                self.assertTrue(array_equal(
+                    reveal(v.partitions[self.bob]), bob_test))
 
     def test_astype_should_ok(self):
         # WHEN
@@ -238,11 +241,13 @@ class TestFedNdarray(DeviceTestCase):
         # THEN
         self.assertTrue(
             array_equal(
-                reveal(fed_arr.partitions[self.alice]), self.alice_arr.astype(str)
+                reveal(fed_arr.partitions[self.alice]
+                       ), self.alice_arr.astype(str)
             )
         )
         self.assertTrue(
-            array_equal(reveal(fed_arr.partitions[self.bob]), self.bob_arr.astype(str))
+            array_equal(
+                reveal(fed_arr.partitions[self.bob]), self.bob_arr.astype(str))
         )
 
     def operator_h_v_cases_test(self, test_handle, true_val, binary=True):
@@ -250,7 +255,8 @@ class TestFedNdarray(DeviceTestCase):
             a_h = reveal(test_handle(self.y_true_fed_h, spu_device=self.spu))
             a_v = reveal(test_handle(self.y_true_fed_v))
         else:
-            a_h = reveal(test_handle(self.y_true_fed_h, self.y_pred_fed_h, self.spu))
+            a_h = reveal(test_handle(self.y_true_fed_h,
+                         self.y_pred_fed_h, self.spu))
             a_v = reveal(test_handle(self.y_true_fed_v, self.y_pred_fed_v))
             # Currently mixed case is not supported
         np.testing.assert_almost_equal(true_val, a_h, decimal=2)
@@ -294,7 +300,8 @@ class TestFedNdarray(DeviceTestCase):
 
     def test_residual_histogram(self):
         hist, edges = np.histogram(self.y_true - self.y_pred)
-        h_v, e_v = reveal(residual_histogram(self.y_true_fed_v, self.y_pred_fed_v))
+        h_v, e_v = reveal(residual_histogram(
+            self.y_true_fed_v, self.y_pred_fed_v))
         h_v_direct, e_v_direct = reveal(
             histogram(self.y_true_fed_v - self.y_pred_fed_v)
         )

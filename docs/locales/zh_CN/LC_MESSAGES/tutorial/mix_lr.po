@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 13:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: ../../tutorial/mix_lr.ipynb:37
 msgid ""
-"Secretflow supports ``Logistic Regression`` with mix data. The algorithm "
+"moleculeflow supports ``Logistic Regression`` with mix data. The algorithm "
 "combines ``H``\\ omomorphic ``E``\\ ncryption and secure aggregation for "
 "better security, for more details please refer to `Federated Logistic "
 "Regression <../developer/algorithm/mix_lr.md>`__"
@@ -60,8 +60,8 @@ msgid "Initialization"
 msgstr "初始化"
 
 #: ../../tutorial/mix_lr.ipynb:63
-msgid "Init secretflow."
-msgstr "初始化SecretFlow"
+msgid "Init moleculeflow."
+msgstr "初始化moleculeflow"
 
 #: ../../tutorial/mix_lr.ipynb:98
 msgid "Data Preparation"
@@ -163,7 +163,7 @@ msgstr ""
 
 #: ../../tutorial/mix_lr.ipynb:228
 msgid ""
-"you can read secretflow's `DataFrame "
+"you can read moleculeflow's `DataFrame "
 "<../components/preprocessing/DataFrame.ipynb>`__ for more details."
 msgstr ""
 "您可以阅读 `DataFrame <../components/preprocessing/DataFrame.ipynb>`__ 了解更多 "

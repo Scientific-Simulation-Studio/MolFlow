@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 11:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -34,7 +34,7 @@ msgid ""
 msgstr "推荐使用 `jupyter <https://jupyter.org/>`__  运行本教程。"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:42
-msgid "Secretflow provides a variety of preprocessing tools to process data."
+msgid "moleculeflow provides a variety of preprocessing tools to process data."
 msgstr "隐语提供了多种预处理工具来处理数据。"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:54
@@ -42,12 +42,12 @@ msgid "Preparation"
 msgstr "前置准备"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:56
-msgid "Initialize secretflow and create two parties alice and bob."
+msgid "Initialize moleculeflow and create two parties alice and bob."
 msgstr "初始化隐语，创建alice和bob两个参与方。"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:67
 msgid ""
-"💡 Before using preprocessing, you may need to get to know secretflow's "
+"💡 Before using preprocessing, you may need to get to know moleculeflow's "
 "`DataFrame <../components/preprocessing/DataFrame.ipynb>`__."
 msgstr ""
 "💡 在使用预处理之前，您可以需要先了解隐语 `DataFrame "
@@ -83,7 +83,7 @@ msgstr "预处理"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:448
 msgid ""
-"Secretflow provides missing value filling, standardization, categorical "
+"moleculeflow provides missing value filling, standardization, categorical "
 "features encoding, discretization .etc, which are similar to sklearn's "
 "preprocessing."
 msgstr "隐语提供了缺失值填充、标准化、分类数据编码、离散化等多种预处理功能，其使用方式和sklearn的预处理一致。"
@@ -108,7 +108,7 @@ msgstr "将特征缩放到某个范围。"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:551
 msgid ""
-"Secretflow provides ``MinMaxScaler`` for scaling features to lie between "
+"moleculeflow provides ``MinMaxScaler`` for scaling features to lie between "
 "a given minimum and maximum value. The input and output of MinMaxScaler "
 "are both ``DataFrame``."
 msgstr "隐语提供了 `MinMaxScaler` 用于把特征缩放到最大和最小值之间。MinMaxScaler的输入和输出形式均为DataFrame。"
@@ -123,7 +123,7 @@ msgstr "方差缩放"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:617
 msgid ""
-"Secretflow provides ``StandardScaler`` for variance scaling. The input "
+"moleculeflow provides ``StandardScaler`` for variance scaling. The input "
 "and output of StandardScaler are both DataFrames."
 msgstr "隐语提供了 `StandardScaler` 进行方差缩放。StandardScaler的输入和输出行为均为DataFrame。"
 
@@ -141,7 +141,7 @@ msgstr "独热编码"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:686
 msgid ""
-"Secretflow provides ``OneHotEncoder`` for OneHot encoding. The input and "
+"moleculeflow provides ``OneHotEncoder`` for OneHot encoding. The input and "
 "output of OneHotEncoder are ``DataFrame``."
 msgstr "隐语提供了 `OneHotEncoder` 用作独热编码。 OneHotEncoder的输入和输出行为均为DataFrame。"
 
@@ -155,7 +155,7 @@ msgstr "标签编码"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:773
 msgid ""
-"secretflow provides ``LabelEncoder`` for encoding target labels with "
+"moleculeflow provides ``LabelEncoder`` for encoding target labels with "
 "value between 0 and n\\_classes-1. The input and output of LabelEncoder "
 "are ``DataFrame``."
 msgstr "隐语提供了 `LabelEncoder` 用作将标签列编码至[0, 类别数 - 1]。LabelEncoder的输入输出形式均为DataFrame。"
@@ -170,7 +170,7 @@ msgstr "离散化"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:848
 msgid ""
-"SecretFlow provides ``KBinsDiscretizer`` for partitioning continuous "
+"moleculeflow provides ``KBinsDiscretizer`` for partitioning continuous "
 "features into discrete values. The input and output of KBinsDiscretizer "
 "are both ``DataFrame``."
 msgstr "隐语提供了 `KBinsDiscretizer` 用作将连续数据切分成离散值。KBinsDiscretizer的输入输出形式均为DataFrame。"
@@ -185,7 +185,7 @@ msgstr "WOE编码"
 
 #: ../../tutorial/data_preprocessing_with_data_frame.ipynb:919
 msgid ""
-"secretflow provides ``VertWoeBinning`` to bin the features into buckets "
+"moleculeflow provides ``VertWoeBinning`` to bin the features into buckets "
 "by quantile or chimerge method, and calculate the woe value and iv value "
 "in each bucket. And ``VertWOESubstitution`` can substitute the features "
 "with the woe value."

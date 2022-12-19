@@ -1,7 +1,7 @@
 import pandas as pd
 
-from secretflow import reveal
-from secretflow.utils.simulation.datasets import load_iris
+from molflow import reveal
+from molflow.utils.simulation.datasets import load_iris
 
 from tests.basecase import DeviceTestCase
 
@@ -114,12 +114,14 @@ class TestPartition(DeviceTestCase):
         # WHEN
         part_num = self.part.select_dtypes('number')
         means = part_num.mean()
-        value = part_num.subtract(means)[part_num.columns].mean(numeric_only=True)
+        value = part_num.subtract(
+            means)[part_num.columns].mean(numeric_only=True)
 
         # THEN
         df_num = self.df.select_dtypes('number')
         df_means = df_num.mean()
-        expected = df_num.subtract(df_means)[df_num.columns].mean(numeric_only=True)
+        expected = df_num.subtract(
+            df_means)[df_num.columns].mean(numeric_only=True)
         pd.testing.assert_series_equal(reveal(value.data), expected)
 
     def test_round_should_ok(self):

@@ -2,11 +2,11 @@ import jax.numpy as jnp
 import numpy as np
 import pandas as pd
 
-from secretflow import reveal
-from secretflow.data import FedNdarray, PartitionWay
-from secretflow.data.base import Partition
-from secretflow.data.vertical import VDataFrame
-from secretflow.stats import pva_eval
+from molflow import reveal
+from molflow.data import FedNdarray, PartitionWay
+from molflow.data.base import Partition
+from molflow.data.vertical import VDataFrame
+from molflow.stats import pva_eval
 from tests.basecase import DeviceTestCase
 
 

@@ -1,9 +1,9 @@
 import numpy as np
 from heu import phe
 
-import secretflow.device as ft
-from secretflow import reveal
-from secretflow.device.device.base import MoveConfig
+import molflow.device as ft
+from molflow import reveal
+from molflow.device.device.base import MoveConfig
 from tests.basecase import DeviceTestCase
 
 
@@ -41,10 +41,12 @@ class TestDeviceHEU(DeviceTestCase):
             x.to(self.heu),  # x_ is ciphertext
             y.to(self.heu),
             y_int.to(
-                self.heu, config=MoveConfig(heu_encoder=phe.BigintEncoder(schema))
+                self.heu, config=MoveConfig(
+                    heu_encoder=phe.BigintEncoder(schema))
             ),
             z_int.to(
-                self.heu, config=MoveConfig(heu_encoder=phe.BigintEncoder(schema))
+                self.heu, config=MoveConfig(
+                    heu_encoder=phe.BigintEncoder(schema))
             ),
         )  # plaintext
 
@@ -77,13 +79,15 @@ class TestDeviceHEU(DeviceTestCase):
         np.testing.assert_almost_equal((x + y)[2, 3], add, decimal=4)
         np.testing.assert_almost_equal((x - y)[1:3, :], sub, decimal=4)
         np.testing.assert_almost_equal((x * y_int)[:3:2, ::-1], mul, decimal=4)
-        np.testing.assert_almost_equal((x @ z_int)[[0, 1, 2], 1::2], matmul, decimal=4)
+        np.testing.assert_almost_equal(
+            (x @ z_int)[[0, 1, 2], 1::2], matmul, decimal=4)
 
     def test_sum(self):
         # test vector, ciphertext
         m = ft.with_device(self.alice)(np.random.rand)(20)
         m_heu = m.to(self.heu)  # ciphertext
-        np.testing.assert_almost_equal(reveal(m).sum(), reveal(m_heu.sum()), decimal=4)
+        np.testing.assert_almost_equal(
+            reveal(m).sum(), reveal(m_heu.sum()), decimal=4)
         np.testing.assert_almost_equal(
             reveal(m)[[1, 2, 3]].sum(), reveal(m_heu[[1, 2, 3]].sum()), decimal=4
         )
@@ -93,9 +97,11 @@ class TestDeviceHEU(DeviceTestCase):
 
         # test matrix
         m = ft.with_device(self.bob)(np.random.rand)(20, 20)
-        m_heu = m.to(self.heu, MoveConfig(heu_dest_party=self.bob.party))  # plaintext
+        m_heu = m.to(self.heu, MoveConfig(
+            heu_dest_party=self.bob.party))  # plaintext
         self.assertTrue(m_heu.is_plain)
-        np.testing.assert_almost_equal(reveal(m).sum(), reveal(m_heu.sum()), decimal=4)
+        np.testing.assert_almost_equal(
+            reveal(m).sum(), reveal(m_heu.sum()), decimal=4)
         np.testing.assert_almost_equal(
             reveal(m).sum(), reveal(m_heu.encrypt().sum()), decimal=4
         )

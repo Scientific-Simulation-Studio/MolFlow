@@ -3,7 +3,7 @@ import numpy as np
 from jax.example_libraries import optimizers, stax
 from jax.example_libraries.stax import Dense, Relu
 
-import secretflow as sf
+import molflow as sf
 from tests.basecase import DeviceTestCase
 
 

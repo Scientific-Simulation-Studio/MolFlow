@@ -2,13 +2,13 @@ import time
 
 import sys
 import logging
-from secretflow.device.driver import reveal, wait
-from secretflow.ml.linear.ss_sgd import SSRegression
+from molflow.device.driver import reveal, wait
+from molflow.ml.linear.ss_sgd import SSRegression
 from sklearn.preprocessing import StandardScaler
 from tests.basecase import ABY3DeviceTestCase
 from sklearn.metrics import roc_auc_score
-from secretflow.data import FedNdarray, PartitionWay
-from secretflow.utils.simulation.datasets import load_linear, create_df, dataset
+from molflow.data import FedNdarray, PartitionWay
+from molflow.utils.simulation.datasets import load_linear, create_df, dataset
 
 
 class TestVertBinning(ABY3DeviceTestCase):

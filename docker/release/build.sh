@@ -5,7 +5,7 @@ set -e
 show_help() {
     echo "Usage: bash build.sh [OPTION]... -v {the_version}"
     echo "  -v  --version"
-    echo "          the secretflow version to build with."
+    echo "          the moleculeflow version to build with."
     echo "  -l --latest"
     echo "          tag this version as latest and push to docker repo."
     echo
@@ -50,8 +50,8 @@ fi
 GREEN="\033[32m"
 NO_COLOR="\033[0m"
 
-IMAGE_TAG=secretflow/secretflow-anolis8:${VERSION}
-LATEST_TAG=secretflow/secretflow-anolis8:latest
+IMAGE_TAG=moleculeflow/moleculeflow-anolis8:${VERSION}
+LATEST_TAG=moleculeflow/moleculeflow-anolis8:latest
 
 cp environment.yml environment.yml.bak
 sed -i.bak "s/version/${VERSION}/g" environment.yml

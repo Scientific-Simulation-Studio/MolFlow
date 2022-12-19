@@ -17,10 +17,10 @@ import sys
 import time
 import logging
 
-from secretflow.device.driver import reveal, wait
-from secretflow.ml.boost.ss_xgb_v import Xgb
-from secretflow.data import FedNdarray, PartitionWay
-from secretflow.utils.simulation.datasets import (
+from molflow.device.driver import reveal, wait
+from molflow.ml.boost.ss_xgb_v import Xgb
+from molflow.data import FedNdarray, PartitionWay
+from molflow.utils.simulation.datasets import (
     load_linear,
     load_dermatology,
     create_df,
@@ -125,7 +125,8 @@ class TestVertBinning(ABY3DeviceTestCase):
         self.run_xgb("breast_cancer", v_data, label_data, y, True, 1, 0.9)
 
     def test_dermatology(self):
-        vdf = load_dermatology(parts={self.alice: (0, 17), self.bob: (17, 35)}, axis=1)
+        vdf = load_dermatology(
+            parts={self.alice: (0, 17), self.bob: (17, 35)}, axis=1)
 
         label_data = vdf['class']
         y = reveal(label_data.partitions[self.bob].data).values

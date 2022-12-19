@@ -2,9 +2,9 @@ import copy
 from typing import Tuple
 
 import numpy as np
-import secretflow as sf
-from secretflow.data import FedNdarray, PartitionWay
-from secretflow.ml.linear.hess_sgd import HESSLogisticRegression
+import molflow as sf
+from molflow.data import FedNdarray, PartitionWay
+from molflow.ml.linear.hess_sgd import HESSLogisticRegression
 from sklearn.datasets import load_breast_cancer
 from sklearn.preprocessing import StandardScaler
 from tests.basecase import DeviceTestCase
@@ -22,7 +22,8 @@ class TestHESSLogisticRegression(DeviceTestCase):
             'encoder': "IntegerEncoder",
             'encoder_args': {"scale": 1},
         }
-        cls.heu_x = sf.HEU(config_x, cls.spu.cluster_def['runtime_config']['field'])
+        cls.heu_x = sf.HEU(
+            config_x, cls.spu.cluster_def['runtime_config']['field'])
 
         config_y = copy.deepcopy(config_x)
         sk_keeper = config_y["sk_keeper"]
@@ -30,7 +31,8 @@ class TestHESSLogisticRegression(DeviceTestCase):
         config_y["sk_keeper"] = evaluator
         config_y["evaluators"][0] = sk_keeper
 
-        cls.heu_y = sf.HEU(config_y, cls.spu.cluster_def['runtime_config']['field'])
+        cls.heu_y = sf.HEU(
+            config_y, cls.spu.cluster_def['runtime_config']['field'])
 
     def load_dataset(self):
         def _load_dataset(return_label=False) -> Tuple[np.ndarray, np.ndarray]:

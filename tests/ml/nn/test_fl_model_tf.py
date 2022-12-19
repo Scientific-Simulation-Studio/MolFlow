@@ -15,14 +15,14 @@ import tempfile
 import numpy as np
 import tensorflow as tf
 
-from secretflow.data.ndarray import load
-from secretflow.ml.nn import FLModel
-from secretflow.preprocessing.encoder import OneHotEncoder
-from secretflow.security.aggregation import PlainAggregator
-from secretflow.security.compare import PlainComparator
-from secretflow.utils.simulation.datasets import load_iris, load_mnist
-from secretflow.security.privacy import DPStrategyFL, GaussianModelDP
-from secretflow.device import reveal
+from molflow.data.ndarray import load
+from molflow.ml.nn import FLModel
+from molflow.preprocessing.encoder import OneHotEncoder
+from molflow.security.aggregation import PlainAggregator
+from molflow.security.compare import PlainComparator
+from molflow.utils.simulation.datasets import load_iris, load_mnist
+from molflow.security.privacy import DPStrategyFL, GaussianModelDP
+from molflow.device import reveal
 
 from tests.basecase import DeviceTestCase
 
@@ -41,7 +41,8 @@ def create_nn_model(input_dim, output_dim, nodes, n=1, name='model'):
         # Create model
         model = keras.Sequential(name=name)
         for i in range(n):
-            model.add(layers.Dense(nodes, input_dim=input_dim, activation='relu'))
+            model.add(layers.Dense(
+                nodes, input_dim=input_dim, activation='relu'))
         model.add(layers.Dense(output_dim, activation='softmax'))
 
         # Compile model
@@ -121,7 +122,8 @@ class TestFedModelDF(DeviceTestCase):
 class TestFedModelCSV(DeviceTestCase):
     def test_keras_model(self):
         aggregator = PlainAggregator(self.carol)
-        train_data = load_iris(parts=[self.alice, self.bob], aggregator=aggregator)
+        train_data = load_iris(
+            parts=[self.alice, self.bob], aggregator=aggregator)
         _, alice_path = tempfile.mkstemp()
         _, bob_path = tempfile.mkstemp()
         train_path = {self.alice: alice_path, self.bob: bob_path}
@@ -143,7 +145,8 @@ class TestFedModelCSV(DeviceTestCase):
         onehot_func = functools.partial(label_decoder, num_class=n_classes)
         model = create_nn_model(n_features, n_classes, 8, 3)
         device_list = [self.alice, self.bob]
-        fed_model = FLModel(device_list=device_list, model=model, aggregator=aggregator)
+        fed_model = FLModel(device_list=device_list,
+                            model=model, aggregator=aggregator)
 
         fed_model.fit(
             train_path,
@@ -223,7 +226,8 @@ class TestFedModelTensorflow(DeviceTestCase):
         )
         # test sample_weight validation
         self.assertEquals(zero_metric[0].result(), 0.0)
-        result = fed_model.predict(data, batch_size=128, random_seed=random_seed)
+        result = fed_model.predict(
+            data, batch_size=128, random_seed=random_seed)
         self.assertEquals(len(reveal(result[self.alice])), alice_length)
 
         model_path_test = os.path.join(_temp_dir, "base_model")

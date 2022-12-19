@@ -4,7 +4,7 @@ Federate XGBoost currently supports the construction of horizontal scene tree bo
 In the horizontal federated learning scenario, the data is partitioned horizontally according to the sample, that is, the data schema of each participant is consistent and has the same columns and types.
 
 ## Introduction to XGBoost
-Official doc: [XGBoost tutorials](https://xgboost.readthedocs.io/en/latest/tutorials/index.html)  
+Official doc: [XGBoost tutorials](https://xgboost.readthedocs.io/en/latest/tutorials/index.html)
 In the horizontal federated learning scenario, each party has data in the same feature space, but the sample space is different from each other, which can be understood as a sampling of the overall data (maybe non-iid), the horizontal tree model, which needs to be in this setting, Build a joint tree model to complete the modeling.
 |role|detail|
 |---|---|
@@ -20,21 +20,21 @@ In the horizontal federated learning scenario, each party has data in the same f
 ![xgb_3](resources/xgb_3.png)
 ### HomoBoost Whole Training Process
 ![xgb_4](resources/xgb_4.png)
-## Algorithm Process 
+## Algorithm Process
 Data input: HdataFrame, XGBoost supports converting Pandas.DataFrame directly into DMatrix
 1. Use federate binning globally to calculate equal-frequency buckets as the basis for subsequent splits.
 2. Construct mock data of the same sample space on the server side to synchronize the training process of server and client
 3. Process callback_before_iteration
-4. Input the data into each Client XGBoost engine to calculate g & h  
-   Initiate the homo_boost task; build FedBooster (iterate n iterations for tree model iteration)  
-    1. Handle callback_before_iteration  
-    1. Calculate grad and hess through the XGBoost engine; build a tree model through federated and add it to the Fedboost model. The point of interaction between the XGBoost engine and our federated tree building module - a standard XGBoost model.  
-    1. Handle callback_after_iteration (such as early stop, evaluation, etc.）  
-5. Input the current g and h into the federate decision tree module, initiate the homo_boost task; build FedBooster (iterate n iterations to do tree model iteration)  
-    1. Perform data reassign and assign it to the node to be split  
-    1. Calculate sum_of_grad and sum_of_hess according to the previously calculated binning buckets  
-    1. Send to the server side, the server side performs secure aggregation, selects the split information,and sends it back to the client side.  
-    1. Update the split, then return 1  
+4. Input the data into each Client XGBoost engine to calculate g & h
+   Initiate the homo_boost task; build FedBooster (iterate n iterations for tree model iteration)
+    1. Handle callback_before_iteration
+    1. Calculate grad and hess through the XGBoost engine; build a tree model through federated and add it to the Fedboost model. The point of interaction between the XGBoost engine and our federated tree building module - a standard XGBoost model.
+    1. Handle callback_after_iteration (such as early stop, evaluation, etc.）
+5. Input the current g and h into the federate decision tree module, initiate the homo_boost task; build FedBooster (iterate n iterations to do tree model iteration)
+    1. Perform data reassign and assign it to the node to be split
+    1. Calculate sum_of_grad and sum_of_hess according to the previously calculated binning buckets
+    1. Send to the server side, the server side performs secure aggregation, selects the split information,and sends it back to the client side.
+    1. Update the split, then return 1
 6. After the current tree split is completed, return to the tree structure, each client and server will have a complete current tree structure, convert the tree structure to the XGBoost standard RegTree format, and add it to the XGBoost standard model file.
 7. Process callback_after_iteration (such as early stop, evaluation, etc.)
 8. `xgboost.load_model` (the standard model file just generated), enter the next iteration
@@ -42,14 +42,14 @@ Data input: HdataFrame, XGBoost supports converting Pandas.DataFrame directly in
 
 ## Sample Code
 ```python
-from secretflow.data.horizontal import read_csv
-from secretflow.security.aggregation import SecureAggregator
-from secretflow.security.compare import SPUComparator
-from secretflow.utils.simulation.datasets import load_dermatology
-from secretflow.ml.boost.homo_boost import SFXgboost
-import secretflow as sf
+from moleculeflow.data.horizontal import read_csv
+from moleculeflow.security.aggregation import SecureAggregator
+from moleculeflow.security.compare import SPUComparator
+from moleculeflow.utils.simulation.datasets import load_dermatology
+from moleculeflow.ml.boost.homo_boost import SFXgboost
+import moleculeflow as sf
 
-# In case you have a running secretflow runtime already.
+# In case you have a running moleculeflow runtime already.
 sf.shutdown()
 
 sf.init(['alice', 'bob', 'charlie'], num_cpus=8, log_to_driver=True)

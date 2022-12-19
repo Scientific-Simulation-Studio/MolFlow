@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 10:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -30,11 +30,11 @@ msgstr "以下代码仅作为演示用，请勿直接在生产环境使用。"
 #: ../../tutorial/Federated_Learning_with_Pytorch_backend.ipynb:31
 msgid ""
 "In this tutorial, We will walk you through how to use pytorch backend on "
-"SecretFlow for federated learning. + We will use the image clasification "
+"moleculeflow for federated learning. + We will use the image clasification "
 "task as example + Use pytorch as backend + We will show how to use multi "
 "fl strategy"
 msgstr ""
-"在本教程中，我们将引导您了解如何在 SecretFlow 上使用 pytorch 后端进行联邦学习。 - 我们将以图像分类任务为例 - 使用 "
+"在本教程中，我们将引导您了解如何在 moleculeflow 上使用 pytorch 后端进行联邦学习。 - 我们将以图像分类任务为例 - 使用 "
 "pytorch 作为后端 - 我们将展示如何使用多种 fl 策略"
 
 #: ../../tutorial/Federated_Learning_with_Pytorch_backend.ipynb:33
@@ -84,6 +84,6 @@ msgstr "当我们定义模型时，我们只需要继承 ``BaseModule`` 来代�
 msgid ""
 "We can continue to use the loss function and optimizer defined in "
 "pytorch, the only difference is that we need to wrap it with the wrapper "
-"provided in secretflow"
-msgstr "我们可以继续使用中在pytorch中定义的损失函数和优化器，在secretflow中唯一的区别是我们需要用包装器来包装它。"
+"provided in moleculeflow"
+msgstr "我们可以继续使用中在pytorch中定义的损失函数和优化器，在moleculeflow中唯一的区别是我们需要用包装器来包装它。"
 

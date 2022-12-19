@@ -4,11 +4,11 @@ import numpy as np
 import pandas as pd
 import ray
 
-from secretflow.data.base import Partition
-from secretflow.data.vertical.dataframe import VDataFrame
-from secretflow.device.driver import reveal
-from secretflow.preprocessing.binning.vert_woe_binning import VertWoeBinning
-from secretflow.utils.simulation.datasets import dataset
+from molflow.data.base import Partition
+from molflow.data.vertical.dataframe import VDataFrame
+from molflow.device.driver import reveal
+from molflow.preprocessing.binning.vert_woe_binning import VertWoeBinning
+from molflow.utils.simulation.datasets import dataset
 
 from tests.basecase import DeviceTestCase
 
@@ -30,7 +30,8 @@ def woe_almost_equal(a, b):
             if isinstance(a_f_bin[k], str) or k == "categories":
                 assert a_f_bin[k] == b_f_bin[k], k
             else:
-                np.testing.assert_almost_equal(a_f_bin[k], b_f_bin[k], err_msg=k)
+                np.testing.assert_almost_equal(
+                    a_f_bin[k], b_f_bin[k], err_msg=k)
 
 
 def audit_ciphertext_equal(a, b):
@@ -103,14 +104,16 @@ class TestVertBinning(DeviceTestCase):
         he_report = he_binning.binning(
             self.v_nan_data,
             binning_method="chimerge",
-            bin_names={self.alice: ["f1", "f3", "f2"], self.bob: ["f1", "f3", "f2"]},
+            bin_names={self.alice: ["f1", "f3", "f2"],
+                       self.bob: ["f1", "f3", "f2"]},
             label_name="y",
             chimerge_target_bins=4,
         )
         ss_report = ss_binning.binning(
             self.v_nan_data,
             binning_method="chimerge",
-            bin_names={self.alice: ["f1", "f3", "f2"], self.bob: ["f1", "f3", "f2"]},
+            bin_names={self.alice: ["f1", "f3", "f2"],
+                       self.bob: ["f1", "f3", "f2"]},
             label_name="y",
             chimerge_target_bins=4,
         )
@@ -134,7 +137,8 @@ class TestVertBinning(DeviceTestCase):
         ss_binning = VertWoeBinning(self.spu)
         he_report = he_binning.binning(
             self.v_nan_data,
-            bin_names={self.alice: ["f1", "f3", "f2"], self.bob: ["f1", "f3", "f2"]},
+            bin_names={self.alice: ["f1", "f3", "f2"],
+                       self.bob: ["f1", "f3", "f2"]},
             label_name="y",
             audit_log_path={
                 self.alice.party: "alice.audit",
@@ -143,7 +147,8 @@ class TestVertBinning(DeviceTestCase):
         )
         ss_report = ss_binning.binning(
             self.v_nan_data,
-            bin_names={self.alice: ["f1", "f3", "f2"], self.bob: ["f1", "f3", "f2"]},
+            bin_names={self.alice: ["f1", "f3", "f2"],
+                       self.bob: ["f1", "f3", "f2"]},
             label_name="y",
         )
         assert he_report.keys() == ss_report.keys()
@@ -183,12 +188,14 @@ class TestVertBinning(DeviceTestCase):
         ss_binning = VertWoeBinning(self.spu)
         he_report = he_binning.binning(
             self.v_float_data,
-            bin_names={self.alice: ["x1", "x2", "x3"], self.bob: ["x1", "x2", "x3"]},
+            bin_names={self.alice: ["x1", "x2", "x3"],
+                       self.bob: ["x1", "x2", "x3"]},
             label_name="y",
         )
         ss_report = ss_binning.binning(
             self.v_float_data,
-            bin_names={self.alice: ["x1", "x2", "x3"], self.bob: ["x1", "x2", "x3"]},
+            bin_names={self.alice: ["x1", "x2", "x3"],
+                       self.bob: ["x1", "x2", "x3"]},
             label_name="y",
         )
         assert he_report.keys() == ss_report.keys()
@@ -212,13 +219,15 @@ class TestVertBinning(DeviceTestCase):
         he_report = he_binning.binning(
             self.v_float_data,
             binning_method="chimerge",
-            bin_names={self.alice: ["x1", "x2", "x3"], self.bob: ["x1", "x2", "x3"]},
+            bin_names={self.alice: ["x1", "x2", "x3"],
+                       self.bob: ["x1", "x2", "x3"]},
             label_name="y",
         )
         ss_report = ss_binning.binning(
             self.v_float_data,
             binning_method="chimerge",
-            bin_names={self.alice: ["x1", "x2", "x3"], self.bob: ["x1", "x2", "x3"]},
+            bin_names={self.alice: ["x1", "x2", "x3"],
+                       self.bob: ["x1", "x2", "x3"]},
             label_name="y",
         )
         assert he_report.keys() == ss_report.keys()

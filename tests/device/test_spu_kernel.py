@@ -3,8 +3,8 @@ from typing import Tuple
 import jax.numpy as jnp
 import numpy as np
 
-import secretflow as sf
-from secretflow.device.device.spu import SPUCompilerNumReturnsPolicy
+import molflow as sf
+from molflow.device.device.spu import SPUCompilerNumReturnsPolicy
 from tests.basecase import DeviceTestCase
 
 
@@ -13,7 +13,8 @@ class TestDeviceSPUKernel(DeviceTestCase):
         def foo(x, y) -> Tuple[int, int]:
             return x, y
 
-        x, y = self.alice(np.random.rand)(3, 4), self.alice(np.random.rand)(3, 4)
+        x, y = self.alice(np.random.rand)(
+            3, 4), self.alice(np.random.rand)(3, 4)
         x_, y_ = x.to(self.spu), y.to(self.spu)
 
         z_ = self.spu(foo)(x_, y_)
@@ -72,7 +73,8 @@ class TestDeviceSPUKernel(DeviceTestCase):
 
             model.compile(
                 optimizer='adam',
-                loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+                loss=tf.keras.losses.SparseCategoricalCrossentropy(
+                    from_logits=True),
                 metrics=['accuracy'],
             )
 
@@ -161,7 +163,8 @@ class TestDeviceSPUKernel(DeviceTestCase):
 
 class Test3PCSPUKernel(DeviceTestCase):
     def setUp(self) -> None:
-        self.spu = sf.SPU(sf.utils.testing.cluster_def(['alice', 'bob', 'carol']))
+        self.spu = sf.SPU(sf.utils.testing.cluster_def(
+            ['alice', 'bob', 'carol']))
 
     def test_matmul(self):
         # PYU

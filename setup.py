@@ -99,20 +99,21 @@ class BuildBazelExtension(build_ext.build_ext):
 
 
 setup(
-    name='secretflow',
+    name='moleculeflow',
     version='0.7.11b3',
     license='Apache 2.0',
     description='Secret Flow',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='SCI Center',
-    author_email='secretflow-contact@service.alipay.com',
-    url='https://github.com/secretflow/secretflow',
-    packages=find_packages(exclude=('examples', 'examples.*', 'tests', 'tests.*')),
+    author_email='moleculeflow-contact@service.alipay.com',
+    url='https://github.com/moleculeflow/moleculeflow',
+    packages=find_packages(
+        exclude=('examples', 'examples.*', 'tests', 'tests.*')),
     install_requires=read_requirements(),
     ext_modules=[
         BazelExtension(
-            '//secretflow_lib/binding:_lib', 'secretflow/security/privacy/_lib'
+            '//moleculeflow_lib/binding:_lib', 'moleculeflow/security/privacy/_lib'
         ),
     ],
     extras_require={'dev': ['pylint']},

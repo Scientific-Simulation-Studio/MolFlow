@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 10:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -40,7 +40,7 @@ msgstr ""
 "<https://en.wikipedia.org/wiki/Private_set_intersection>`__）是一种使用密码学方法，获取两份数据内容的交集的算法。PSI过程中不泄露任务交集以外的信息。"
 
 #: ../../tutorial/PSI_On_SPU.ipynb:33
-msgid "In SecretFlow, SPU device supports three PSI protocol:"
+msgid "In moleculeflow, SPU device supports three PSI protocol:"
 msgstr "在隐语中，SPU设备支持三种隐私求交算法："
 
 #: ../../tutorial/PSI_On_SPU.ipynb:35

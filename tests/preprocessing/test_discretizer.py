@@ -2,15 +2,15 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import KBinsDiscretizer as SkKBinsDiscretizer
 
-from secretflow import reveal
-from secretflow.data.base import Partition
-from secretflow.data.horizontal.dataframe import HDataFrame
-from secretflow.data.mix.dataframe import MixDataFrame
-from secretflow.data.vertical.dataframe import VDataFrame
-from secretflow.preprocessing.discretization import KBinsDiscretizer
-from secretflow.security.aggregation.plain_aggregator import PlainAggregator
-from secretflow.security.compare.plain_comparator import PlainComparator
-from secretflow.utils.simulation.datasets import load_iris
+from molflow import reveal
+from molflow.data.base import Partition
+from molflow.data.horizontal.dataframe import HDataFrame
+from molflow.data.mix.dataframe import MixDataFrame
+from molflow.data.vertical.dataframe import VDataFrame
+from molflow.preprocessing.discretization import KBinsDiscretizer
+from molflow.security.aggregation.plain_aggregator import PlainAggregator
+from molflow.security.compare.plain_comparator import PlainComparator
+from molflow.utils.simulation.datasets import load_iris
 
 from tests.basecase import DeviceTestCase
 
@@ -57,14 +57,16 @@ class TestKBinsDiscretizer(DeviceTestCase):
         self, sf_est: KBinsDiscretizer, sk_est: SkKBinsDiscretizer = None
     ):
         # GIVEN
-        selected_cols = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+        selected_cols = ['sepal_length', 'sepal_width',
+                         'petal_length', 'petal_width']
 
         # WHEN
         value = sf_est.fit_transform(self.hdf[selected_cols])
 
         if sk_est is not None:
             sk_est.fit(
-                pd.concat([self.hdf_alice[selected_cols], self.hdf_bob[selected_cols]])
+                pd.concat([self.hdf_alice[selected_cols],
+                          self.hdf_bob[selected_cols]])
             )
             expect_alice = sk_est.transform(self.hdf_alice[selected_cols])
             np.testing.assert_almost_equal(
@@ -81,7 +83,8 @@ class TestKBinsDiscretizer(DeviceTestCase):
 
     def test_on_hdataframe_should_ok_when_uniform(self):
         sf_est = KBinsDiscretizer(n_bins=5, strategy='uniform')
-        sk_est = SkKBinsDiscretizer(n_bins=5, encode='ordinal', strategy='uniform')
+        sk_est = SkKBinsDiscretizer(
+            n_bins=5, encode='ordinal', strategy='uniform')
         self.on_hdataframe(sf_est, sk_est)
 
     def on_vdataframe(
@@ -97,7 +100,8 @@ class TestKBinsDiscretizer(DeviceTestCase):
             )
 
             expect_bob = sk_est.fit_transform(self.vdf_bob[['b4', 'b6']])
-            np.testing.assert_equal(reveal(value.partitions[self.bob].data), expect_bob)
+            np.testing.assert_equal(
+                reveal(value.partitions[self.bob].data), expect_bob)
 
     def test_on_vdataframe_should_ok_when_quantile(self):
         sf_est = KBinsDiscretizer(n_bins=5, strategy='quantile')
@@ -105,7 +109,8 @@ class TestKBinsDiscretizer(DeviceTestCase):
 
     def test_on_vdataframe_should_ok_when_uniform(self):
         sf_est = KBinsDiscretizer(n_bins=5, strategy='uniform')
-        sk_est = SkKBinsDiscretizer(n_bins=5, encode='ordinal', strategy='uniform')
+        sk_est = SkKBinsDiscretizer(
+            n_bins=5, encode='ordinal', strategy='uniform')
         self.on_vdataframe(sf_est, sk_est)
 
     def on_h_mixdataframe(
@@ -154,8 +159,10 @@ class TestKBinsDiscretizer(DeviceTestCase):
             np.testing.assert_equal(
                 pd.concat(
                     [
-                        reveal(value.partitions[0].partitions[self.alice].data),
-                        reveal(value.partitions[1].partitions[self.alice].data),
+                        reveal(
+                            value.partitions[0].partitions[self.alice].data),
+                        reveal(
+                            value.partitions[1].partitions[self.alice].data),
                     ]
                 ),
                 expect_alice,
@@ -173,7 +180,8 @@ class TestKBinsDiscretizer(DeviceTestCase):
 
     def test_on_h_mixdataframe_should_ok_when_uniform(self):
         sf_est = KBinsDiscretizer(n_bins=5, strategy='uniform')
-        sk_est = SkKBinsDiscretizer(n_bins=5, encode='ordinal', strategy='uniform')
+        sk_est = SkKBinsDiscretizer(
+            n_bins=5, encode='ordinal', strategy='uniform')
         self.on_h_mixdataframe(sf_est, sk_est)
 
     def test_on_h_mixdataframe_should_ok_when_quantile(self):
@@ -226,7 +234,8 @@ class TestKBinsDiscretizer(DeviceTestCase):
             np.testing.assert_equal(
                 pd.concat(
                     [
-                        reveal(value.partitions[0].partitions[self.alice].data),
+                        reveal(
+                            value.partitions[0].partitions[self.alice].data),
                         reveal(value.partitions[0].partitions[self.bob].data),
                     ]
                 ),
@@ -236,7 +245,8 @@ class TestKBinsDiscretizer(DeviceTestCase):
             np.testing.assert_almost_equal(
                 pd.concat(
                     [
-                        reveal(value.partitions[1].partitions[self.alice].data),
+                        reveal(
+                            value.partitions[1].partitions[self.alice].data),
                         reveal(value.partitions[1].partitions[self.bob].data),
                     ]
                 ),
@@ -249,7 +259,8 @@ class TestKBinsDiscretizer(DeviceTestCase):
 
     def test_on_v_mixdataframe_should_ok_when_uniform(self):
         sf_est = KBinsDiscretizer(n_bins=5, strategy='uniform')
-        sk_est = SkKBinsDiscretizer(n_bins=5, encode='ordinal', strategy='uniform')
+        sk_est = SkKBinsDiscretizer(
+            n_bins=5, encode='ordinal', strategy='uniform')
         self.on_v_mixdataframe(sf_est, sk_est)
 
     def should_error_when_not_dataframe(self):
@@ -273,7 +284,8 @@ class TestKBinsDiscretizer(DeviceTestCase):
     def tranform_should_error_when_diff_features_num(self):
         est = KBinsDiscretizer()
         est.fit(
-            self.hdf[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
+            self.hdf[['sepal_length', 'sepal_width',
+                      'petal_length', 'petal_width']]
         )
         with self.assertRaisesRegex(
             AssertionError,

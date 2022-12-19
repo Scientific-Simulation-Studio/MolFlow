@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-09 08:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -24,15 +24,15 @@ msgstr "FLModel设计文档"
 #: ../../developer/design/flmodel.md:2
 msgid ""
 "FLModel is the logical abstraction of federated learning provided by "
-"SecretFlow, and it is also a unified interface for users. FLModel "
+"moleculeflow, and it is also a unified interface for users. FLModel "
 "encapsulates various capabilities required under the federated learning "
 "framework, including data processing, training strategies, aggregation "
-"logic, etc. SecretFlow provides a user-friendly interface, so that users "
+"logic, etc. moleculeflow provides a user-friendly interface, so that users "
 "can easily and quickly transfer existing plaintext computing models "
 "through the FLModel interface to quickly form federated learning "
 "capabilities through simple migration , a joint multi-party establishment"
 " of joint models with low learning cost."
-msgstr " FLModel是SecretFlow提供的联邦学习的逻辑抽象，也是面向用户的统一接口。FLModel封装了联邦学习框架下需要的各种能力，包括数据处理，训练策略，聚合逻辑等，用户可以通过FLModel接口方便快速的将已有的明文计算模型，通过简单的迁移，快速形成联邦学习能力，低学习成本的联合多方建立联合模型。"
+msgstr " FLModel是moleculeflow提供的联邦学习的逻辑抽象，也是面向用户的统一接口。FLModel封装了联邦学习框架下需要的各种能力，包括数据处理，训练策略，聚合逻辑等，用户可以通过FLModel接口方便快速的将已有的明文计算模型，通过简单的迁移，快速形成联邦学习能力，低学习成本的联合多方建立联合模型。"
 
 #: ../../developer/design/flmodel.md:3
 msgid "Design Principles"
@@ -69,12 +69,12 @@ msgstr "架构框图"
 
 #: ../../developer/design/flmodel.md:9
 msgid ""
-"SecretFlow provides the FLModel module from a centralized perspective. "
+"moleculeflow provides the FLModel module from a centralized perspective. "
 "The overall logic flow of the federation is choreographed by FLModel. "
 "FLModel determines which workers are based on the parameters, and those "
 "backends will cooperate to complete the federation calculation. "
 "![flmodel](resources/flmodel.jpg)"
-msgstr "SecretFlow提供了中心化视角下的FLModel模块，联邦整体流程由FLModel来进行编排，由传入FLModel的参数来决定使用那些worker想会被拉起来进行联邦计算。![flmodel](resources/flmodel.jpg)"
+msgstr "moleculeflow提供了中心化视角下的FLModel模块，联邦整体流程由FLModel来进行编排，由传入FLModel的参数来决定使用那些worker想会被拉起来进行联邦计算。![flmodel](resources/flmodel.jpg)"
 
 #: ../../developer/design/flmodel.md:9
 msgid "flmodel"
@@ -222,10 +222,10 @@ msgstr "多后端"
 
 #: ../../developer/design/flmodel.md:119
 msgid ""
-"SecretFlow provides the base class of BaseModel, which defines a set of "
+"moleculeflow provides the base class of BaseModel, which defines a set of "
 "methods required by workers in federated scenarios for FLModel to use in "
 "process orchestration."
-msgstr "SecretFlow提供了BaseModel的基类，定义了联邦场景下worker所必须的方法集合供FLModel在流程编排的时候使用。"
+msgstr "moleculeflow提供了BaseModel的基类，定义了联邦场景下worker所必须的方法集合供FLModel在流程编排的时候使用。"
 
 #: ../../developer/design/flmodel.md:120
 msgid ""

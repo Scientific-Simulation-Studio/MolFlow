@@ -3,12 +3,12 @@ import spu
 from sklearn.datasets import load_breast_cancer
 from sklearn.metrics import roc_auc_score
 
-import secretflow as sf
-from secretflow.data.base import Partition
-from secretflow.data.vertical import VDataFrame
-from secretflow.ml.linear.fl_lr_v import FlLogisticRegressionVertical
-from secretflow.preprocessing import StandardScaler
-from secretflow.security.aggregation.plain_aggregator import PlainAggregator
+import molflow as sf
+from molflow.data.base import Partition
+from molflow.data.vertical import VDataFrame
+from molflow.ml.linear.fl_lr_v import FlLogisticRegressionVertical
+from molflow.preprocessing import StandardScaler
+from molflow.security.aggregation.plain_aggregator import PlainAggregator
 
 from tests.basecase import DeviceTestCaseBase
 
@@ -114,7 +114,8 @@ class TestFlLogisticRegressionVertical(DeviceTestCaseBase):
             [self.alice, self.bob, self.carol], aggregator, self.heu
         )
         x = self.x.values
-        y = VDataFrame(partitions={self.bob: Partition(self.bob(lambda: [1, 2, 3])())})
+        y = VDataFrame(partitions={self.bob: Partition(
+            self.bob(lambda: [1, 2, 3])())})
 
         # WHEN
         with self.assertRaisesRegex(

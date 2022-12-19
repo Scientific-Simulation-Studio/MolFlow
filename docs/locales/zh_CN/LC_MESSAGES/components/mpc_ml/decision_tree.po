@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-14 22:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -24,12 +24,12 @@ msgstr "决策树模型"
 #: ../../components/mpc_ml/decision_tree.rst:4
 msgid ""
 "With the help of Secret Sharing, a secure multi-party computation "
-"technique, SecretFlow implements provably secure gradient boosting model "
-":py:meth:`~secretflow.ml.boost.ss_xgb_v.model.Xgb` to support both "
+"technique, moleculeflow implements provably secure gradient boosting model "
+":py:meth:`~moleculeflow.ml.boost.ss_xgb_v.model.Xgb` to support both "
 "regression and binary classification machine learning tasks."
 msgstr ""
-"SecretFlow使用多方安全计算的秘密分享技术实现了可证安全的梯度下降决策树模型 "
-":py:meth:`~secretflow.ml.boost.ss_xgb_v.model.Xgb` ，"
+"moleculeflow使用多方安全计算的秘密分享技术实现了可证安全的梯度下降决策树模型 "
+":py:meth:`~moleculeflow.ml.boost.ss_xgb_v.model.Xgb` ，"
 "目前支持线性回归问题训练和二分类问题训练。"
 
 #: ../../components/mpc_ml/decision_tree.rst:10
@@ -130,10 +130,10 @@ msgstr "SS-XGB 训练算法"
 
 #: ../../components/mpc_ml/decision_tree.rst:56
 msgid ""
-"SS-XGB :py:meth:`~secretflow.ml.boost.ss_xgb_v.model.Xgb` use secret "
+"SS-XGB :py:meth:`~moleculeflow.ml.boost.ss_xgb_v.model.Xgb` use secret "
 "sharing to compute the split gain and leaf weights."
 msgstr ""
-"SS-XGB :py:meth:`~secretflow.ml.boost.ss_xgb_v.model.Xgb` "
+"SS-XGB :py:meth:`~moleculeflow.ml.boost.ss_xgb_v.model.Xgb` "
 "使用秘密分享计算分裂增益值和叶权重。"
 
 #: ../../components/mpc_ml/decision_tree.rst:58
@@ -191,8 +191,8 @@ msgstr ""
 #: ../../components/mpc_ml/decision_tree.rst:80
 msgid ""
 "For more details about the APIs, see "
-":py:meth:`~secretflow.ml.boost.ss_xgb_v.model.Xgb`"
+":py:meth:`~moleculeflow.ml.boost.ss_xgb_v.model.Xgb`"
 msgstr ""
-"API详情：:py:meth:`~secretflow.ml.boost.ss_xgb_v.model.Xgb`"
+"API详情：:py:meth:`~moleculeflow.ml.boost.ss_xgb_v.model.Xgb`"
 
 

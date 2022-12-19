@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 13:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -29,8 +29,8 @@ msgid ""
 msgstr "以下代码仅作为示例，请勿在生产环境直接使用。"
 
 #: ../../tutorial/spu_basics.ipynb:13
-msgid "SPU devices are responsible for performing MPC computation in SecretFlow."
-msgstr "SPU设备在SecretFlow中负责执行MPC计算。"
+msgid "SPU devices are responsible for performing MPC computation in moleculeflow."
+msgstr "SPU设备在moleculeflow中负责执行MPC计算。"
 
 #: ../../tutorial/spu_basics.ipynb:15
 msgid "This tutorial would help you:"
@@ -53,15 +53,15 @@ msgid "Create a SPU Device"
 msgstr "创建一个SPU设备"
 
 #: ../../tutorial/spu_basics.ipynb:34
-msgid "Create SecretFlow Parties"
-msgstr "创建SecretFlow Parties"
+msgid "Create moleculeflow Parties"
+msgstr "创建moleculeflow Parties"
 
 #: ../../tutorial/spu_basics.ipynb:36
 msgid ""
-"Parties are basic nodes in SecretFlow nodes. We are going to create four "
+"Parties are basic nodes in moleculeflow nodes. We are going to create four "
 "parties - **alice**, **bob**, **carol** and **dave**."
 msgstr ""
-"SecretFlow Parties是在SecretFlow的基本节点，我们将会创建4个party - **alice**, **bob**, "
+"moleculeflow Parties是在moleculeflow的基本节点，我们将会创建4个party - **alice**, **bob**, "
 "**carol** 和 **dave**。"
 
 #: ../../tutorial/spu_basics.ipynb:38
@@ -370,8 +370,8 @@ msgid ""
 msgstr "最后，SPU 设备的每一方都将拥有一个输出 SPU Object的一份share和一个meta。"
 
 #: ../../tutorial/spu_basics.ipynb:1042
-msgid "Then SecretFlow framework would use them to assembly SPU Objects."
-msgstr "然后 SecretFlow 框架将使用它们来组装 SPU Object。"
+msgid "Then moleculeflow framework would use them to assembly SPU Objects."
+msgstr "然后 moleculeflow 框架将使用它们来组装 SPU Object。"
 
 #: ../../tutorial/spu_basics.ipynb:1054
 msgid "Get Value from SPU Device"

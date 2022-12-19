@@ -3,12 +3,12 @@ from io import StringIO
 import numpy as np
 import pandas as pd
 
-from secretflow.data.base import Partition
-from secretflow.data.vertical.dataframe import VDataFrame
-from secretflow.device.driver import reveal
-from secretflow.preprocessing.binning.vert_woe_binning import VertWoeBinning
-from secretflow.preprocessing.binning.vert_woe_substitution import VertWOESubstitution
-from secretflow.utils.simulation.datasets import dataset
+from molflow.data.base import Partition
+from molflow.data.vertical.dataframe import VDataFrame
+from molflow.device.driver import reveal
+from molflow.preprocessing.binning.vert_woe_binning import VertWoeBinning
+from molflow.preprocessing.binning.vert_woe_substitution import VertWOESubstitution
+from molflow.utils.simulation.datasets import dataset
 
 from tests.basecase import DeviceTestCase
 
@@ -30,7 +30,8 @@ def woe_almost_equal(a, b):
             if isinstance(a_f_bin[k], str) or k == "categories":
                 assert a_f_bin[k] == b_f_bin[k], k
             else:
-                np.testing.assert_almost_equal(a_f_bin[k], b_f_bin[k], err_msg=k)
+                np.testing.assert_almost_equal(
+                    a_f_bin[k], b_f_bin[k], err_msg=k)
 
 
 class TestVertBinning(DeviceTestCase):
@@ -88,16 +89,19 @@ class TestVertBinning(DeviceTestCase):
         woe_rules = ss_binning.binning(
             self.v_nan_data,
             binning_method="chimerge",
-            bin_names={self.alice: ["f1", "f3", "f2"], self.bob: ["f1", "f3", "f2"]},
+            bin_names={self.alice: ["f1", "f3", "f2"],
+                       self.bob: ["f1", "f3", "f2"]},
             label_name="y",
             chimerge_target_bins=4,
         )
 
         woe_sub = VertWOESubstitution()
         sub_data = woe_sub.substitution(self.v_nan_data, woe_rules)
-        alice_data = reveal(sub_data.partitions[self.alice].data).drop("y", axis=1)
+        alice_data = reveal(
+            sub_data.partitions[self.alice].data).drop("y", axis=1)
         bob_data = reveal(sub_data.partitions[self.bob].data)
-        rules = {v['name']: v for v in reveal(woe_rules[self.alice])["variables"]}
+        rules = {v['name']: v for v in reveal(
+            woe_rules[self.alice])["variables"]}
 
         assert alice_data.equals(bob_data), (
             str(alice_data) + "\n,,,,,,\n" + str(bob_data)
@@ -117,15 +121,18 @@ class TestVertBinning(DeviceTestCase):
         ss_binning = VertWoeBinning(self.spu)
         woe_rules = ss_binning.binning(
             self.v_float_data,
-            bin_names={self.alice: ["x1", "x2", "x3"], self.bob: ["x1", "x2", "x3"]},
+            bin_names={self.alice: ["x1", "x2", "x3"],
+                       self.bob: ["x1", "x2", "x3"]},
             label_name="y",
         )
 
         woe_sub = VertWOESubstitution()
         sub_data = woe_sub.substitution(self.v_float_data, woe_rules)
-        alice_data = reveal(sub_data.partitions[self.alice].data).drop("y", axis=1)
+        alice_data = reveal(
+            sub_data.partitions[self.alice].data).drop("y", axis=1)
         bob_data = reveal(sub_data.partitions[self.bob].data)
-        rules = {v['name']: v for v in reveal(woe_rules[self.alice])["variables"]}
+        rules = {v['name']: v for v in reveal(
+            woe_rules[self.alice])["variables"]}
 
         assert alice_data.equals(bob_data), (
             str(alice_data) + "\n,,,,,,\n" + str(bob_data)

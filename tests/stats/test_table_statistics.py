@@ -1,11 +1,11 @@
-from secretflow.stats import table_statistics
+from molflow.stats import table_statistics
 
 from tests.basecase import DeviceTestCase
 import pandas as pd
-import secretflow as sf
+import molflow as sf
 from sklearn.datasets import load_iris
 import tempfile
-from secretflow.data.vertical import read_csv as v_read_csv
+from molflow.data.vertical import read_csv as v_read_csv
 
 
 class TestTableStatistics(DeviceTestCase):

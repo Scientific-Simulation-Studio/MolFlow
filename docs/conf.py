@@ -16,9 +16,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'SecretFlow'
+project = 'moleculeflow'
 copyright = '2022 Ant Group Co., Ltd.'
-author = 'SecretFlow authors'
+author = 'moleculeflow authors'
 
 
 # -- General configuration ---------------------------------------------------
@@ -124,7 +124,7 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/secretflow/secretflow",
+            "url": "https://github.com/moleculeflow/moleculeflow",
             "icon": "fab fa-github-square",
             "type": "fontawesome",
         },
@@ -134,7 +134,7 @@ html_theme_options = {
         {"name": "HEU", "url": "https://heu.readthedocs.io/"},
     ],
     "logo": {
-        "text": "SecretFlow",
+        "text": "moleculeflow",
         "image_light": "logo-light.png",
         "image_dark": "logo-dark.png",
     },

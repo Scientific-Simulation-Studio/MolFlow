@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-14 17:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -27,7 +27,7 @@ msgstr "HEU 是什么"
 
 #: ../../developer/design/heu.rst:7
 msgid ""
-"Homomorphic Encryption processing Unit (HEU) is a submodule of Secretflow"
+"Homomorphic Encryption processing Unit (HEU) is a submodule of moleculeflow"
 " that implements high-performance homomorphic encryption algorithms."
 msgstr "HEU (Homomorphic Encryption processing Unit) 是隐语的一个子项目，它实现了高性能的同态加密算法"
 
@@ -45,7 +45,7 @@ msgstr "HEU 设计思想"
 
 #: ../../developer/design/heu.rst:25
 msgid ""
-"HEU has two meanings, it is both a device in Secretflow and a high-"
+"HEU has two meanings, it is both a device in moleculeflow and a high-"
 "performance homomorphic encryption library that can be used "
 "independently."
 msgstr "HEU 包括两层含义，它既是隐语中的一个设备(HE Device)，也是一个可以独立使用的同态加密算法库(He Library)"
@@ -64,7 +64,7 @@ msgstr ""
 
 #: ../../developer/design/heu.rst:32
 msgid ""
-":blue:`HEU device`: As a component of Secretflow, HEU abstracts the "
+":blue:`HEU device`: As a component of moleculeflow, HEU abstracts the "
 "homomorphic encryption algorithms into a programmable device, making it "
 "easy for users to flexibly build applications using the homomorphic "
 "encryption technology without professional knowledge. HEU (device) aims "
@@ -212,7 +212,7 @@ msgid ""
 "The left part integrates PHE-related libraries, including Paillier, "
 "ElGamal, and so on. HEU deeply optimizes these PHE algorithms and often "
 "performs better than third-party libraries. So even if you do not need to"
-" use SecretFlow, it's beneficial to just use HEU alone as a PHE library."
+" use moleculeflow, it's beneficial to just use HEU alone as a PHE library."
 msgstr ""
 "最左边的部分整合了 PHE 算法，具体包括 Paillier、ElGamal 等等，HEU "
 "深度改进并优化了这些算法的性能，性能通常比第三方库更高，因此，即便您不需要隐语，只把 HEU 单独拿出来当做 PHE lib 使用也是有收益的。"

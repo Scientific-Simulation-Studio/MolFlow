@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 import pandas as pd
-from secretflow.ml.boost.homo_boost.tree_core.feature_histogram import (
+from molflow.ml.boost.homo_boost.tree_core.feature_histogram import (
     FeatureHistogram,
     HistogramBag,
 )
@@ -124,10 +124,12 @@ class TestFeatureHistogram(unittest.TestCase):
 
         # test for sum
         histogram_sum = histogram_bags[0] + histogram_bags[1]
-        np.testing.assert_array_equal(expect_sum_histogram, np.array(histogram_sum))
+        np.testing.assert_array_equal(
+            expect_sum_histogram, np.array(histogram_sum))
         # test for sub
         histogram_sub = histogram_bags[0] - histogram_bags[1]
-        np.testing.assert_array_equal(expect_zero_histogram, np.array(histogram_sub))
+        np.testing.assert_array_equal(
+            expect_zero_histogram, np.array(histogram_sub))
         # test for len
         histogram_len = len(histogram_bag[0])
         np.testing.assert_equal(histogram_len, 10)

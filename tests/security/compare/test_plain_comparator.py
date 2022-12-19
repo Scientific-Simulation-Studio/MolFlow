@@ -1,4 +1,4 @@
-from secretflow.security.compare.plain_comparator import PlainComparator
+from molflow.security.compare.plain_comparator import PlainComparator
 from tests.basecase import DeviceTestCase
 from tests.security.compare.test_comparator_base import TestComparatorBase
 

@@ -19,7 +19,7 @@ The vertical data 0 is consist of (data0 of A, data0 of B, data of C, label0) co
 
 ## Algorithm
 
-SecretFlow provides SDG based `Federated Logistic Regression` to handle mix partitioned data,
+moleculeflow provides SDG based `Federated Logistic Regression` to handle mix partitioned data,
 and each participant holds its weights.
 
 The high level overview of the algorithm:
@@ -28,7 +28,7 @@ The high level overview of the algorithm:
 
 The detailed steps of the algorithm:
 
- (suppose A holds label) 
+ (suppose A holds label)
 
 <img alt="mix_lr.png" src="resources/mix_lr.png">
 

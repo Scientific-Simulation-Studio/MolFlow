@@ -4,9 +4,9 @@ import time
 
 import numpy as np
 
-from secretflow.device import proxy, PYUObject, reveal
+from molflow.device import proxy, PYUObject, reveal
 from tests.basecase import DeviceTestCase
-from secretflow.device.link import Link
+from molflow.device.link import Link
 
 
 @proxy(PYUObject, max_concurrency=2)
@@ -40,9 +40,11 @@ class ParameterServer(Link):
             for step in range(steps_per_epoch):
                 step_id = epoch * steps_per_epoch + step
                 weights = self.recv('weights', self._worker_device, step_id)
-                weights = [np.average(weight, axis=0) for weight in zip(weights)]
+                weights = [np.average(weight, axis=0)
+                           for weight in zip(weights)]
                 self.send('weights', weights, self._worker_device, step_id)
-                logging.info(f'parameter server {self._device} finish step {step_id}')
+                logging.info(
+                    f'parameter server {self._device} finish step {step_id}')
 
 
 class TestLink(DeviceTestCase):

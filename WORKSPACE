@@ -1,10 +1,10 @@
-workspace(name = "secretflow")
+workspace(name = "moleculeflow")
 
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
     name = "yasl",
-    remote = "https://github.com/secretflow/yasl.git",
+    remote = "https://github.com/moleculeflow/yasl.git",
     commit = "a1cd56d69261a0e2e4d369b0d29a4ca629ed9bc9",
 )
 

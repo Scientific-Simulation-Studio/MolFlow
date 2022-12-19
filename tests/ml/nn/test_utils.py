@@ -1,6 +1,6 @@
 from unittest import TestCase
-from secretflow.ml.nn.fl.metrics import Mean, Precision
-from secretflow.ml.nn.fl.utils import History
+from molflow.ml.nn.fl.metrics import Mean, Precision
+from molflow.ml.nn.fl.utils import History
 
 
 class TestHistory(TestCase):
@@ -22,9 +22,11 @@ class TestHistory(TestCase):
             mean.result().numpy(),
         )
         self.assertEqual(
-            his.global_detailed_history['acc'][0].result().numpy(), acc.result().numpy()
+            his.global_detailed_history['acc'][0].result(
+            ).numpy(), acc.result().numpy()
         )
-        self.assertEqual(his.local_history['alice']['mean'], [mean.result().numpy()])
+        self.assertEqual(his.local_history['alice']['mean'], [
+                         mean.result().numpy()])
         self.assertEqual(
             his.local_detailed_history['alice']['mean'][0].result().numpy(),
             mean.result().numpy(),

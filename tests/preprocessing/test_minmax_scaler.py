@@ -2,15 +2,15 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler as SkMinMaxScaler
 
-from secretflow import reveal
-from secretflow.data.base import Partition
-from secretflow.data.horizontal.dataframe import HDataFrame
-from secretflow.data.mix.dataframe import MixDataFrame
-from secretflow.data.vertical.dataframe import VDataFrame
-from secretflow.preprocessing.scaler import MinMaxScaler
-from secretflow.security.aggregation.plain_aggregator import PlainAggregator
-from secretflow.security.compare.plain_comparator import PlainComparator
-from secretflow.utils.simulation.datasets import load_iris
+from molflow import reveal
+from molflow.data.base import Partition
+from molflow.data.horizontal.dataframe import HDataFrame
+from molflow.data.mix.dataframe import MixDataFrame
+from molflow.data.vertical.dataframe import VDataFrame
+from molflow.preprocessing.scaler import MinMaxScaler
+from molflow.security.aggregation.plain_aggregator import PlainAggregator
+from molflow.security.compare.plain_comparator import PlainComparator
+from molflow.utils.simulation.datasets import load_iris
 
 from tests.basecase import DeviceTestCase
 
@@ -54,7 +54,8 @@ class TestMinMaxScaler(DeviceTestCase):
 
     def test_on_hdataframe_should_ok(self):
         # GIVEN
-        selected_cols = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+        selected_cols = ['sepal_length', 'sepal_width',
+                         'petal_length', 'petal_width']
         scaler = MinMaxScaler()
 
         # WHEN
@@ -63,7 +64,8 @@ class TestMinMaxScaler(DeviceTestCase):
         # THEN
         sk_scaler = SkMinMaxScaler()
         sk_scaler.fit(
-            pd.concat([self.hdf_alice[selected_cols], self.hdf_bob[selected_cols]])
+            pd.concat([self.hdf_alice[selected_cols],
+                      self.hdf_bob[selected_cols]])
         )
         expect_alice = sk_scaler.transform(self.hdf_alice[selected_cols])
         np.testing.assert_almost_equal(
@@ -84,10 +86,12 @@ class TestMinMaxScaler(DeviceTestCase):
         # THEN
         sk_scaler = SkMinMaxScaler()
         expect_alice = sk_scaler.fit_transform(self.vdf_alice[['a3']])
-        np.testing.assert_equal(reveal(value.partitions[self.alice].data), expect_alice)
+        np.testing.assert_equal(
+            reveal(value.partitions[self.alice].data), expect_alice)
 
         expect_bob = sk_scaler.fit_transform(self.vdf_bob[['b4', 'b6']])
-        np.testing.assert_equal(reveal(value.partitions[self.bob].data), expect_bob)
+        np.testing.assert_equal(
+            reveal(value.partitions[self.bob].data), expect_bob)
 
     def test_on_h_mixdataframe_should_ok(self):
         # GIVEN

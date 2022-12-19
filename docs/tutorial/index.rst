@@ -7,7 +7,7 @@ Tutorial
    The following codes are demos only. It's **NOT for production** due to system security concerns,
    please **DO NOT** use it directly in production.
 
-We hope you enjoy these toturials from SecretFlow developers.
+We hope you enjoy these toturials from moleculeflow developers.
 
 .. toctree::
    :maxdepth: 1
@@ -49,5 +49,5 @@ We hope you enjoy these toturials from SecretFlow developers.
 .. toctree::
    :maxdepth: 1
    :caption: 培训资料
-   
+
    practical_case_walkthrough_using_sf_with_spu

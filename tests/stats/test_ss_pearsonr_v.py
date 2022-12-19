@@ -2,12 +2,12 @@ import numpy as np
 import pandas as pd
 from scipy.stats import pearsonr
 
-from secretflow.preprocessing.scaler import StandardScaler
-from secretflow.stats import SSVertPearsonR
-from secretflow.utils.simulation.datasets import load_linear, dataset, create_df
+from molflow.preprocessing.scaler import StandardScaler
+from molflow.stats import SSVertPearsonR
+from molflow.utils.simulation.datasets import load_linear, dataset, create_df
 
 from tests.basecase import DeviceTestCase, ABY3DeviceTestCase
-from secretflow.device.driver import wait
+from molflow.device.driver import wait
 import logging
 import sys
 import time
@@ -23,7 +23,8 @@ class TestVertPearsonR(DeviceTestCase):
 
     def scipy_pearsonr(self):
         ret = np.ones((20, 20))
-        data = pd.read_csv(dataset('linear'), usecols=[f'x{i}' for i in range(1, 21)])
+        data = pd.read_csv(dataset('linear'), usecols=[
+                           f'x{i}' for i in range(1, 21)])
 
         for i in range(20):
             for j in range(i, 20):
@@ -44,8 +45,10 @@ class TestVertPearsonR(DeviceTestCase):
         ss_pearsonr_1 = v_pearsonr.pearsonr(data)
         ss_pearsonr_2 = v_pearsonr.pearsonr(std_data, False)
         scipy_pearsonr = self.scipy_pearsonr()
-        np.testing.assert_almost_equal(ss_pearsonr_1, scipy_pearsonr, decimal=2)
-        np.testing.assert_almost_equal(ss_pearsonr_2, scipy_pearsonr, decimal=2)
+        np.testing.assert_almost_equal(
+            ss_pearsonr_1, scipy_pearsonr, decimal=2)
+        np.testing.assert_almost_equal(
+            ss_pearsonr_2, scipy_pearsonr, decimal=2)
 
 
 if __name__ == '__main__':

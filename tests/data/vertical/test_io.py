@@ -4,9 +4,9 @@ import tempfile
 import numpy as np
 import pandas as pd
 
-from secretflow import reveal
-from secretflow.data.base import Partition
-from secretflow.data.vertical import VDataFrame, read_csv, to_csv
+from molflow import reveal
+from molflow.data.base import Partition
+from molflow.data.vertical import VDataFrame, read_csv, to_csv
 from tests.basecase import DeviceTestCase
 
 
@@ -57,27 +57,33 @@ class TestVDataFrameIO(DeviceTestCase):
             self.filepath, spu=self.spu, keys='c1', drop_keys={self.alice: 'c1'}
         )
 
-        expected_alice = pd.DataFrame({'c2': ['A1', 'A3', 'A4'], 'c3': [1, 3, 4]})
+        expected_alice = pd.DataFrame(
+            {'c2': ['A1', 'A3', 'A4'], 'c3': [1, 3, 4]})
         df_alice = reveal(df.partitions[self.alice].data)
-        pd.testing.assert_frame_equal(df_alice.reset_index(drop=True), expected_alice)
+        pd.testing.assert_frame_equal(
+            df_alice.reset_index(drop=True), expected_alice)
 
         expected_bob = pd.DataFrame(
-            {'c1': ['K1', 'K3', 'K4'], 'c4': ['B1', 'B3', 'B4'], 'c5': [1, 3, 4]}
+            {'c1': ['K1', 'K3', 'K4'], 'c4': [
+                'B1', 'B3', 'B4'], 'c5': [1, 3, 4]}
         )
         df_bob = reveal(df.partitions[self.bob].data)
-        pd.testing.assert_frame_equal(df_bob.reset_index(drop=True), expected_bob)
+        pd.testing.assert_frame_equal(
+            df_bob.reset_index(drop=True), expected_bob)
 
     def test_read_csv_drop_keys(self):
         df = read_csv(self.filepath, spu=self.spu, keys='c1', drop_keys='c1')
 
         expected = pd.DataFrame({'c2': ['A1', 'A3', 'A4'], 'c3': [1, 3, 4]})
         pd.testing.assert_frame_equal(
-            reveal(df.partitions[self.alice].data).reset_index(drop=True), expected
+            reveal(df.partitions[self.alice].data).reset_index(
+                drop=True), expected
         )
 
         expected = pd.DataFrame({'c4': ['B1', 'B3', 'B4'], 'c5': [1, 3, 4]})
         pd.testing.assert_frame_equal(
-            reveal(df.partitions[self.bob].data).reset_index(drop=True), expected
+            reveal(df.partitions[self.bob].data).reset_index(
+                drop=True), expected
         )
 
     def test_read_csv_with_dtypes(self):
@@ -91,12 +97,14 @@ class TestVDataFrameIO(DeviceTestCase):
 
         expected = pd.DataFrame({'c2': ['A1', 'A3', 'A4']})
         pd.testing.assert_frame_equal(
-            reveal(df.partitions[self.alice].data).reset_index(drop=True), expected
+            reveal(df.partitions[self.alice].data).reset_index(
+                drop=True), expected
         )
 
         expected = pd.DataFrame({'c5': [1, 3, 4]})
         pd.testing.assert_frame_equal(
-            reveal(df.partitions[self.bob].data).reset_index(drop=True), expected
+            reveal(df.partitions[self.bob].data).reset_index(
+                drop=True), expected
         )
 
     def test_read_csv_mismatch_dtypes(self):
@@ -180,9 +188,11 @@ class TestVDataFrameIO(DeviceTestCase):
             os.remove(path)
 
     def test_read_csv_without_psi(self):
-        df1 = pd.DataFrame({'c2': ['A5', 'A1', 'A2', 'A6'], 'c3': [5, 1, 2, 6]})
+        df1 = pd.DataFrame(
+            {'c2': ['A5', 'A1', 'A2', 'A6'], 'c3': [5, 1, 2, 6]})
 
-        df2 = pd.DataFrame({'c4': ['B3', 'B1', 'B9', 'B4'], 'c5': [3, 1, 9, 4]})
+        df2 = pd.DataFrame(
+            {'c4': ['B3', 'B1', 'B9', 'B4'], 'c5': [3, 1, 9, 4]})
 
         _, path1 = tempfile.mkstemp()
         _, path2 = tempfile.mkstemp()
@@ -208,10 +218,12 @@ class TestVDataFrameIO(DeviceTestCase):
 
     def test_read_csv_without_psi_mismatch_length(self):
         df1 = pd.DataFrame(
-            {'c2': ['A5', 'A1', 'A2', 'A6', 'A4', 'A3'], 'c3': [5, 1, 2, 6, 4, 3]}
+            {'c2': ['A5', 'A1', 'A2', 'A6', 'A4', 'A3'],
+                'c3': [5, 1, 2, 6, 4, 3]}
         )
 
-        df2 = pd.DataFrame({'c4': ['B3', 'B1', 'B9', 'B4'], 'c5': [3, 1, 9, 4]})
+        df2 = pd.DataFrame(
+            {'c4': ['B3', 'B1', 'B9', 'B4'], 'c5': [3, 1, 9, 4]})
 
         _, path1 = tempfile.mkstemp()
         _, path2 = tempfile.mkstemp()
@@ -234,9 +246,11 @@ class TestVDataFrameIO(DeviceTestCase):
         _, path1 = tempfile.mkstemp()
         _, path2 = tempfile.mkstemp()
         file_uris = {self.alice: path1, self.bob: path2}
-        df1 = pd.DataFrame({'c2': ['A5', 'A1', 'A2', 'A6'], 'c3': [5, 1, 2, 6]})
+        df1 = pd.DataFrame(
+            {'c2': ['A5', 'A1', 'A2', 'A6'], 'c3': [5, 1, 2, 6]})
 
-        df2 = pd.DataFrame({'c4': ['B3', 'B1', 'B9', 'B4'], 'c5': [3, 1, 9, 4]})
+        df2 = pd.DataFrame(
+            {'c4': ['B3', 'B1', 'B9', 'B4'], 'c5': [3, 1, 9, 4]})
 
         df = VDataFrame(
             {
@@ -257,5 +271,6 @@ class TestVDataFrameIO(DeviceTestCase):
         pd.testing.assert_frame_equal(
             reveal(actual_df.partitions[self.alice].data), df1
         )
-        pd.testing.assert_frame_equal(reveal(actual_df.partitions[self.bob].data), df2)
+        pd.testing.assert_frame_equal(
+            reveal(actual_df.partitions[self.bob].data), df2)
         self.cleartmp([path1, path2])

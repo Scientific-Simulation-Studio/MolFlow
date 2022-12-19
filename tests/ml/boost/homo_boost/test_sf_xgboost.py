@@ -3,10 +3,10 @@ import tempfile
 
 import numpy as np
 import pandas as pd
-from secretflow.data.horizontal import read_csv as h_read_csv
-from secretflow.ml.boost.homo_boost import SFXgboost
-from secretflow.security.aggregation.plain_aggregator import PlainAggregator
-from secretflow.security.compare.plain_comparator import PlainComparator
+from molflow.data.horizontal import read_csv as h_read_csv
+from molflow.ml.boost.homo_boost import SFXgboost
+from molflow.security.aggregation.plain_aggregator import PlainAggregator
+from molflow.security.compare.plain_comparator import PlainComparator
 from tests.basecase import DeviceTestCase
 
 _temp_dir = tempfile.mkdtemp()
@@ -55,8 +55,10 @@ class TestHomoXgboost(DeviceTestCase):
     num_feature = 10
     bin_num = 10
 
-    data1 = gen_data(data_size // 2, num_feature, use_random=True, data_bin_num=bin_num)
-    data2 = gen_data(data_size // 2, num_feature, use_random=True, data_bin_num=bin_num)
+    data1 = gen_data(data_size // 2, num_feature,
+                     use_random=True, data_bin_num=bin_num)
+    data2 = gen_data(data_size // 2, num_feature,
+                     use_random=True, data_bin_num=bin_num)
     dfs = [data1, data2]
 
     @classmethod

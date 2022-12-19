@@ -1,9 +1,9 @@
 FROM openanolis/anolisos:8.4-x86_64
 
-LABEL maintainer="secretflow-contact@service.alipay.com"
+LABEL maintainer="moleculeflow-contact@service.alipay.com"
 
 RUN yum install -y git wget unzip which vim \
-    && yum clean all 
+    && yum clean all
 
 COPY Miniconda3.sh /tmp/Miniconda3.sh
 
@@ -18,7 +18,7 @@ RUN conda env create -f /tmp/environment.yml \
     && conda clean --all -f --yes \
     && rm -rf /root/.cache
 
-RUN echo "source /root/miniconda3/bin/activate secretflow" > ~/.bashrc
+RUN echo "source /root/miniconda3/bin/activate moleculeflow" > ~/.bashrc
 
 WORKDIR /root
 

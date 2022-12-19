@@ -1,6 +1,6 @@
 import unittest
 
-from secretflow.ml.boost.homo_boost.tree_core.criterion import XgboostCriterion
+from molflow.ml.boost.homo_boost.tree_core.criterion import XgboostCriterion
 
 
 class TestXgboostCriterion(unittest.TestCase):
@@ -19,7 +19,8 @@ class TestXgboostCriterion(unittest.TestCase):
         gain_left = left[0] * left[0] / (left[1] + self.reg_lambda)
         gain_right = right[0] * right[0] / (right[1] + self.reg_lambda)
         split_gain = gain_left + gain_right - gain_all
-        self.assertTrue(self.criterion.split_gain(node, left, right), split_gain)
+        self.assertTrue(self.criterion.split_gain(
+            node, left, right), split_gain)
 
     def test_node_gain(self):
         grad = 0.5

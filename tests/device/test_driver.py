@@ -4,8 +4,8 @@ import time
 
 import numpy as np
 
-from secretflow.device.device.spu import SPUObject
-from secretflow.device.driver import reveal, to, wait
+from molflow.device.device.spu import SPUObject
+from molflow.device.driver import reveal, to, wait
 from tests.basecase import DeviceTestCase
 
 

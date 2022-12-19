@@ -1,6 +1,6 @@
 import numpy as np
 
-import secretflow as sf
+import molflow as sf
 from tests.basecase import DeviceTestCase
 
 

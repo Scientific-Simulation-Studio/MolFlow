@@ -5,9 +5,9 @@ import numpy as np
 import pandas as pd
 import xgboost as xgb
 
-from secretflow.ml.boost.homo_boost.tree_core.decision_tree import DecisionTree
-from secretflow.ml.boost.homo_boost.tree_core.loss_function import LossFunction
-from secretflow.ml.boost.homo_boost.tree_param import TreeParam
+from molflow.ml.boost.homo_boost.tree_core.decision_tree import DecisionTree
+from molflow.ml.boost.homo_boost.tree_core.loss_function import LossFunction
+from molflow.ml.boost.homo_boost.tree_param import TreeParam
 
 
 def gen_data(data_num, feature_num, use_random=True, data_bin_num=10):
@@ -68,7 +68,8 @@ class TestFeatureHistogram(unittest.TestCase):
                 )
             else:
                 bin_split_points.append(
-                    np.linspace(0.0, 0.1 * (self.data_bin_num - 1), self.data_bin_num)
+                    np.linspace(0.0, 0.1 * (self.data_bin_num - 1),
+                                self.data_bin_num)
                 )
         self.valid_features = valid_features
         self.bin_split_points = np.array(bin_split_points)
@@ -86,7 +87,8 @@ class TestFeatureHistogram(unittest.TestCase):
         self.dTest = xgb.DMatrix(test_data.drop(columns=['label']))
 
     def tearDown(self) -> None:
-        model_file_list = ["temp.json", "temp.dump", "xgb_model.json", "xgb_model.dump"]
+        model_file_list = ["temp.json", "temp.dump",
+                           "xgb_model.json", "xgb_model.dump"]
         for filename in model_file_list:
             if os.path.isfile(filename):
                 os.remove(filename)
@@ -108,10 +110,12 @@ class TestFeatureHistogram(unittest.TestCase):
         }
         bst = xgb.Booster(param, [self.dTrain])
 
-        xgboost_pred = bst.predict(self.dTrain, output_margin=True, training=True)
+        xgboost_pred = bst.predict(
+            self.dTrain, output_margin=True, training=True)
         # 把xgboost计算出来的grad和hess附在 dataframe上
         obj_func = LossFunction(param['objective']).obj_function()
-        self.data['grad'], self.data['hess'] = obj_func(xgboost_pred, self.dTrain)
+        self.data['grad'], self.data['hess'] = obj_func(
+            xgboost_pred, self.dTrain)
 
         tree_param = TreeParam(
             max_depth=4,
@@ -149,7 +153,8 @@ class TestFeatureHistogram(unittest.TestCase):
         ypred = bst.predict(self.dTest, training=True, output_margin=False)
 
         # 用xgboost训练模型
-        xgb_bst = xgb.train(param, self.dTrain, num_boost_round=1, obj=obj_func)
+        xgb_bst = xgb.train(param, self.dTrain,
+                            num_boost_round=1, obj=obj_func)
         xgb_result = xgb_bst.predict(self.dTest, output_margin=False)
         xgb_bst.save_model("xgb_model.json")
         xgb_bst.dump_model("xgb_model.dump")

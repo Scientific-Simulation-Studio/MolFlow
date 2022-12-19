@@ -2,8 +2,8 @@ from typing import Tuple
 
 import numpy as np
 
-from secretflow import reveal
-from secretflow.device import PYUObject, proxy
+from molflow import reveal
+from molflow.device import PYUObject, proxy
 from tests.basecase import DeviceTestCase
 
 

@@ -6,11 +6,11 @@ build:
     python: "3.8"
   jobs:
     pre_build:
-      - SPHINX_APIDOC_OPTIONS=members,autosummary sphinx-apidoc -f -d 2 -t docs/templates -o docs/source ./secretflow/
+      - SPHINX_APIDOC_OPTIONS=members,autosummary sphinx-apidoc -f -d 2 -t docs/templates -o docs/source ./moleculeflow/
 
 sphinx:
   configuration: docs/conf.py
 
 python:
   install:
-  - requirements: docs/requirements.txt
+    - requirements: docs/requirements.txt

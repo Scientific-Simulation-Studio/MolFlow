@@ -3,16 +3,16 @@ import pandas as pd
 from functools import partial
 from sklearn.preprocessing import FunctionTransformer as SkFunctionTransformer
 
-from secretflow import reveal
-from secretflow.data.base import Partition
-from secretflow.data.horizontal.dataframe import HDataFrame
-from secretflow.data.mix.dataframe import MixDataFrame
-from secretflow.data.vertical.dataframe import VDataFrame
-from secretflow.preprocessing import LogroundTransformer
-from secretflow.preprocessing.transformer import _FunctionTransformer
-from secretflow.security.aggregation.plain_aggregator import PlainAggregator
-from secretflow.security.compare.plain_comparator import PlainComparator
-from secretflow.utils.simulation.datasets import load_iris
+from molflow import reveal
+from molflow.data.base import Partition
+from molflow.data.horizontal.dataframe import HDataFrame
+from molflow.data.mix.dataframe import MixDataFrame
+from molflow.data.vertical.dataframe import VDataFrame
+from molflow.preprocessing import LogroundTransformer
+from molflow.preprocessing.transformer import _FunctionTransformer
+from molflow.security.aggregation.plain_aggregator import PlainAggregator
+from molflow.security.compare.plain_comparator import PlainComparator
+from molflow.utils.simulation.datasets import load_iris
 
 from tests.basecase import DeviceTestCase
 
@@ -64,10 +64,12 @@ class TestFunctionTransformer(DeviceTestCase):
         # THEN
         sk_transformer = SkFunctionTransformer(partial(np.add, 1))
         expect_alice = sk_transformer.fit_transform(self.vdf_alice[['a3']])
-        pd.testing.assert_frame_equal(reveal(value.partitions[self.alice].data), expect_alice)
+        pd.testing.assert_frame_equal(
+            reveal(value.partitions[self.alice].data), expect_alice)
 
         expect_bob = sk_transformer.fit_transform(self.vdf_bob[['b4', 'b6']])
-        pd.testing.assert_frame_equal(reveal(value.partitions[self.bob].data), expect_bob)
+        pd.testing.assert_frame_equal(
+            reveal(value.partitions[self.bob].data), expect_bob)
 
     def test_on_h_mixdataframe_should_ok(self):
         # GIVEN
@@ -205,7 +207,8 @@ class TestFunctionTransformer(DeviceTestCase):
 
     def test_transform_should_ok_when_not_fit(self):
         # GIVEN
-        selected_cols = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+        selected_cols = ['sepal_length', 'sepal_width',
+                         'petal_length', 'petal_width']
         transformer = _FunctionTransformer(partial(np.add, 1))
 
         # WHEN
@@ -227,14 +230,17 @@ class TestFunctionTransformer(DeviceTestCase):
 
         sk_transformer = SkFunctionTransformer(loground)
         expect_alice = sk_transformer.fit_transform(self.vdf_alice[['a3']])
-        pd.testing.assert_frame_equal(reveal(value.partitions[self.alice].data), expect_alice)
+        pd.testing.assert_frame_equal(
+            reveal(value.partitions[self.alice].data), expect_alice)
 
         expect_bob = sk_transformer.fit_transform(self.vdf_bob[['b4', 'b6']])
-        pd.testing.assert_frame_equal(reveal(value.partitions[self.bob].data), expect_bob)
+        pd.testing.assert_frame_equal(
+            reveal(value.partitions[self.bob].data), expect_bob)
 
     def test_loground_on_hdataframe_should_ok(self):
         # GIVEN
-        selected_cols = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+        selected_cols = ['sepal_length', 'sepal_width',
+                         'petal_length', 'petal_width']
         transformer = LogroundTransformer(decimals=2, bias=1)
 
         # WHEN
@@ -246,7 +252,8 @@ class TestFunctionTransformer(DeviceTestCase):
 
         sk_transformer = SkFunctionTransformer(loground)
         sk_transformer.fit(
-            pd.concat([self.hdf_alice[selected_cols], self.hdf_bob[selected_cols]])
+            pd.concat([self.hdf_alice[selected_cols],
+                      self.hdf_bob[selected_cols]])
         )
         expect_alice = sk_transformer.transform(self.hdf_alice[selected_cols])
         pd.testing.assert_frame_equal(

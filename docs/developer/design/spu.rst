@@ -154,12 +154,12 @@ The API of the SPU is quite simple. There are three main modules, corresponding 
    a library to consume SPU IR and execute MPC computation.
 
 
-SPU in SecretFlow
+SPU in moleculeflow
 ~~~~~~~~~~~~~~~~~
 
-In SecretFlow, *SPU Device* encapsulates all the concepts of the above SPU, providing a simpler programming interface upwards.
+In moleculeflow, *SPU Device* encapsulates all the concepts of the above SPU, providing a simpler programming interface upwards.
 
--  Data owners are *PYU devices* in SecretFlow and plaintext of values are called *PYU Objects*.
+-  Data owners are *PYU devices* in moleculeflow and plaintext of values are called *PYU Objects*.
 -  A *PYU object* (plaintext) could be converted to secret shares, which is called a *SPU Object*.
 -  Python functions could be sent and executed by a *SPU device*, with the help of SPU Compiler and Runtime.
 -  Lastly, a *SPU Object* could be transferred to a *PYU Object*, which is owned by a *PYU Device*.

@@ -1,7 +1,7 @@
 import copy
 import unittest
 
-from secretflow.ml.boost.homo_boost.tree_core.feature_importance import (
+from molflow.ml.boost.homo_boost.tree_core.feature_importance import (
     FeatureImportance,
 )
 

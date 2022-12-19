@@ -1,9 +1,9 @@
 import numpy as np
 
-import secretflow.device as ft
-from secretflow import reveal
-from secretflow.device.device.pyu import PYUObject
-from secretflow.device.device.spu import SPUObject
+import molflow.device as ft
+from molflow import reveal
+from molflow.device.device.pyu import PYUObject
+from molflow.device.device.spu import SPUObject
 from tests.basecase import DeviceTestCase
 
 

@@ -1,8 +1,8 @@
 from tests.basecase import DeviceTestCase
 import numpy as np
-from secretflow.device.driver import reveal
+from molflow.device.driver import reveal
 
-from secretflow.utils import sigmoid
+from molflow.utils import sigmoid
 
 
 class SigmoidAllCase(DeviceTestCase):

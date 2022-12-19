@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-05 14:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -24,6 +24,6 @@ msgstr "API文档"
 #: ../../api/index.rst:6 29f31eba4c2442ecbb8eb28f9354c7d2
 msgid ""
 "This reference manual details modules, objects and functions included in "
-"SecretFlow, describing what they are and what they do."
-msgstr "这里介绍了SecretFlow中包含的模块、类和函数，并且描述了它们的基本信息和作用。"
+"moleculeflow, describing what they are and what they do."
+msgstr "这里介绍了moleculeflow中包含的模块、类和函数，并且描述了它们的基本信息和作用。"
 

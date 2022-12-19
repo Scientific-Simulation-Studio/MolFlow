@@ -1,10 +1,10 @@
 import numpy as np
 import pandas as pd
 
-from secretflow import reveal
-from secretflow.data.base import Partition
-from secretflow.data.vertical import VDataFrame
-from secretflow.utils.errors import NotFoundError
+from molflow import reveal
+from molflow.data.base import Partition
+from molflow.data.vertical import VDataFrame
+from molflow.utils.errors import NotFoundError
 
 from tests.basecase import DeviceTestCase
 
@@ -122,7 +122,8 @@ class TestVDataFrame(DeviceTestCase):
 
         # THEN
         expected_alice = self.df_alice.mean(numeric_only=True)
-        pd.testing.assert_series_equal(value[expected_alice.index], expected_alice)
+        pd.testing.assert_series_equal(
+            value[expected_alice.index], expected_alice)
         expected_bob = self.df_bob.mean(numeric_only=True)
         pd.testing.assert_series_equal(value[expected_bob.index], expected_bob)
 
@@ -181,7 +182,8 @@ class TestVDataFrame(DeviceTestCase):
         value = self.df.count()
 
         # THEN
-        expected_alice = pd.concat([self.df_alice, self.df_bob], axis=1).count()
+        expected_alice = pd.concat(
+            [self.df_alice, self.df_bob], axis=1).count()
         pd.testing.assert_series_equal(value, expected_alice)
 
     def test_mode_should_ok(self):
@@ -199,7 +201,8 @@ class TestVDataFrame(DeviceTestCase):
         value = self.df.isna().sum()
 
         # THEN
-        expected_alice = pd.concat([self.df_alice, self.df_bob], axis=1).isna().sum()
+        expected_alice = pd.concat(
+            [self.df_alice, self.df_bob], axis=1).isna().sum()
         pd.testing.assert_series_equal(value, expected_alice)
 
     def test_get_single_item_should_ok(self):

@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the SecretFlow package.
+# This file is distributed under the same license as the moleculeflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: SecretFlow \n"
+"Project-Id-Version: moleculeflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 13:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -35,7 +35,7 @@ msgstr "推荐使用 `jupyter <https://jupyter.org/>`__  运行本教程。"
 
 #: ../../components/preprocessing/DataFrame.ipynb:42
 msgid ""
-"Secretflow provides federated data encapsulation in the form of "
+"moleculeflow provides federated data encapsulation in the form of "
 "DataFrame. DataFrame is composed of data blocks of multiple parties and "
 "supports horizontal or vertical partitioned data."
 msgstr "隐语提供了联邦数据的DataFrame形式封装。DataFrame由多个参与方的数据块构成，支持数据水平或者垂直切分。"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../../components/preprocessing/DataFrame.ipynb:46
 msgid ""
-"Currently secretflow.DataFrame provides a subset of pandas operations, "
+"Currently moleculeflow.DataFrame provides a subset of pandas operations, "
 "which are basically the same as pandas. During the calculation process, "
 "the original data is kept in the data holder and will not go out of the "
 "domain."
@@ -65,8 +65,8 @@ msgid "Preparation"
 msgstr "前置准备"
 
 #: ../../components/preprocessing/DataFrame.ipynb:65
-msgid "Initialize secretflow and create three parties alice, bob and carol."
-msgstr "初始化secretflow，创建alice、bob和carol三个参与方。"
+msgid "Initialize moleculeflow and create three parties alice, bob and carol."
+msgstr "初始化moleculeflow，创建alice、bob和carol三个参与方。"
 
 #: ../../components/preprocessing/DataFrame.ipynb:93
 msgid "Data preparation"

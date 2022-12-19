@@ -16,18 +16,18 @@
 import numpy as np
 import pandas as pd
 import math
-from secretflow.ml.linear import LinearModel, RegType, SSRegression
-from secretflow.data.vertical import VDataFrame
+from molflow.ml.linear import LinearModel, RegType, SSRegression
+from molflow.data.vertical import VDataFrame
 import statsmodels.api as sm
 from sklearn.preprocessing import StandardScaler
-from secretflow.utils.sigmoid import SigType
+from molflow.utils.sigmoid import SigType
 
-from secretflow.stats import SSPValue
-from secretflow.data.base import Partition
+from molflow.stats import SSPValue
+from molflow.data.base import Partition
 
 from tests.basecase import DeviceTestCase
 
-from secretflow.utils.simulation.datasets import dataset
+from molflow.utils.simulation.datasets import dataset
 
 from sklearn import linear_model
 import scipy.stats as stat

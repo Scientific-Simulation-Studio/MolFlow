@@ -12,14 +12,14 @@ import os
 import tempfile
 
 import numpy as np
-from secretflow.device import reveal
-from secretflow.ml.nn import FLModel
-from secretflow.ml.nn.fl.backend.torch.utils import BaseModule, TorchModel
-from secretflow.ml.nn.fl.utils import metric_wrapper, optim_wrapper
-from secretflow.preprocessing.encoder import OneHotEncoder
-from secretflow.security.aggregation import PlainAggregator
-from secretflow.utils.simulation.datasets import load_iris, load_mnist
-from secretflow.security.privacy import DPStrategyFL, GaussianModelDP
+from molflow.device import reveal
+from molflow.ml.nn import FLModel
+from molflow.ml.nn.fl.backend.torch.utils import BaseModule, TorchModel
+from molflow.ml.nn.fl.utils import metric_wrapper, optim_wrapper
+from molflow.preprocessing.encoder import OneHotEncoder
+from molflow.security.aggregation import PlainAggregator
+from molflow.utils.simulation.datasets import load_iris, load_mnist
+from molflow.security.privacy import DPStrategyFL, GaussianModelDP
 from tests.basecase import DeviceTestCase
 from torch import nn, optim
 from torch.nn import functional as F

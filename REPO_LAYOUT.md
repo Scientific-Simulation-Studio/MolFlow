@@ -1,6 +1,6 @@
 # Repository layout
 
-secretflow
+moleculeflow
 - data: horizontal, vertical and mixed DataFrame and Ndarray (like pandas and numpy)
 - device: various devices and their kernels, such as PYU, SPU, HEU, etc
 - model: federated learning and split learning algorithms

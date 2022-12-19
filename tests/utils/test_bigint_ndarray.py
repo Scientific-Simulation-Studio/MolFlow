@@ -2,14 +2,15 @@ import unittest
 import numpy as np
 
 from heu import phe
-from secretflow.utils import ndarray_bigint
+from molflow.utils import ndarray_bigint
 
 
 class BigintNdarrayCase(unittest.TestCase):
     def test_arange(self):
         a = ndarray_bigint.arange(120)
         a.resize((2, 3, 4, 5))
-        self.assertTrue((np.arange(120).reshape((2, 3, 4, 5)) == a.to_numpy()).all())
+        self.assertTrue((np.arange(120).reshape(
+            (2, 3, 4, 5)) == a.to_numpy()).all())
 
     def test_randbits(self):
         a = ndarray_bigint.randbits((100000,), 8)
