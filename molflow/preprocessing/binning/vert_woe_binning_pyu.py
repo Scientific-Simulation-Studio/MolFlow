@@ -18,8 +18,8 @@ import pandas as pd
 import numpy as np
 import math
 
-from moleculeflow.device import PYUObject, proxy
-from moleculeflow.data.base import Partition
+from molflow.device import PYUObject, proxy
+from molflow.data.base import Partition
 
 
 @proxy(PYUObject)

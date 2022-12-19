@@ -14,11 +14,11 @@
 
 from typing import Callable, Dict, List, Union
 
-from moleculeflow.data.horizontal.dataframe import HDataFrame
-from moleculeflow.device import reveal
-from moleculeflow.device.device import PYU
-from moleculeflow.ml.boost.homo_boost.homo_booster_worker import HomoBooster
-from moleculeflow.preprocessing.binning.homo_binning import HomoBinning
+from molflow.data.horizontal.dataframe import HDataFrame
+from molflow.device import reveal
+from molflow.device.device import PYU
+from molflow.ml.boost.homo_boost.homo_booster_worker import HomoBooster
+from molflow.preprocessing.binning.homo_binning import HomoBinning
 from validator import GreaterThan, In, LessThan, Not, Range, Required, validate
 
 

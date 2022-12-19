@@ -17,8 +17,8 @@ from typing import List
 
 import numpy as np
 
-from moleculeflow.device import PYU, DeviceObject, PYUObject
-from moleculeflow.security.aggregation.aggregator import Aggregator
+from molflow.device import PYU, DeviceObject, PYUObject
+from molflow.security.aggregation.aggregator import Aggregator
 
 
 class PlainAggregator(Aggregator):

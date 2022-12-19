@@ -12,7 +12,7 @@ A typical mix partitioned data.
 Mix Logistic Regression
 -----------------------
 
-moleculeflow provides :py:class:`~moleculeflow.ml.linear.FlLogisticRegressionMix` for logistic regression with mix partitioned data.
+molflow provides :py:class:`~molflow.ml.linear.FlLogisticRegressionMix` for logistic regression with mix partitioned data.
 You can check the tutorial to have a try.
 
 Tutorial

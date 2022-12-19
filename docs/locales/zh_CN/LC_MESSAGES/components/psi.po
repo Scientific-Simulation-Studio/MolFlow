@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-15 19:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -22,8 +22,8 @@ msgid "Private Set Intersection(PSI)"
 msgstr "隐私集合求交"
 
 #: ../../components/psi.rst:4
-msgid "moleculeflow SPU implements the following PSI protocols,"
-msgstr "moleculeflow SPU 实现了下面的PSI(Private Set Intersection)协议:"
+msgid "molflow SPU implements the following PSI protocols,"
+msgstr "molflow SPU 实现了下面的PSI(Private Set Intersection)协议:"
 
 #: ../../components/psi.rst:6
 msgid "Semi-honest ECDH-based two-party PSI protocol [HFH99]_"
@@ -153,7 +153,7 @@ msgstr ""
 ":math:`{\\{\\{H(y_i)\\}^{\\beta\\alpha}\\}}_{i=1}^{n_2}` ，得到交集。"
 
 #: ../../components/psi.rst:57
-msgid "The Elliptic Curve groups, supported in moleculeflow SPU PSI moudule."
+msgid "The Elliptic Curve groups, supported in molflow SPU PSI moudule."
 msgstr "隐语 SPU PSI模块支持的椭圆曲线类型包括： "
 
 #: ../../components/psi.rst:60

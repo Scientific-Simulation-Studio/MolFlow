@@ -26,7 +26,7 @@ import numpy
 import pandas
 import numpy as np
 
-from moleculeflow.utils.errors import InvalidArgumentError
+from molflow.utils.errors import InvalidArgumentError
 
 
 @dataclass()

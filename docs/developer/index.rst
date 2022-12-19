@@ -3,7 +3,7 @@
 Developer
 ===============
 
-The following documents will help you understand the design ideas and principles of moleculeflow.
+The following documents will help you understand the design ideas and principles of molflow.
 
 
 .. toctree::

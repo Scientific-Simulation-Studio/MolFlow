@@ -16,9 +16,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'moleculeflow'
+project = 'molflow'
 copyright = '2022 Ant Group Co., Ltd.'
-author = 'moleculeflow authors'
+author = 'molflow authors'
 
 
 # -- General configuration ---------------------------------------------------
@@ -124,7 +124,7 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/moleculeflow/moleculeflow",
+            "url": "https://github.com/molflow/molflow",
             "icon": "fab fa-github-square",
             "type": "fontawesome",
         },
@@ -134,7 +134,7 @@ html_theme_options = {
         {"name": "HEU", "url": "https://heu.readthedocs.io/"},
     ],
     "logo": {
-        "text": "moleculeflow",
+        "text": "molflow",
         "image_light": "logo-light.png",
         "image_dark": "logo-dark.png",
     },

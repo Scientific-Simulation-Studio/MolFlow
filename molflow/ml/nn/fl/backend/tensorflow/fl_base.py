@@ -22,9 +22,9 @@ from typing import Callable, Optional
 import numpy as np
 import tensorflow as tf
 
-from moleculeflow.ml.nn.fl.backend.tensorflow.sampler import sampler_data
-from moleculeflow.ml.nn.fl.metrics import AUC, Mean, Precision, Recall
-from moleculeflow.utils.io import rows_count
+from molflow.ml.nn.fl.backend.tensorflow.sampler import sampler_data
+from molflow.ml.nn.fl.metrics import AUC, Mean, Precision, Recall
+from molflow.utils.io import rows_count
 
 # 抽象model类
 

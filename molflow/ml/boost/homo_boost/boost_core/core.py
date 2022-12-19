@@ -18,13 +18,13 @@ import uuid
 from typing import Callable, Dict, List, Union
 
 import numpy
-import moleculeflow.device.link as link
+import molflow.device.link as link
 import xgboost.core as xgb_core
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.data.split import train_test_split
-from moleculeflow.ml.boost.homo_boost.homo_decision_tree import HomoDecisionTree
-from moleculeflow.ml.boost.homo_boost.tree_param import TreeParam
-from moleculeflow.utils.errors import InvalidArgumentError
+from molflow.data.horizontal import HDataFrame
+from molflow.data.split import train_test_split
+from molflow.ml.boost.homo_boost.homo_decision_tree import HomoDecisionTree
+from molflow.ml.boost.homo_boost.tree_param import TreeParam
+from molflow.utils.errors import InvalidArgumentError
 
 
 class FedBooster(xgb_core.Booster):

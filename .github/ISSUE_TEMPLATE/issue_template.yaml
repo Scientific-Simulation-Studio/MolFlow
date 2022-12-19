@@ -1,11 +1,11 @@
-name: moleculeflow Issue Template
+name: molflow Issue Template
 description: Thank you for reporting the issue!
 body:
   - type: markdown
     attributes:
       value: |
         Please make sure that you report a code/doc bug, feature request or build/installation bug on GitHub.
-        Please post on our [discussions](https://github.com/moleculeflow/moleculeflow/discussions) instead if you want to ask questions or share ideas.
+        Please post on our [discussions](https://github.com/molflow/molflow/discussions) instead if you want to ask questions or share ideas.
   - type: dropdown
     id: issue-type
     attributes:
@@ -26,7 +26,7 @@ body:
     id: source
     attributes:
       label: Source
-      description: moleculeflow installed from
+      description: molflow installed from
       options:
         - binary
         - source
@@ -35,9 +35,9 @@ body:
   - type: input
     id: sfversion
     attributes:
-      label: moleculeflow Version
+      label: molflow Version
       description:
-      placeholder: e.g., moleculeflow 0.6.13b0
+      placeholder: e.g., molflow 0.6.13b0
     validations:
       required: true
   - type: input

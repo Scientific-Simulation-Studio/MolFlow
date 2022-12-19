@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from moleculeflow.device import SPU
-from moleculeflow.security.compare.device_comparator import DeviceComparator
+from molflow.device import SPU
+from molflow.security.compare.device_comparator import DeviceComparator
 
 
 class SPUComparator(DeviceComparator):

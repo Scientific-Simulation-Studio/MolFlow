@@ -16,8 +16,8 @@
 from enum import Enum, unique
 from dataclasses import dataclass
 from typing import Union, List
-from moleculeflow.utils.sigmoid import SigType
-from moleculeflow.device import SPUObject, PYUObject
+from molflow.utils.sigmoid import SigType
+from molflow.device import SPUObject, PYUObject
 
 
 @unique

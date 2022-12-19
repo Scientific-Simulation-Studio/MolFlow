@@ -1,8 +1,8 @@
 # Architecture
 
-moleculeflow is a unified framework for privacy preserving data analysis and machine learning.
+molflow is a unified framework for privacy preserving data analysis and machine learning.
 
-![moleculeflow](../../_static/moleculeflow.svg)
+![molflow](../../_static/molflow.svg)
 
 ## Design Motivation
 
@@ -13,25 +13,25 @@ Based on the practical experience over the past few years, we found that
 2. Private computing has a high learning curve and is difficult for users from other backgrounds to use.
 3. Privacy computing involves many fields and requires the cooperation of different domain experts.
 
-The design goal of moleculeflow is to make it very easy for data scientists and machine learning developers
+The design goal of molflow is to make it very easy for data scientists and machine learning developers
 to use private computing techniques for data analysis and machine learning without knowing the underlying technical details.
-To achieve this goal, moleculeflow provides a layer of device abstraction that abstracts Multi-Party Secure Computing (MPC),
+To achieve this goal, molflow provides a layer of device abstraction that abstracts Multi-Party Secure Computing (MPC),
 Homomorphic Encryption (HE), and Trusted Execution Environment (TEE) into ciphertext devices.
 Based on this level of abstraction, data analysis and machine learning workflows can be represented as a computational graph,
 where nodes represent computations on a device and edges represent the data flow between devices.
 Data flow between different types of devices requires protocol conversion.
-In this regard, moleculeflow borrows from mainstream deep learning frameworks, which represent neural networks as a
+In this regard, molflow borrows from mainstream deep learning frameworks, which represent neural networks as a
 computational graph consisting of on-device operators and tensor flows between devices.
 
-moleculeflow is an open framework for developers at different levels. At the device layer, we work with experts in cryptography,
+molflow is an open framework for developers at different levels. At the device layer, we work with experts in cryptography,
 trusted hardware, hardware acceleration and other fields to continuously improve protocol security and computing performance.
-At the same time, moleculeflow provides a good device interface, and the third-party privacy computing protocol can be plugged in as
+At the same time, molflow provides a good device interface, and the third-party privacy computing protocol can be plugged in as
 a device. At the algorithm layer, a flexible programming interface is provided for machine learning, and algorithm developers
 can easily define their own algorithms.
 
 ## Device
 
-The devices of the moleculeflow are divided into physical devices and logical devices. The physical device is the physical machine
+The devices of the molflow are divided into physical devices and logical devices. The physical device is the physical machine
 of each participant in the privacy computing, and the logical device is composed of one or more physical devices. A logical device
 supports a specific set of computing operators (Device Ops) and has its own specific data representation (Device Object).
 Logical devices are divided into two types: plaintext and ciphertext. The former performs unilateral local computation,
@@ -44,7 +44,7 @@ can be virtualized according to different privacy protocols and participation co
 
 ![device](../../_static/device.svg)
 
-The following table is a list of devices currently supported by moleculeflow:
+The following table is a list of devices currently supported by molflow:
 
 | Device         | Type       | Runtime            | Ops          | Protocol      | Frontend                 | Status  |
 |----------------|------------|--------------------|--------------|---------------|--------------------------|---------|
@@ -136,7 +136,7 @@ We comprehensively evaluate several popular distributed frameworks in the indust
 - [TensorFlow Distributed](https://www.tensorflow.org/guide/distributed_training)
 - [PyTorch Distributed](https://pytorch.org/tutorials/beginner/dist_overview.html)
 
-In the end, we chose Ray as the distributed engine of moleculeflow, which satisfies the above requirements of moleculeflow very well.
+In the end, we chose Ray as the distributed engine of molflow, which satisfies the above requirements of molflow very well.
 The distributed primitives provided by Ray enable task scheduling and data transfer on logical devices to be easily mapped to physical devices.
 The asynchronous scheduling and dynamic execution capabilities provided by Ray make the execution of computational graphs more flexible and efficient.
 
@@ -159,4 +159,4 @@ Here are some algorithms built by our device programming model:
 - In horizontal federated learning, do local training in PYU, and do gradient and weight aggregation in SPU and TEE.
 - In vertical split learning, splitting a model into multiple PYUs, using differential privacy to protect forward hidden layers and reverse gradients
 
-For the details of these algorithms, please refer to our tutorials and implementations, and look forward to your developing more interesting algorithms based on moleculeflow!
+For the details of these algorithms, please refer to our tutorials and implementations, and look forward to your developing more interesting algorithms based on molflow!

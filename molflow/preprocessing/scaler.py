@@ -19,13 +19,13 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler as SkMinMaxScaler
 from sklearn.preprocessing import StandardScaler as SkStandardScaler
 
-from moleculeflow.data.base import Partition
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.data.mix import MixDataFrame, PartitionWay
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device.driver import reveal
-from moleculeflow.security.aggregation import Aggregator
-from moleculeflow.utils.errors import InvalidArgumentError
+from molflow.data.base import Partition
+from molflow.data.horizontal import HDataFrame
+from molflow.data.mix import MixDataFrame, PartitionWay
+from molflow.data.vertical import VDataFrame
+from molflow.device.driver import reveal
+from molflow.security.aggregation import Aggregator
+from molflow.utils.errors import InvalidArgumentError
 
 
 class MinMaxScaler:
@@ -35,7 +35,7 @@ class MinMaxScaler:
         _scaler: the sklearn MinMaxScaler instance.
 
     Examples:
-        >>> from moleculeflow.preprocessing import MinMaxScaler
+        >>> from molflow.preprocessing import MinMaxScaler
         >>> scaler = MinMaxScaler()
         >>> scaler.fit(df)
         >>> scaler.transform(df)
@@ -130,7 +130,7 @@ class StandardScaler:
             unit standard deviation).
 
     Examples:
-        >>> from moleculeflow.preprocessing import StandardScaler
+        >>> from molflow.preprocessing import StandardScaler
         >>> data = HDataFrame(...) # your HDataFrame/VDataFrame/MixDataFrame instance.
         >>> scaler = StandardScaler()
         >>> scaler.fit(data)

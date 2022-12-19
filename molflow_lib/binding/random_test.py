@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 
-import moleculeflow_lib.binding._lib.random as random
+import molflow_lib.binding._lib.random as random
 
 
 class TestRandom(unittest.TestCase):

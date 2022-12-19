@@ -21,10 +21,10 @@ import numpy as np
 import torch
 import torchmetrics
 
-from moleculeflow.ml.nn.fl.backend.torch.sampler import sampler_data
-from moleculeflow.ml.nn.fl.backend.torch.utils import TorchModel
-from moleculeflow.ml.nn.fl.metrics import Default, Mean, Precision, Recall
-from moleculeflow.utils.io import rows_count
+from molflow.ml.nn.fl.backend.torch.sampler import sampler_data
+from molflow.ml.nn.fl.backend.torch.utils import TorchModel
+from molflow.ml.nn.fl.metrics import Default, Mean, Precision, Recall
+from molflow.utils.io import rows_count
 
 # Torch model on worker side
 

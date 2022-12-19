@@ -19,16 +19,16 @@ pybind_extension(
     ],
     linkopts = select({
         "@bazel_tools//src/conditions:darwin": [
-            "-Wl,-exported_symbols_list,$(location //moleculeflow_lib/binding:exported_symbols.lds)",
+            "-Wl,-exported_symbols_list,$(location //molflow_lib/binding:exported_symbols.lds)",
         ],
         "//conditions:default": [
-            "-Wl,--version-script,$(location //moleculeflow_lib/binding:version_script.lds)",
+            "-Wl,--version-script,$(location //molflow_lib/binding:version_script.lds)",
         ],
     }),
     deps = [
         ":exported_symbols.lds",
         ":version_script.lds",
-        "//moleculeflow_lib/differential_privacy/random:distributions",
+        "//molflow_lib/differential_privacy/random:distributions",
     ],
 )
 

@@ -15,7 +15,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from moleculeflow.device import DeviceObject
+from molflow.device import DeviceObject
 
 
 class Aggregator(ABC):

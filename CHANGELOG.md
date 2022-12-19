@@ -47,7 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Bump dependencies
-  - moleculeflow-ray to 2.0.0.dev2
+  - molflow-ray to 2.0.0.dev2
 - Update psi_df doc.
 - Optimize sl_model by tf_funciton.
 - Add curve parameter for ecdh psi.
@@ -65,7 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- omp_num_threads param for moleculeflow init().
+- omp_num_threads param for molflow init().
 - Regression and biclassification evaluation.
 - Xgboost evaluation.
 - Horizontal fl supports default naive aggreagte for metrics.
@@ -83,7 +83,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Get rid of import tensorflow/torch when import moleculeflow.
+- Get rid of import tensorflow/torch when import molflow.
 
 ## [0.7.8] - 2022-9-22
 
@@ -153,7 +153,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Use moleculeflow-ray instead of ray.
+- Use molflow-ray instead of ray.
 
 ## [0.7.1] - 2022-08-25
 
@@ -271,7 +271,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- moleculeflow shutdown.
+- molflow shutdown.
 
 ### Fixed
 

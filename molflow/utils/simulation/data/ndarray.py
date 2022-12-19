@@ -16,10 +16,10 @@ from typing import Callable, Dict, List, Union
 
 import numpy as np
 
-from moleculeflow.data.ndarray import FedNdarray, PartitionWay
-from moleculeflow.device import PYU
-from moleculeflow.utils.errors import InvalidArgumentError
-from moleculeflow.utils.simulation.data._utils import cal_indexes
+from molflow.data.ndarray import FedNdarray, PartitionWay
+from molflow.device import PYU
+from molflow.utils.errors import InvalidArgumentError
+from molflow.utils.simulation.data._utils import cal_indexes
 
 
 def create_ndarray(

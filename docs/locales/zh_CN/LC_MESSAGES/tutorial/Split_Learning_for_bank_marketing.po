@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 13:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -31,20 +31,20 @@ msgstr "以下代码仅作为演示用，请勿直接在生产环境使用。"
 msgid ""
 "In this tutorial, we will use the bank's marketing model as an example to"
 " show how to accomplish split learning in vertical scenarios under the "
-"``moleculeflow`` framework. ``moleculeflow`` provides a user-friendly Api "
+"``molflow`` framework. ``molflow`` provides a user-friendly Api "
 "that makes it easy to apply your Keras model or PyTorch model to split "
 "learning scenarios to complete joint modeling tasks for vertical "
 "scenarios."
 msgstr ""
-"在这个教程中，我们将以银行的市场营销模型为例，展示在 `moleculeflow` 框架下如何完成垂直场景下的拆分学习。 `moleculeflow` "
+"在这个教程中，我们将以银行的市场营销模型为例，展示在 `molflow` 框架下如何完成垂直场景下的拆分学习。 `molflow` "
 "框架提供了一套用户友好的Api，可以很方便的将您的keras模型或者pytorch模型应用到拆分学习场景，成为拆分学习模型，进而完成垂直场景的联合建模任务."
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:33
 msgid ""
 "In this tutorial we will show you how to turn your existing 'Keras' model"
-" into a split learning model under ``moleculeflow`` to complete federated "
+" into a split learning model under ``molflow`` to complete federated "
 "multi-party modeling tasks."
-msgstr "在接下来的教程中我们将手把手演示，如何将您已有的 `keras` 模型变成 `moleculeflow` 下的拆分学习模型，完成联邦多方建模任务。"
+msgstr "在接下来的教程中我们将手把手演示，如何将您已有的 `keras` 模型变成 `molflow` 下的拆分学习模型，完成联邦多方建模任务。"
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:45
 msgid "What is Split Learning？"
@@ -165,7 +165,7 @@ msgstr "我们先来看看我们银行市场营销数据长什么样的?"
 msgid ""
 "The original data is divided into Bank Alice and Bank Bob, which stores "
 "in Alice and Bob respectively. Here, CSV is the original data that has "
-"only been separated without pre-processing, we will use ``moleculeflow "
+"only been separated without pre-processing, we will use ``molflow "
 "preprocess`` for FedData preprocess"
 msgstr "原始数据经过分拆后分成bank_alice和bank_bob，分别存在alice和bob两方。这里的csv是原始数据仅经过分拆，没有做预处理的数据"
 
@@ -187,16 +187,16 @@ msgid ""
 msgstr "bob端是一个老银行，他们有用户的账户余额，是否有房，是否有贷款，以及最近的营销反馈"
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:768
-msgid "Create moleculeflow Environment"
+msgid "Create molflow Environment"
 msgstr "环境的搭建"
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:779
 msgid ""
-"Create 2 entities in the moleculeflow environment [Alice, Bob] Where "
+"Create 2 entities in the molflow environment [Alice, Bob] Where "
 "'Alice' and 'Bob' are two PYU Once you've constructed the two objects, "
 "you can happily start Splitting Learning"
 msgstr ""
-"在 moleculeflow 环境中创建 2 个实体 [Alice, Bob]，其中 'Alice' 和 'Bob' 是两个 PY。 "
+"在 molflow 环境中创建 2 个实体 [Alice, Bob]，其中 'Alice' 和 'Bob' 是两个 PY。 "
 "一旦你构建了这两个对象，你可以愉快地开始拆分学习"
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:791
@@ -252,12 +252,12 @@ msgstr "``Federated Table`` 的接口与 pandas.DataFrame 对齐，以降低多�
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:839
 msgid ""
-"The moleculeflow framework provides Plain&Ciphertext hybrid programming "
+"The molflow framework provides Plain&Ciphertext hybrid programming "
 "capabilities. Vertical federated tables are built using ``SPU``, and "
 "``MPC-PSI`` is used to safely get intersection and align data from all "
 "parties."
 msgstr ""
-"moleculeflow 框架提供 Plain&Ciphertext 混合编程能力。垂直联合表是使用 ``SPU`` 构建的， ``MPC-PSI``"
+"molflow 框架提供 Plain&Ciphertext 混合编程能力。垂直联合表是使用 ``SPU`` 构建的， ``MPC-PSI``"
 " 用于安全地获取来自各方的交集和对齐数据。"
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:841
@@ -271,12 +271,12 @@ msgstr ""
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:855
 msgid ""
 "VDataFrame provides ``read_csv`` interface similar to pandas, except that"
-" ``moleculeflow.read_csv`` receives a dictionary that defines the path of "
-"data for both parties. We can use ``moleculeflow.vertical.read_csv`` to "
+" ``molflow.read_csv`` receives a dictionary that defines the path of "
+"data for both parties. We can use ``molflow.vertical.read_csv`` to "
 "build the ``VDataFrame``."
 msgstr ""
-"VDataFrame 提供类似于 pandas 的 read_csv 接口，不同之处在于moleculeflow.read_csv "
-"接收一个定义双方数据路径的字典。我们可以使用 ``moleculeflow.vertical.read_csv`` 来构建 "
+"VDataFrame 提供类似于 pandas 的 read_csv 接口，不同之处在于molflow.read_csv "
+"接收一个定义双方数据路径的字典。我们可以使用 ``molflow.vertical.read_csv`` 来构建 "
 "``VDataFrame`` 。"
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:873
@@ -330,14 +330,14 @@ msgstr "接着我们将数据集划分成train-set和test-set"
 msgid ""
 "**Summary:** At this point, we have completed the definition of "
 "**federated tables**, **data preprocessing**, and **training set and test"
-" set partitioning** The moleculeflow framework defines a set of operations "
+" set partitioning** The molflow framework defines a set of operations "
 "to be built on the federated table (its logical counterpart is "
-"``pandas.DataFrame``). The moleculeflow framework defines a set of "
+"``pandas.DataFrame``). The molflow framework defines a set of "
 "operations to be built on the federated table (its logical counterpart is"
 " ``sklearn``) Refer to our documentation and API introduction to learn "
 "more about other features"
 msgstr ""
-"**小结：到这里为止，我们就完成了联邦表的定义，数据预处理，以及训练集和测试集的划分。** moleculeflow框架定义了跨越多方的 `联邦表` "
+"**小结：到这里为止，我们就完成了联邦表的定义，数据预处理，以及训练集和测试集的划分。** molflow框架定义了跨越多方的 `联邦表` "
 "概念，同时定义了一套构建在联邦表上的操作，逻辑对等 `pandas.DataFrame` ，同时定义了对于联邦表的预处理操作，逻辑对等 "
 "`sklearn` ,您在使用过程中遇到问题，可以参考我们的文档以及api介绍，进一步了解其他的功能"
 
@@ -409,13 +409,13 @@ msgstr "创建拆分学习模型"
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:1708
 msgid ""
-"moleculeflow provides the split learning model ``SLModel`` To initial "
+"molflow provides the split learning model ``SLModel`` To initial "
 "SLModel only need 3 parameters \\* base\\_model\\_dict: A dictionary "
 "needs to be passed in all clients participating in the training along "
 "with base\\_model mappings \\* device\\_y: PYU, which device has label "
 "\\* model\\_fuse: The fusion model"
 msgstr ""
-"moleculeflow提供了拆分学习的模型 SLModelSLModel模型初始化需要3个参数\\* "
+"molflow提供了拆分学习的模型 SLModelSLModel模型初始化需要3个参数\\* "
 "base\\_model_dict：一个字典需要传入参与训练的所有client以及base_model映射\\* "
 "device\\_y：PYU，哪一方持有label\\* model\\_fuse：融合模型，具体的优化器以及损失函数都在这个模型中进行定义"
 
@@ -468,8 +468,8 @@ msgstr "总结"
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:3326
 msgid ""
 "This tutorial introduces what is split learning and how to do it in "
-"moleculeflow"
-msgstr "本篇我们介绍了什么是拆分学习，以及如何在moleculeflow框架下进行拆分学习"
+"molflow"
+msgstr "本篇我们介绍了什么是拆分学习，以及如何在molflow框架下进行拆分学习"
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:3327
 msgid ""
@@ -481,11 +481,11 @@ msgstr "从实验数据可以看出，split learning在扩充样本维度，通�
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:3328
 msgid ""
 "This tutorial uses plaintext aggregation to demonstrate, without "
-"considering the leakage problem of hidden layer. moleculeflow provides "
+"considering the leakage problem of hidden layer. molflow provides "
 "AggLayer to avoid the leakage problem of hidden layer plaintext "
 "transmission through MPC,TEE,HE, and DP. If you are interested, please "
 "refer to relevant documents."
-msgstr "本文档使用明文聚合来做演示，同时没有考虑隐层的泄露问题，moleculeflow提供了AggLayer通过MPC,TEE,HE，以及DP等方式规避隐层明文传输泄露的问题，感兴趣可以看相关文档。"
+msgstr "本文档使用明文聚合来做演示，同时没有考虑隐层的泄露问题，molflow提供了AggLayer通过MPC,TEE,HE，以及DP等方式规避隐层明文传输泄露的问题，感兴趣可以看相关文档。"
 
 #: ../../tutorial/Split_Learning_for_bank_marketing.ipynb:3329
 msgid ""

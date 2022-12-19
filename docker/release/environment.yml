@@ -1,6 +1,6 @@
-name: moleculeflow
+name: molflow
 dependencies:
   - python==3.8.13
   - pip
   - pip:
-      - moleculeflow==version
+      - molflow==version

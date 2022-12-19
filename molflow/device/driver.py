@@ -109,7 +109,7 @@ def reveal(func_or_object):
     """Get plaintext data from device.
 
     NOTE: Use this function with extreme caution, as it may cause privacy leaks.
-    In moleculeflow, we recommend that data should flow between different devices
+    In molflow, we recommend that data should flow between different devices
     and rarely revealed to driver. Only use this function when data dependency
     control flow occurs.
 
@@ -234,7 +234,7 @@ def init(
 
 
 def shutdown():
-    """Disconnect the worker, and terminate processes started by moleculeflow.init().
+    """Disconnect the worker, and terminate processes started by molflow.init().
 
     This will automatically run at the end when a Python process that uses Ray exits.
     It is ok to run this twice in a row. The primary use case for this function

@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-30 17:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -31,7 +31,7 @@ msgstr "开发者"
 #: ../../developer/index.rst:6 a1b4448948f34221baafff78f9cee586
 msgid ""
 "The following documents will help you understand the design ideas and "
-"principles of moleculeflow."
+"principles of molflow."
 msgstr ""
 "下列文档有助于您了解隐语的设计思想和原则。"
 

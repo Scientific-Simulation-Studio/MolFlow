@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from moleculeflow.security.privacy.mechanism.tensorflow.layers import EmbeddingDP, LabelDP
+from molflow.security.privacy.mechanism.tensorflow.layers import EmbeddingDP, LabelDP
 
 
 class DPStrategy:

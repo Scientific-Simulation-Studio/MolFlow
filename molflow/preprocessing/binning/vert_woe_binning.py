@@ -16,13 +16,13 @@ from typing import List, Dict, Union
 import jax.numpy as jnp
 import numpy as np
 
-from moleculeflow.device.device.base import MoveConfig
-from moleculeflow.preprocessing.binning.vert_woe_binning_pyu import (
+from molflow.device.device.base import MoveConfig
+from molflow.preprocessing.binning.vert_woe_binning_pyu import (
     VertWoeBinningPyuWorker,
 )
-from moleculeflow.device import SPU, HEU, PYU, PYUObject
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device import reveal
+from molflow.device import SPU, HEU, PYU, PYUObject
+from molflow.data.vertical import VDataFrame
+from molflow.device import reveal
 
 
 class VertWoeBinning:

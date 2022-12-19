@@ -17,11 +17,11 @@ from typing import Any, Dict, List, Tuple, Union
 import numpy as np
 import pandas as pd
 
-import moleculeflow.utils.ndarray_encoding as ndarray_encoding
-from moleculeflow.device import PYU, DeviceObject, PYUObject, proxy, reveal
-from moleculeflow.security.aggregation import Aggregator
-from moleculeflow.security.aggregation._utils import is_nesting_list
-from moleculeflow.security.diffie_hellman import DiffieHellman
+import molflow.utils.ndarray_encoding as ndarray_encoding
+from molflow.device import PYU, DeviceObject, PYUObject, proxy, reveal
+from molflow.security.aggregation import Aggregator
+from molflow.security.aggregation._utils import is_nesting_list
+from molflow.security.diffie_hellman import DiffieHellman
 
 
 @proxy(PYUObject)

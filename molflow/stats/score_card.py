@@ -18,9 +18,9 @@ import math
 
 import numpy as np
 
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.data import FedNdarray
+from molflow.data.vertical import VDataFrame
+from molflow.data.horizontal import HDataFrame
+from molflow.data import FedNdarray
 
 
 class ScoreCard:

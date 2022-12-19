@@ -4,9 +4,9 @@
 
 ---
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/moleculeflow/moleculeflow/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/moleculeflow/moleculeflow/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/molflow/molflow/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/molflow/molflow/tree/main)
 
-moleculeflow is a unified framework for privacy-preserving data intelligence and machine learning. To achieve this goal,
+molflow is a unified framework for privacy-preserving data intelligence and machine learning. To achieve this goal,
 it provides:
 
 - An abstract device layer consists of plain devices and secret devices which encapsulate various cryptographic protocols.
@@ -15,7 +15,7 @@ it provides:
 - A workflow layer that seamlessly integrates data processing, model training, and hyperparameter tuning.
 
 <div align="center">
-    <img src="docs/_static/moleculeflow_arch.svg">
+    <img src="docs/_static/molflow_arch.svg">
 </div>
 
 ## Install
@@ -31,4 +31,4 @@ Please check [DEPLOYMENT.md](./DEPLOYMENT.md)
 Please check [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Disclaimer
-Non-release versions of moleculeflow are prohibited to use in any production environment due to possible bugs, glitches, lack of functionality, security issues or other problems.
+Non-release versions of molflow are prohibited to use in any production environment due to possible bugs, glitches, lack of functionality, security issues or other problems.

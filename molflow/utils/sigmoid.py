@@ -14,7 +14,7 @@
 
 import jax.numpy as jnp
 from enum import Enum, unique
-from moleculeflow.utils.errors import InvalidArgumentError
+from molflow.utils.errors import InvalidArgumentError
 
 
 def t1_sig(x, limit: bool = True):

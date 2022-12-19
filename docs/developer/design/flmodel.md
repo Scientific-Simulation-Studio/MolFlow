@@ -1,12 +1,12 @@
 # FLModel Design
-FLModel is the logical abstraction of federated learning provided by moleculeflow, and it is also a unified interface for users. FLModel encapsulates various capabilities required under the federated learning framework, including data processing, training strategies, aggregation logic, etc. moleculeflow provides a user-friendly interface, so that users can easily and quickly transfer existing plaintext computing models through the FLModel interface to quickly form federated learning capabilities through simple migration , a joint multi-party establishment of joint models with low learning cost.
+FLModel is the logical abstraction of federated learning provided by molflow, and it is also a unified interface for users. FLModel encapsulates various capabilities required under the federated learning framework, including data processing, training strategies, aggregation logic, etc. molflow provides a user-friendly interface, so that users can easily and quickly transfer existing plaintext computing models through the FLModel interface to quickly form federated learning capabilities through simple migration , a joint multi-party establishment of joint models with low learning cost.
 ## Design Principles
 1. The federated logic layer provides a lingo user API, provides a unified interface, shields the underlying differences, and simplifies user learning costs
 2. The use of the interface conforms to user habits. Users only need to migrate the existing code without modifying the original code.
 3. Parameterized configuration of backend, strategy, sampler and other federated model configurations to simplify user experience
 4. Supports Torch, Tensorflow multiple backends, and the programming experience of different backends is consistent.
 ## Architecture
-moleculeflow provides the FLModel module from a centralized perspective. The overall logic flow of the federation is choreographed by FLModel. FLModel determines which workers are based on the parameters, and those backends will cooperate to complete the federation calculation.
+molflow provides the FLModel module from a centralized perspective. The overall logic flow of the federation is choreographed by FLModel. FLModel determines which workers are based on the parameters, and those backends will cooperate to complete the federation calculation.
 ![flmodel](resources/flmodel.jpg)
 
 example：
@@ -116,7 +116,7 @@ is_test: Whether the mark is a stand-alone simulation, if it is a stand-alone si
 
 
 ## Multiple Backend Support
-+ moleculeflow provides the base class of BaseModel, which defines a set of methods required by workers in federated scenarios for FLModel to use in process orchestration.
++ molflow provides the base class of BaseModel, which defines a set of methods required by workers in federated scenarios for FLModel to use in process orchestration.
 + Specific TorchModel and TensorFlowModel will use their own engine-specific API to implement these methods.
 + Each strategy further down will implement its own train step and other related strategies.
 + FLModel will use the strategy dispatcher to pull up specific instance workers to complete the calculation.

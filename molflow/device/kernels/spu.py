@@ -16,7 +16,7 @@ from typing import Dict, List, Union
 
 import ray
 
-from moleculeflow.device import (
+from molflow.device import (
     HEU,
     PYU,
     SPU,

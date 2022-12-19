@@ -21,8 +21,8 @@ from typing import Dict, List
 
 import numpy as np
 import pandas as pd
-from moleculeflow.preprocessing.binning.kernels.base_binning import BaseBinning
-from moleculeflow.preprocessing.binning.kernels.quantile_summaries import (
+from molflow.preprocessing.binning.kernels.base_binning import BaseBinning
+from molflow.preprocessing.binning.kernels.quantile_summaries import (
     QuantileSummaries,
 )
 

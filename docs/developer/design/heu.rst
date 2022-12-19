@@ -4,7 +4,7 @@ HEU Device
 What is HEU
 -----------
 
-Homomorphic Encryption processing Unit (HEU) is a submodule of moleculeflow that implements high-performance homomorphic encryption algorithms.
+Homomorphic Encryption processing Unit (HEU) is a submodule of molflow that implements high-performance homomorphic encryption algorithms.
 
 The purpose of HEU is to lower the threshold for the use of homomorphic encryption, so that users can use homomorphic encryption algorithms to build privacy-preserving applications without professional cryptography knowledge.
 
@@ -22,14 +22,14 @@ The Design of HEU
 .. role:: red
 .. role:: blue
 
-HEU has two meanings, it is both a device in moleculeflow and a high-performance homomorphic encryption library that can be used independently.
+HEU has two meanings, it is both a device in molflow and a high-performance homomorphic encryption library that can be used independently.
 
 .. image:: img/heu_layer.svg
    :align: center
 
 :red:`HEU Library`: You can view HEU as a high-performance and complete homomorphic encryption library, which integrates almost all homomorphic encryption algorithms in the industry. At the same time, HEU encapsulates each algorithm and provides a uniform interface called "HEU library access layer". You can switch between different HE algorithms at any time without modifying business code.
 
-:blue:`HEU device`: As a component of moleculeflow, HEU abstracts the homomorphic encryption algorithms into a programmable device, making it easy for users to flexibly build applications using the homomorphic encryption technology without professional knowledge. HEU (device) aims to build a complete computing solution through HE, that is, based on HE, any type of computing can be completed. Compared with SPU, HEU's computation is purely local without any network communication, so HEU and SPU are complementary
+:blue:`HEU device`: As a component of molflow, HEU abstracts the homomorphic encryption algorithms into a programmable device, making it easy for users to flexibly build applications using the homomorphic encryption technology without professional knowledge. HEU (device) aims to build a complete computing solution through HE, that is, based on HE, any type of computing can be completed. Compared with SPU, HEU's computation is purely local without any network communication, so HEU and SPU are complementary
 
 
 Insight into HEU
@@ -52,7 +52,7 @@ Based on the three working modes of the HEU, the architecture of the HEU library
 
 .. image:: img/heu_arch.png
 
-The left part integrates PHE-related libraries, including Paillier, ElGamal, and so on. HEU deeply optimizes these PHE algorithms and often performs better than third-party libraries. So even if you do not need to use moleculeflow, it's beneficial to just use HEU alone as a PHE library.
+The left part integrates PHE-related libraries, including Paillier, ElGamal, and so on. HEU deeply optimizes these PHE algorithms and often performs better than third-party libraries. So even if you do not need to use molflow, it's beneficial to just use HEU alone as a PHE library.
 
 The middle part integrates LHE libraries, including SEAL, HELib, Palisade, and so on. It should be noted that although BGV/BFV and CKKS are fully homomorphic encryption algorithms themselves, the performance of bootstrapping is very low, so HEU only uses them as leveled HEs.
 

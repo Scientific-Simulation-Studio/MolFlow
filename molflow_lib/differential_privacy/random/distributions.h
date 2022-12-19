@@ -10,7 +10,7 @@
 #include "yasl/base/exception.h"
 #include "yasl/crypto/pseudo_random_generator.h"
 
-namespace moleculeflow {
+namespace molflow {
 namespace dp {
 
 namespace {
@@ -261,4 +261,4 @@ struct SecureLaplaceReal {
 };
 
 }  // namespace dp
-}  // namespace moleculeflow
+}  // namespace molflow

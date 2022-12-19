@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import pandas as pd
-from moleculeflow.data.vertical import VDataFrame
+from molflow.data.vertical import VDataFrame
 from typing import Union
 
 

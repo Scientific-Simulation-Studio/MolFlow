@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-15 13:44+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -27,8 +27,8 @@ msgid ""
 msgstr "您可以使用 Tensorflow 或 PyTorch 轻松定义联邦学习模型。"
 
 #: ../../components/federated_learning/horizontal_federated_learning/fl_model.rst:6
-msgid "Please check API of :py:class:`~moleculeflow.ml.nn.FLModel`."
-msgstr "具体API使用请查看 :py:class:`~moleculeflow.ml.nn.FLModel` 。"
+msgid "Please check API of :py:class:`~molflow.ml.nn.FLModel`."
+msgstr "具体API使用请查看 :py:class:`~molflow.ml.nn.FLModel` 。"
 
 #: ../../components/federated_learning/horizontal_federated_learning/fl_model.rst:8
 msgid "You may also check tutorials:"

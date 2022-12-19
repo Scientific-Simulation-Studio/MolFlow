@@ -5,8 +5,8 @@ Please read me before adding a new algorithm to this folder.
 All algorithm modules in this folder follow this convention.
 
 ```
-name = moleculeflow.ml.{algo_type}.{specific_name}
-     | moleculeflow.ml.{algo_type}.{security_prefix}_{algo_name}[_{split_postfix}]
+name = molflow.ml.{algo_type}.{specific_name}
+     | molflow.ml.{algo_type}.{security_prefix}_{algo_name}[_{split_postfix}]
 
 where $algo_type is one of {boost | linear | nn}
       $specific_name is any string.
@@ -44,12 +44,12 @@ Both folder and python file are accepted for algorithm module.
 If the module is simple enough, we can directly use a python file, i.e.
 
 ```
-moleculeflow/ml/linear/hess_sgd.py
+molflow/ml/linear/hess_sgd.py
 ```
 
 If the module is complex and has internal modules, we can use a folder and put `__init__.py` into it, i.e.
 
 ```
-moleculeflow/ml/boost/fl_boost_v/__init__.py
+molflow/ml/boost/fl_boost_v/__init__.py
                               /core/...
 ```

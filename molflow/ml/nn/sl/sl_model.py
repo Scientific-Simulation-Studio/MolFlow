@@ -28,15 +28,15 @@ from typing import Callable, Dict, Iterable, List, Tuple, Union
 
 from tqdm import tqdm
 
-from moleculeflow.data.base import Partition
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.data.ndarray import FedNdarray
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device import PYU, Device, reveal, wait
-from moleculeflow.device.device.pyu import PYUObject
-from moleculeflow.ml.nn.sl.backend.tensorflow.sl_base import PYUSLTFModel
-from moleculeflow.security.privacy import DPStrategy
-from moleculeflow.utils.compressor import Compressor
+from molflow.data.base import Partition
+from molflow.data.horizontal import HDataFrame
+from molflow.data.ndarray import FedNdarray
+from molflow.data.vertical import VDataFrame
+from molflow.device import PYU, Device, reveal, wait
+from molflow.device.device.pyu import PYUObject
+from molflow.ml.nn.sl.backend.tensorflow.sl_base import PYUSLTFModel
+from molflow.security.privacy import DPStrategy
+from molflow.utils.compressor import Compressor
 
 
 class SLModel:

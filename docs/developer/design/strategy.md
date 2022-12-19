@@ -1,9 +1,9 @@
 # Strategy Design
 ## What is Strategy?
 The federated learning strategy is the key difference between federated learning and conventional distributed machine learning, and it is critical to the effect of model training. Strategy is mainly composed of two parts in federated learning. One part is the local training strategy of the local part, which includes the control of the loss function (how to align the server side, etc.), how to transmit gradients or parameters upstream; the second part is the server part, It includes how to aggregate gradients or parameters uploaded by Clients, how to update them, and how to distribute them downstream.
-moleculeflow encapsulates a layer of Strategy under FLModel to control the learning strategy of the model in federated scenarios. The lingo provides Strategy Zoo, which currently supports various strategies covering Non-iid and communication optimization, and is constantly updated iteratively. Users Just pass the alias names of different strategies ("fed_avg_w", "fed_avg_g", "fed_prox", "fed_scr", etc.) to complete the call. At the same time, the Strategy framework supports the development, registration, and use of user-defined strategies.
+molflow encapsulates a layer of Strategy under FLModel to control the learning strategy of the model in federated scenarios. The lingo provides Strategy Zoo, which currently supports various strategies covering Non-iid and communication optimization, and is constantly updated iteratively. Users Just pass the alias names of different strategies ("fed_avg_w", "fed_avg_g", "fed_prox", "fed_scr", etc.) to complete the call. At the same time, the Strategy framework supports the development, registration, and use of user-defined strategies.
 
-## The positioning and characteristics of moleculeflow's Strategy
+## The positioning and characteristics of molflow's Strategy
 1. Pull up different Workers according to the strategy name
 2. Define how to perform local calculation in Worker, which parameters (g/w) to upload after calculation, whether to compress, etc.
 3. In FLModel, how to calculate on the server side is determined according to the strategy name.
@@ -15,7 +15,7 @@ Strategy consists of three parts
 + Compression method for upstream and downstream data transmission
 + Aggregation logic in server part
 ![arch](resources/strategy_arc.jpg)
-Our moleculeflow framework also provides a friendly advanced development interface for high-level advanced developers, which can be easily extended to new custom strategy
+Our molflow framework also provides a friendly advanced development interface for high-level advanced developers, which can be easily extended to new custom strategy
 ## Using Built-in Strategy
 Using the built-in Strategy is very straightforward and simple, the user only needs to pass the name of the strategy method they want to use into "FLModel".
 Currently provided strategies (continuously updated):
@@ -37,7 +37,7 @@ A custom strategy takes just a few steps
 3. compressor strategy
 4. register strategy
 ### The local strategy
-The local strategy in moleculeflow is a framework on top of fl_base, inherits all the properties and methods of BaseModel, and provides local calculation logic dedicated to a specific strategy
+The local strategy in molflow is a framework on top of fl_base, inherits all the properties and methods of BaseModel, and provides local calculation logic dedicated to a specific strategy
 
 ```python
 class FedCustom(BaseTFModel):

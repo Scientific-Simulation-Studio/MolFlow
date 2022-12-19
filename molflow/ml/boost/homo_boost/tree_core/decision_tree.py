@@ -23,13 +23,13 @@ from typing import List
 import numpy as np
 import pandas
 import xgboost as xgb
-from moleculeflow.ml.boost.homo_boost.tree_core.feature_histogram import FeatureHistogram
-from moleculeflow.ml.boost.homo_boost.tree_core.feature_importance import (
+from molflow.ml.boost.homo_boost.tree_core.feature_histogram import FeatureHistogram
+from molflow.ml.boost.homo_boost.tree_core.feature_importance import (
     FeatureImportance,
 )
-from moleculeflow.ml.boost.homo_boost.tree_core.node import Node
-from moleculeflow.ml.boost.homo_boost.tree_core.splitter import SplitInfo, Splitter
-from moleculeflow.ml.boost.homo_boost.tree_param import TreeParam
+from molflow.ml.boost.homo_boost.tree_core.node import Node
+from molflow.ml.boost.homo_boost.tree_core.splitter import SplitInfo, Splitter
+from molflow.ml.boost.homo_boost.tree_param import TreeParam
 
 
 class DecisionTree(object):

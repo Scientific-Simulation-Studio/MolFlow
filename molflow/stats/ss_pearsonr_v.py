@@ -17,10 +17,10 @@ from typing import List
 import numpy as np
 import jax.numpy as jnp
 
-import moleculeflow as sf
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device import SPU
-from moleculeflow.preprocessing.scaler import StandardScaler
+import molflow as sf
+from molflow.data.vertical import VDataFrame
+from molflow.device import SPU
+from molflow.preprocessing.scaler import StandardScaler
 
 
 class PearsonR:

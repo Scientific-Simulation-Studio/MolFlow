@@ -17,7 +17,7 @@ from typing import Callable, List
 
 from xgboost.callback import CallbackContainer, TrainingCallback, _aggcv
 
-import moleculeflow.device.link as link
+import molflow.device.link as link
 
 
 class FedCallbackContainer(CallbackContainer):

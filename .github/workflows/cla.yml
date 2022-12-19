@@ -18,12 +18,12 @@ jobs:
           # the below token should have repo scope and must be manually added by you in the repository's secret
           PERSONAL_ACCESS_TOKEN: ${{ secrets.CLA_PERSONAL_ACCESS_TOKEN }}
         with:
-          path-to-document: "https://github.com/moleculeflow/.github/blob/main/CLA.md" # e.g. a CLA or a DCO document
+          path-to-document: "https://github.com/molflow/.github/blob/main/CLA.md" # e.g. a CLA or a DCO document
 
           # branch should not be protected
           lock-pullrequest-aftermerge: True
           path-to-signatures: "signatures/version1/cla.json"
-          remote-organization-name: moleculeflow
+          remote-organization-name: molflow
           remote-repository-name: cla.db
           branch: "main"
           allowlist: "test"

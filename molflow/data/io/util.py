@@ -19,7 +19,7 @@ from urllib.parse import urlparse
 
 import pandas as pd
 
-import moleculeflow.data.io.oss as oss
+import molflow.data.io.oss as oss
 
 
 def open(filepath: Union[str, Path], mode='rb'):

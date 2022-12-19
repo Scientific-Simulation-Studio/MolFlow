@@ -22,13 +22,13 @@ from typing import Callable, Dict, List, Union
 
 import numpy as np
 import pandas as pd
-import moleculeflow.device.link as link
+import molflow.device.link as link
 import xgboost as xgb
-from moleculeflow.device import PYUObject, proxy
-from moleculeflow.device.device import PYU
-from moleculeflow.ml.boost.homo_boost.boost_core.core import FedBooster
-from moleculeflow.ml.boost.homo_boost.boost_core.training import train
-from moleculeflow.ml.boost.homo_boost.tree_core.loss_function import LossFunction
+from molflow.device import PYUObject, proxy
+from molflow.device.device import PYU
+from molflow.ml.boost.homo_boost.boost_core.core import FedBooster
+from molflow.ml.boost.homo_boost.boost_core.training import train
+from molflow.ml.boost.homo_boost.tree_core.loss_function import LossFunction
 
 
 @proxy(PYUObject, max_concurrency=2)

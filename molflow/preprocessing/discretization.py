@@ -18,14 +18,14 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import KBinsDiscretizer as SkKBinsDiscretizer
 
-from moleculeflow.data.base import Partition
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.data.mix.dataframe import MixDataFrame, PartitionWay
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device.driver import reveal
-from moleculeflow.preprocessing.binning.homo_binning import HomoBinning
-from moleculeflow.security.aggregation import Aggregator
-from moleculeflow.security.compare import Comparator
+from molflow.data.base import Partition
+from molflow.data.horizontal import HDataFrame
+from molflow.data.mix.dataframe import MixDataFrame, PartitionWay
+from molflow.data.vertical import VDataFrame
+from molflow.device.driver import reveal
+from molflow.preprocessing.binning.homo_binning import HomoBinning
+from molflow.security.aggregation import Aggregator
+from molflow.security.compare import Comparator
 
 _STRATEGIES = ['uniform', 'quantile']
 
@@ -103,9 +103,9 @@ class KBinsDiscretizer:
             df: the X to fit.
             aggregator: optional; shall be provided if df is a horizontal partitioned MixDataFrame.
             comparator: optional; shall be provided if df is a horizontal partitioned MixDataFrame.
-            compress_thres: optional; the compress threshold of :py:class:`~moleculeflow.preprocessing.binning.homo_binning.HomoBinning`.
-            error: optional; the error of :py:class:`~moleculeflow.preprocessing.binning.homo_binning.HomoBinning`.
-            max_iter: optional; the max iterations of :py:class:`~moleculeflow.preprocessing.binning.homo_binning.HomoBinning`.
+            compress_thres: optional; the compress threshold of :py:class:`~molflow.preprocessing.binning.homo_binning.HomoBinning`.
+            error: optional; the error of :py:class:`~molflow.preprocessing.binning.homo_binning.HomoBinning`.
+            max_iter: optional; the max iterations of :py:class:`~molflow.preprocessing.binning.homo_binning.HomoBinning`.
 
         Returns:
             the instance itself.

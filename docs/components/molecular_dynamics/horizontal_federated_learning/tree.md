@@ -42,14 +42,14 @@ Data input: HdataFrame, XGBoost supports converting Pandas.DataFrame directly in
 
 ## Sample Code
 ```python
-from moleculeflow.data.horizontal import read_csv
-from moleculeflow.security.aggregation import SecureAggregator
-from moleculeflow.security.compare import SPUComparator
-from moleculeflow.utils.simulation.datasets import load_dermatology
-from moleculeflow.ml.boost.homo_boost import SFXgboost
-import moleculeflow as sf
+from molflow.data.horizontal import read_csv
+from molflow.security.aggregation import SecureAggregator
+from molflow.security.compare import SPUComparator
+from molflow.utils.simulation.datasets import load_dermatology
+from molflow.ml.boost.homo_boost import SFXgboost
+import molflow as sf
 
-# In case you have a running moleculeflow runtime already.
+# In case you have a running molflow runtime already.
 sf.shutdown()
 
 sf.init(['alice', 'bob', 'charlie'], num_cpus=8, log_to_driver=True)

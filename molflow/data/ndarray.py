@@ -23,9 +23,9 @@ import jax.numpy as jnp
 
 from sklearn.model_selection import train_test_split as _train_test_split
 
-from moleculeflow.data.io import util as io_util
-from moleculeflow.device import PYU, PYUObject, reveal, SPU, to
-from moleculeflow.utils.errors import InvalidArgumentError
+from molflow.data.io import util as io_util
+from molflow.device import PYU, PYUObject, reveal, SPU, to
+from molflow.utils.errors import InvalidArgumentError
 
 from .math_utils import (
     sum_of_difference_squares,

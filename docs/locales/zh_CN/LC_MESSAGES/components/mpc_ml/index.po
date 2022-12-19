@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-14 22:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -23,9 +23,9 @@ msgstr "MPC机器学习"
 
 #: ../../components/mpc_ml/index.rst:4
 msgid ""
-"moleculeflow provides a variety of MPC modeling capabilities through the "
+"molflow provides a variety of MPC modeling capabilities through the "
 "MPC security protocol and HE homomorphic encryption."
-msgstr "moleculeflow使用MPC协议和同态加密实现了多个可证安全的建模算法。"
+msgstr "molflow使用MPC协议和同态加密实现了多个可证安全的建模算法。"
 
 
 

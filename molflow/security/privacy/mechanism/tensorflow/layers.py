@@ -17,12 +17,12 @@ import tensorflow as tf
 from abc import ABC, abstractmethod
 from typing import List
 
-from moleculeflow.security.privacy.accounting.rdp_accountant import (
+from molflow.security.privacy.accounting.rdp_accountant import (
     get_rdp,
     get_privacy_spent_rdp,
 )
 
-from moleculeflow.security.privacy.accounting.gdp_accountant import (
+from molflow.security.privacy.accounting.gdp_accountant import (
     cal_mu_poisson,
     cal_mu_uniform,
     get_eps_from_mu,
@@ -84,7 +84,7 @@ class GaussianEmbeddingDP(EmbeddingDP):
         embed_clipped = tf.reshape(embed_flat_clipped, inputs.shape)
         # add noise
         if self.is_secure_generator:
-            import moleculeflow.security.privacy._lib.random as random
+            import molflow.security.privacy._lib.random as random
 
             noise = random.secure_normal_real(
                 0, self.noise_multiplier * self.l2_norm_clip, size=inputs.shape

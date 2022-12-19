@@ -6,7 +6,7 @@ Components
 Preprocessing
 -------------
 
-moleculeflow provides serveral common utility functions/classes to change raw
+molflow provides serveral common utility functions/classes to change raw
 features into a representation for more suitable for the downstream pipeline.
 
 .. grid:: 2
@@ -16,14 +16,14 @@ features into a representation for more suitable for the downstream pipeline.
       :link: preprocessing/DataFrame
       :link-type: doc
 
-        moleculeflow provides federated data encapsulation in the form of DataFrame.
+        molflow provides federated data encapsulation in the form of DataFrame.
         DataFrame is composed of data blocks of multiple parties and supports horizontal or vertical partitioned data.
 
 
 Private Set Intersection(PSI)
 -----------------------------
 
-moleculeflow SPU now supports ECDH-PSI, KKRT16-PSI, and BC22-PCG-PSI.
+molflow SPU now supports ECDH-PSI, KKRT16-PSI, and BC22-PCG-PSI.
 Please check :ref:`/components/psi.rst` for details.
 
 .. grid:: 2
@@ -41,7 +41,7 @@ Please check :ref:`/components/psi.rst` for details.
 MPC Machine Learning
 --------------------
 
-moleculeflow provides a variety of MPC modeling capabilities
+molflow provides a variety of MPC modeling capabilities
 through the MPC security protocol and HE homomorphic encryption.
 
 .. grid:: 2

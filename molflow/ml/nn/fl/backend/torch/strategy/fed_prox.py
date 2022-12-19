@@ -21,9 +21,9 @@ from typing import List, Tuple
 
 import numpy as np
 import torch
-from moleculeflow.device import PYUObject, proxy
-from moleculeflow.ml.nn.fl.backend.torch.fl_base import BaseTorchModel
-from moleculeflow.ml.nn.fl.strategy_dispatcher import register_strategy
+from molflow.device import PYUObject, proxy
+from molflow.ml.nn.fl.backend.torch.fl_base import BaseTorchModel
+from molflow.ml.nn.fl.strategy_dispatcher import register_strategy
 
 
 class FedProx(BaseTorchModel):

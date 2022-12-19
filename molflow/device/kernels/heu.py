@@ -14,7 +14,7 @@
 
 from heu import numpy as hnp
 
-from moleculeflow.device import (
+from molflow.device import (
     HEU,
     PYU,
     SPU,
@@ -26,7 +26,7 @@ from moleculeflow.device import (
     SPUObject,
     register,
 )
-from moleculeflow.device.device.base import MoveConfig
+from molflow.device.device.base import MoveConfig
 
 
 @register(DeviceType.HEU)

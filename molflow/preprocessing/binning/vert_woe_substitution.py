@@ -16,9 +16,9 @@ from typing import Dict
 import pandas as pd
 import numpy as np
 
-from moleculeflow.device import proxy, PYUObject, PYU
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.data.base import Partition
+from molflow.device import proxy, PYUObject, PYU
+from molflow.data.vertical import VDataFrame
+from molflow.data.base import Partition
 
 
 @proxy(PYUObject)

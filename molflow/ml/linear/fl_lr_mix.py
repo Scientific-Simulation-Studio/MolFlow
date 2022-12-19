@@ -18,16 +18,16 @@ from typing import Dict, List, Optional
 import numpy as np
 import spu
 
-from moleculeflow import reveal
-from moleculeflow.data.mix.dataframe import MixDataFrame, PartitionWay
-from moleculeflow.device.device.heu import HEU
-from moleculeflow.device.device.pyu import PYUObject
-from moleculeflow.device.device.type_traits import spu_fxp_precision
-from moleculeflow.ml.linear.fl_lr_v import FlLogisticRegressionVertical
-from moleculeflow.security.aggregation import Aggregator, SecureAggregator
-from moleculeflow.utils.errors import InvalidArgumentError
+from molflow import reveal
+from molflow.data.mix.dataframe import MixDataFrame, PartitionWay
+from molflow.device.device.heu import HEU
+from molflow.device.device.pyu import PYUObject
+from molflow.device.device.type_traits import spu_fxp_precision
+from molflow.ml.linear.fl_lr_v import FlLogisticRegressionVertical
+from molflow.security.aggregation import Aggregator, SecureAggregator
+from molflow.utils.errors import InvalidArgumentError
 
-from moleculeflow.device.device import PYU
+from molflow.device.device import PYU
 
 
 class _CustomSecureAggregator(SecureAggregator):
@@ -102,7 +102,7 @@ class FlLogisticRegressionMix:
     +---------------+-------------+
 
     When fitted with the X and Y, two
-    :py:class:`~moleculeflow.ml.linear.FlLogisticRegressionVertical` instances
+    :py:class:`~molflow.ml.linear.FlLogisticRegressionVertical` instances
     are constructed. The first one will be fitted with VDataFrame_0 of X and Y,
     while the second one will be fitted with  VDataFrame_1 of X and Y,.
 
@@ -111,7 +111,7 @@ class FlLogisticRegressionMix:
     1. The `FlLogisticRegressionVertical` are fitted with the `VDataFrame` of X
        and Y respectly.
     2. Aggregate :math:`{\\theta}` of the `FlLogisticRegressionVertical` with
-       :py:class:`~moleculeflow.security.aggregation.SecureAggregator`.
+       :py:class:`~molflow.security.aggregation.SecureAggregator`.
     3. Send aggregated :math:`{\\theta}` to the `FlLogisticRegressionVertical`.
 
     """
@@ -172,10 +172,10 @@ class FlLogisticRegressionMix:
 
         Args:
             x: trainning vector. X should be a horizontal partitioned
-                :py:class:`~moleculeflow.data.mix.MixDataFrame`, which consists
-                of :py:class:`~moleculeflow.data.vertical.VDataFrame`s.
+                :py:class:`~molflow.data.mix.MixDataFrame`, which consists
+                of :py:class:`~molflow.data.vertical.VDataFrame`s.
             y: target vector relative to x. Y should be a horizontal partitioned
-                :py:class:`~moleculeflow.data.mix.MixDataFrame` alos. X and y
+                :py:class:`~molflow.data.mix.MixDataFrame` alos. X and y
                 should have the same amount of `VDataFrame`s.
             batch_size: number of samples per gradient update.
             epochs: number of epochs to train the model.

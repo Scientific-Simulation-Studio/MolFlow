@@ -2,8 +2,8 @@ Decision Trees
 ==============
 
 With the help of Secret Sharing, a secure multi-party computation technique,
-moleculeflow implements provably secure gradient boosting model
-:py:meth:`~moleculeflow.ml.boost.ss_xgb_v.model.Xgb`
+molflow implements provably secure gradient boosting model
+:py:meth:`~molflow.ml.boost.ss_xgb_v.model.Xgb`
 to support both regression and binary classification machine learning tasks.
 
 Dataset Settings
@@ -53,7 +53,7 @@ Regression and classification share the same training process except:
 
 SS-XGB Training
 ---------------
-SS-XGB :py:meth:`~moleculeflow.ml.boost.ss_xgb_v.model.Xgb` use secret sharing to compute the split gain and leaf weights.
+SS-XGB :py:meth:`~molflow.ml.boost.ss_xgb_v.model.Xgb` use secret sharing to compute the split gain and leaf weights.
 
 In order to implement a secure joint training, we replace all the computations with secret sharing protocols,
 e.g. Addition, Multiplication, etc. In addition, we have to take special care to accumulate the gradients
@@ -77,7 +77,7 @@ Example
 A local cluster(Standalone Mode) needs to be initialized as the running environment for this example.
 See `Deployment <../../getting_started/deployment.html>`_ and refer to the 'Cluster Mode'.
 
-For more details about the APIs, see :py:meth:`~moleculeflow.ml.boost.ss_xgb_v.model.Xgb`
+For more details about the APIs, see :py:meth:`~molflow.ml.boost.ss_xgb_v.model.Xgb`
 
 .. code-block:: python
 
@@ -86,10 +86,10 @@ For more details about the APIs, see :py:meth:`~moleculeflow.ml.boost.ss_xgb_v.m
     import logging
 
     import spu
-    import moleculeflow as sf
-    from moleculeflow.ml.boost.ss_xgb_v import Xgb
-    from moleculeflow.device.driver import wait, reveal
-    from moleculeflow.data import FedNdarray, PartitionWay
+    import molflow as sf
+    from molflow.ml.boost.ss_xgb_v import Xgb
+    from molflow.device.driver import wait, reveal
+    from molflow.data import FedNdarray, PartitionWay
 
     from sklearn.metrics import roc_auc_score
 

@@ -16,9 +16,9 @@
 
 from typing import Union
 
-from moleculeflow.data import FedNdarray
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device import PYUObject
+from molflow.data import FedNdarray
+from molflow.data.vertical import VDataFrame
+from molflow.device import PYUObject
 
 from .core import pva
 

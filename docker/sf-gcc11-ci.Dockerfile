@@ -1,7 +1,7 @@
 FROM openanolis/anolisos:8.6-x86_64
 
 
-LABEL maintainer="moleculeflow-contact@service.alipay.com"
+LABEL maintainer="molflow-contact@service.alipay.com"
 
 # GCC version
 ARG DEVTOOLSET_VERSION=11

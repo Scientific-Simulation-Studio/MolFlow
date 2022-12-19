@@ -22,15 +22,15 @@ import spu
 from heu import phe
 from numpy.random import RandomState
 
-from moleculeflow import reveal
-from moleculeflow.data.ndarray import FedNdarray
-from moleculeflow.data.vertical.dataframe import VDataFrame
-from moleculeflow.device import proxy
-from moleculeflow.device.device.base import MoveConfig
-from moleculeflow.device.device.heu import HEU
-from moleculeflow.device.device.pyu import PYU, PYUObject
-from moleculeflow.device.device.type_traits import spu_fxp_precision
-from moleculeflow.security.aggregation.aggregator import Aggregator
+from molflow import reveal
+from molflow.data.ndarray import FedNdarray
+from molflow.data.vertical.dataframe import VDataFrame
+from molflow.device import proxy
+from molflow.device.device.base import MoveConfig
+from molflow.device.device.heu import HEU
+from molflow.device.device.pyu import PYU, PYUObject
+from molflow.device.device.type_traits import spu_fxp_precision
+from molflow.security.aggregation.aggregator import Aggregator
 
 
 class FlLrVWorker(object):

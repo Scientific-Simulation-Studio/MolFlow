@@ -33,11 +33,11 @@ from torch.nn.modules.loss import _Loss as BaseTorchLoss
 from torch.optim import Optimizer
 from torch.utils.data import DataLoader
 
-import moleculeflow.device as ft
+import molflow.device as ft
 
-from moleculeflow.device import PYUObject, proxy
-from moleculeflow.security.privacy import DPStrategy
-from moleculeflow.utils.compressor import Compressor, SparseCompressor
+from molflow.device import PYUObject, proxy
+from molflow.security.privacy import DPStrategy
+from molflow.utils.compressor import Compressor, SparseCompressor
 
 
 class SLBaseModel(ABC):

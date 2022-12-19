@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 10:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -29,15 +29,15 @@ msgstr "以下代码仅作为演示用，请勿直接在生产环境使用。"
 
 #: ../../tutorial/Federated_Xgboost.ipynb:31
 msgid ""
-"In this tutorial, we will learn how to use ``moleculeflow`` to train tree "
-"models for horizontal federation. moleculeflow provides ``tree modeling`` "
+"In this tutorial, we will learn how to use ``molflow`` to train tree "
+"models for horizontal federation. molflow provides ``tree modeling`` "
 "capabilities for horizontal scenarios(\\ ``SFXgboost``), The usage of "
 "``SFXgboost`` is similar to ``XGBoost``, you can easily convert your "
-"existing XGBoost program into a federated model for ``moleculeflow``."
+"existing XGBoost program into a federated model for ``molflow``."
 msgstr ""
-"在本教程中，我们将学习如何使用 `moleculeflow` 来训练水平联邦的树模型。moleculeflow 为水平场景提供了 ``tree "
+"在本教程中，我们将学习如何使用 `molflow` 来训练水平联邦的树模型。molflow 为水平场景提供了 ``tree "
 "modeling`` 能力（\\ ``SFXgboost``），``SFXgboost`` 类似于 ``XGBoost``，您可以轻松地将现有的 "
-"XGBoost 程序转换为 `moleculeflow` 的联合模型。"
+"XGBoost 程序转换为 `molflow` 的联合模型。"
 
 #: ../../tutorial/Federated_Xgboost.ipynb:43
 msgid "Xgboost"
@@ -59,16 +59,16 @@ msgstr ""
 "<https://xgboost.readthedocs.io/en/latest/tutorials/index.html>`__ "
 
 #: ../../tutorial/Federated_Xgboost.ipynb:68
-msgid "prepare moleculeflow devices"
-msgstr "准备moleculeflow devices"
+msgid "prepare molflow devices"
+msgstr "准备molflow devices"
 
 #: ../../tutorial/Federated_Xgboost.ipynb:123
 msgid "XGBoost Example"
 msgstr "XGBoost示例"
 
 #: ../../tutorial/Federated_Xgboost.ipynb:344
-msgid "Then, How to do federated xgboost in moleculeflow?"
-msgstr "那么，我们在moleculeflow中应该怎么做联邦XGBoost呢"
+msgid "Then, How to do federated xgboost in molflow?"
+msgstr "那么，我们在molflow中应该怎么做联邦XGBoost呢"
 
 #: ../../tutorial/Federated_Xgboost.ipynb:346
 msgid ""
@@ -112,11 +112,11 @@ msgstr "完成训练，并保存模型。"
 
 #: ../../tutorial/Federated_Xgboost.ipynb:366
 msgid ""
-"Create 3 entities in the moleculeflow environment [Alice, Bob, Charlie] "
+"Create 3 entities in the molflow environment [Alice, Bob, Charlie] "
 "Where 'Alice' and 'Bob' are clients, and ``Charlie`` is the server,then "
 "you can happily start ``Federate Boosting``."
 msgstr ""
-"在 moleculeflow 环境中创建 3 个实体 [Alice, Bob, "
+"在 molflow 环境中创建 3 个实体 [Alice, Bob, "
 "Charlie]'Alice'和'Bob'是客户端，'Charlie'是服务器，那么你可以愉快地开始 ``Federate Boosting`` "
 "了。"
 

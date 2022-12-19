@@ -22,9 +22,9 @@ from typing import Dict, List
 
 import numpy as np
 
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.device import reveal
-from moleculeflow.preprocessing.binning.homo_binning_base import HomoBinningBase
+from molflow.data.horizontal import HDataFrame
+from molflow.device import reveal
+from molflow.preprocessing.binning.homo_binning_base import HomoBinningBase
 
 
 class HomoBinning(HomoBinningBase):

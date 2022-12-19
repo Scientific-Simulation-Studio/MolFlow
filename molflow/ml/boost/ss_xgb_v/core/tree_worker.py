@@ -16,7 +16,7 @@ import math
 from typing import Tuple, List
 import numpy as np
 from .xgb_tree import XgbTree
-from moleculeflow.device import PYUObject, proxy
+from molflow.device import PYUObject, proxy
 
 
 @proxy(PYUObject)

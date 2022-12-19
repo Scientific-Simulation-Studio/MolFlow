@@ -17,8 +17,8 @@ from typing import List
 
 import jax.numpy as jnp
 
-from moleculeflow.device import SPU, DeviceObject, SPUObject
-from moleculeflow.security.aggregation.aggregator import Aggregator
+from molflow.device import SPU, DeviceObject, SPUObject
+from molflow.security.aggregation.aggregator import Aggregator
 
 
 class SPUAggregator(Aggregator):

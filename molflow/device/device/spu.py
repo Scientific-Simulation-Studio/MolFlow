@@ -40,8 +40,8 @@ from spu.binding.util.distributed import dtype_spu_to_np, shape_spu_to_np
 from spu import psi
 from heu import phe
 
-from moleculeflow.utils.errors import InvalidArgumentError
-from moleculeflow.utils.ndarray_bigint import BigintNdArray
+from molflow.utils.errors import InvalidArgumentError
+from molflow.utils.ndarray_bigint import BigintNdArray
 
 from .base import Device, DeviceObject, DeviceType
 from .pyu import PYUObject

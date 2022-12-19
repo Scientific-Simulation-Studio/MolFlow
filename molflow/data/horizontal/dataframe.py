@@ -18,12 +18,12 @@ from typing import Dict, Union
 import numpy as np
 import pandas as pd
 
-from moleculeflow.data.base import DataFrameBase, Partition
-from moleculeflow.data.ndarray import FedNdarray, PartitionWay
-from moleculeflow.device import PYU, reveal
-from moleculeflow.security.aggregation.aggregator import Aggregator
-from moleculeflow.security.compare.comparator import Comparator
-from moleculeflow.utils.errors import InvalidArgumentError
+from molflow.data.base import DataFrameBase, Partition
+from molflow.data.ndarray import FedNdarray, PartitionWay
+from molflow.device import PYU, reveal
+from molflow.security.aggregation.aggregator import Aggregator
+from molflow.security.compare.comparator import Comparator
+from molflow.utils.errors import InvalidArgumentError
 
 
 @dataclass
@@ -46,9 +46,9 @@ class HDataFrame(DataFrameBase):
             maximum/minimum.
 
     Examples:
-        >>> from moleculeflow.data.horizontal import read_csv
-        >>> from moleculeflow.security.aggregation import PlainAggregator, PlainComparator
-        >>> from moleculeflow import PYU
+        >>> from molflow.data.horizontal import read_csv
+        >>> from molflow.security.aggregation import PlainAggregator, PlainComparator
+        >>> from molflow import PYU
         >>> alice = PYU('alice')
         >>> bob = PYU('bob')
         >>> h_df = read_csv({alice: 'alice.csv', bob: 'bob.csv'},
@@ -418,7 +418,7 @@ class HDataFrame(DataFrameBase):
 
         Returns:
             Returns a list of PYUObjects whose value is none. You can use
-            `moleculeflow.wait` to wait for the save to complete.
+            `molflow.wait` to wait for the save to complete.
         """
         for device, uri in fileuris.items():
             if device not in self.partitions:

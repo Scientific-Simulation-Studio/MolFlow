@@ -14,12 +14,12 @@
 
 from typing import Dict
 
-from moleculeflow.data.base import Partition
-from moleculeflow.data.horizontal.dataframe import HDataFrame
-from moleculeflow.data.io import read_csv_wrapper
-from moleculeflow.device import PYU
-from moleculeflow.security.aggregation.aggregator import Aggregator
-from moleculeflow.security.compare.comparator import Comparator
+from molflow.data.base import Partition
+from molflow.data.horizontal.dataframe import HDataFrame
+from molflow.data.io import read_csv_wrapper
+from molflow.device import PYU
+from molflow.security.aggregation.aggregator import Aggregator
+from molflow.security.compare.comparator import Comparator
 
 
 def read_csv(

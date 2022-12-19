@@ -1,11 +1,11 @@
 :notoc:
 
-moleculeflow
+molflow
 =============
 
-`moleculeflow <https://github.com/moleculeflow/moleculeflow>`_ is a unified framework for privacy-preserving data analysis and machine learning.
+`molflow <https://github.com/molflow/molflow>`_ is a unified framework for privacy-preserving data analysis and machine learning.
 
-moleculeflow provides
+molflow provides
 
 - Device abstraction, which abstracts privacy computing technologies such as
   Multi-Party Secure Computing (MPC), Homomorphic Encryption (HE),
@@ -16,16 +16,16 @@ moleculeflow provides
 - Machine learning/data analysis capabilities based on computational graphs,
   supporting data horizontal/vertical/hybrid segmentation and other scenarios.
 
-.. image:: _static/moleculeflow_arch.svg
+.. image:: _static/molflow_arch.svg
 
-Why `moleculeflow`
+Why `molflow`
 ----------------
 
 At present, privacy computing technology is growing in popularity.
 However, neither the technology nor the market has yet reached real maturity.
 In order to cope with the development uncertainty of privacy computing technology and applications,
-we propose a general privacy computing framework called "moleculeflow".
-moleculeflow will adhere to the following principles,
+we propose a general privacy computing framework called "molflow".
+molflow will adhere to the following principles,
 so that the framework has the maximum inclusive and extensible capabilities to
 cope with the development of future privacy computing technologies and applications.
 

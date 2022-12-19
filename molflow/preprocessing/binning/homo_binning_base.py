@@ -23,10 +23,10 @@ from dataclasses import dataclass
 from typing import Dict, List
 
 import numpy as np
-from moleculeflow.device import PYUObject, proxy
-from moleculeflow.preprocessing.binning.kernels.base_binning import BaseBinning
-from moleculeflow.preprocessing.binning.kernels.quantile_binning import QuantileBinning
-from moleculeflow.preprocessing.binning.kernels.quantile_summaries import (
+from molflow.device import PYUObject, proxy
+from molflow.preprocessing.binning.kernels.base_binning import BaseBinning
+from molflow.preprocessing.binning.kernels.quantile_binning import QuantileBinning
+from molflow.preprocessing.binning.kernels.quantile_summaries import (
     QuantileSummaries,
 )
 

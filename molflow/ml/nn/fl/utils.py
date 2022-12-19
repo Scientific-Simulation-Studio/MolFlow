@@ -16,7 +16,7 @@
 from dataclasses import dataclass, field
 from typing import Dict, List
 
-from moleculeflow.ml.nn.fl.metrics import Metric
+from molflow.ml.nn.fl.metrics import Metric
 
 
 @dataclass

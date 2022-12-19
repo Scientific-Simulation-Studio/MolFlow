@@ -15,7 +15,7 @@
 import numpy as np
 from sklearn.preprocessing import OneHotEncoder
 
-from moleculeflow.utils.errors import InvalidArgumentError
+from molflow.utils.errors import InvalidArgumentError
 
 LEGAL_OBJ_FUNCTION = [
     "binary:logistic",

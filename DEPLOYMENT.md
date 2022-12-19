@@ -1,12 +1,12 @@
 # Deployment
 
-moleculeflow can be deployed on a single host or on multiple nodes.
+molflow can be deployed on a single host or on multiple nodes.
 
 ## Standalone Mode
-Use `moleculeflow.init` directly to run moleculeflow in standalone mode.
+Use `molflow.init` directly to run molflow in standalone mode.
 
 ```python
->>> import moleculeflow as sf
+>>> import molflow as sf
 >>> sf.init(['alice', 'bob', 'carol'], num_cpus=8, log_to_driver=True)
 ```
 ## Cluster Mode
@@ -67,19 +67,19 @@ The node starts successfully if you see "Ray runtime started." in the screen out
 
 You can repeat the step above to start more nodes with using other parties as resources tag.
 
-### Start moleculeflow
-Now you can start moleculeflow and run your code.
+### Start molflow
+Now you can start molflow and run your code.
 
 ```python
->>> import moleculeflow as sf
+>>> import molflow as sf
 # Replace with the `node-ip-address` and `port` of head node.
 >>> sf.init(address='ip:port')
 >>> alice = sf.PYU('alice')
 >>> bob = sf.PYU('bob')
 >>> alice(lambda x : x)(2)
-<moleculeflow.device.device.pyu.PYUObject object at 0x7fe932a1a640>
+<molflow.device.device.pyu.PYUObject object at 0x7fe932a1a640>
 >>> bob(lambda x : x)(2)
-<moleculeflow.device.device.pyu.PYUObject object at 0x7fe6fef03250>
+<molflow.device.device.pyu.PYUObject object at 0x7fe6fef03250>
 ```
 
 ### (optional) How to shut down the cluster
@@ -104,7 +104,7 @@ We are working on merging them.
 A typical SPU config:
 ```python
 import spu
-import moleculeflow as sf
+import molflow as sf
 
 # Use ray head adress
 sf.init(address='ip:port')
@@ -153,7 +153,7 @@ be careful that it works only in standalone mode because `sf.utils.testing.clust
 
 
 ### Suggestions for production
-moleculeflow use `ray` as its distribution system.
+molflow use `ray` as its distribution system.
 You may need to do some more configuration for higher security when using it in production.
 The following actions can help improve security features.
 

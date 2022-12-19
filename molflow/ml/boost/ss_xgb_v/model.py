@@ -24,10 +24,10 @@ from .core.utils import prepare_dataset
 from .core import node_split as split_fn
 from .core.tree_worker import XgbTreeWorker as Worker
 
-from moleculeflow.data import FedNdarray, PartitionWay
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device.device.base import MoveConfig
-from moleculeflow.device import (
+from molflow.data import FedNdarray, PartitionWay
+from molflow.data.vertical import VDataFrame
+from molflow.device.device.base import MoveConfig
+from molflow.device import (
     SPU,
     PYU,
     PYUObject,

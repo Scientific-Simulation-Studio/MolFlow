@@ -16,14 +16,14 @@ from typing import Callable, Dict, List, Union
 
 import pandas as pd
 
-from moleculeflow.data.base import Partition
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device import PYU
-from moleculeflow.security.aggregation.aggregator import Aggregator
-from moleculeflow.security.compare.comparator import Comparator
-from moleculeflow.utils.errors import InvalidArgumentError
-from moleculeflow.utils.simulation.data._utils import cal_indexes
+from molflow.data.base import Partition
+from molflow.data.horizontal import HDataFrame
+from molflow.data.vertical import VDataFrame
+from molflow.device import PYU
+from molflow.security.aggregation.aggregator import Aggregator
+from molflow.security.compare.comparator import Comparator
+from molflow.utils.errors import InvalidArgumentError
+from molflow.utils.simulation.data._utils import cal_indexes
 
 
 def create_df(
@@ -51,9 +51,9 @@ def create_df(
         shuffle: optional, if suffule the dataset before split.
         random_state: optional, the random state for shuffle.
         aggregator: optional, shall be provided only when axis is 0. For details,
-            please refer to `moleculeflow.data.horizontal.HDataFrame`.
+            please refer to `molflow.data.horizontal.HDataFrame`.
         comparator:  optional, shall be provided only when axis is 0. For details,
-            please refer to `moleculeflow.data.horizontal.HDataFrame`.
+            please refer to `molflow.data.horizontal.HDataFrame`.
 
     Returns:
         Union[HDataFrame, VDataFrame]: return a HDataFrame if axis is 0 else

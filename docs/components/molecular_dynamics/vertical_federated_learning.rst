@@ -30,7 +30,7 @@ Bob holds its own data, base model and fuse model.
 Split Learning Model
 --------------------
 
-SecreFlow provides :py:class:`~moleculeflow.ml.nn.SLModel` to define a split learning model.
+SecreFlow provides :py:class:`~molflow.ml.nn.SLModel` to define a split learning model.
 You can check the tutorial to have a try.
 
 Tutorial

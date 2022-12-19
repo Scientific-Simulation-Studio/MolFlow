@@ -17,10 +17,10 @@ from typing import Callable, Dict, List, Union
 
 import pandas as pd
 from pandas.core.indexes.base import Index
-from moleculeflow.data.base import DataFrameBase, Partition
-from moleculeflow.data.ndarray import FedNdarray, PartitionWay
-from moleculeflow.device import PYU, Device, reveal
-from moleculeflow.utils.errors import InvalidArgumentError, NotFoundError
+from molflow.data.base import DataFrameBase, Partition
+from molflow.data.ndarray import FedNdarray, PartitionWay
+from molflow.device import PYU, Device, reveal
+from molflow.utils.errors import InvalidArgumentError, NotFoundError
 
 
 @dataclass
@@ -40,8 +40,8 @@ class VDataFrame(DataFrameBase):
         aligned: a boolean indicating whether the data is
 
     Examples:
-        >>> from moleculeflow.data.vertical import read_csv
-        >>> from moleculeflow import PYU
+        >>> from molflow.data.vertical import read_csv
+        >>> from molflow import PYU
         >>> alice = PYU('alice')
         >>> bob = PYU('bob')
         >>> v_df = read_csv({alice: 'alice.csv', bob: 'bob.csv'})
@@ -557,7 +557,7 @@ class VDataFrame(DataFrameBase):
 
         Returns:
             Returns a list of PYUObjects whose value is none. You can use
-            `moleculeflow.wait` to wait for the save to complete.
+            `molflow.wait` to wait for the save to complete.
         """
         for device, uri in fileuris.items():
             if device not in self.partitions:

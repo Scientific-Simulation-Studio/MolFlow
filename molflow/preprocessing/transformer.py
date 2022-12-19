@@ -19,10 +19,10 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import FunctionTransformer as SkFunctionTransformer
 
-from moleculeflow.data.base import Partition
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.data.mix import MixDataFrame
-from moleculeflow.data.vertical import VDataFrame
+from molflow.data.base import Partition
+from molflow.data.horizontal import HDataFrame
+from molflow.data.mix import MixDataFrame
+from molflow.data.vertical import VDataFrame
 
 
 def _check_dataframe(df):
@@ -50,7 +50,7 @@ class _FunctionTransformer:
         _transformer: the sklearn FunctionTransformer instance.
 
     Examples:
-        >>> from moleculeflow.preprocessing import _FunctionTransformer
+        >>> from molflow.preprocessing import _FunctionTransformer
         >>> ft = _FunctionTransformer(np.log1p)
         >>> ft.fit(df)
         >>> ft.transform(df)

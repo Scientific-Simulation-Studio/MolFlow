@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from moleculeflow.data import FedNdarray, PartitionWay
-from moleculeflow.data.vertical import VDataFrame
+from molflow.data import FedNdarray, PartitionWay
+from molflow.data.vertical import VDataFrame
 
 from typing import Union, Tuple
 

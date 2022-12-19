@@ -20,11 +20,11 @@ import os
 from typing import Callable, Dict, List, Union
 
 import xgboost.core as xgb_core
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.ml.boost.homo_boost.boost_core import callback
-from moleculeflow.ml.boost.homo_boost.boost_core.core import FedBooster
+from molflow.data.horizontal import HDataFrame
+from molflow.ml.boost.homo_boost.boost_core import callback
+from molflow.ml.boost.homo_boost.boost_core.core import FedBooster
 from xgboost import callback as xgb_callback
-import moleculeflow.device.link as link
+import molflow.device.link as link
 
 
 def _configure_deprecated_callbacks(

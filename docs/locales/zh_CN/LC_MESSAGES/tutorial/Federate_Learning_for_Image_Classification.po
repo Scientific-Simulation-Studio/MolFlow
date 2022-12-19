@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-16 13:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -30,14 +30,14 @@ msgstr "以下代码仅作为示例，请勿在生产环境直接使用。"
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:31
 msgid ""
 "In this tutorial, we will use the image classification task to show how "
-"to complete the horizontal federated learning task in the ``moleculeflow`` "
-"framework. The ``moleculeflow`` framework provides a user-friendly API that"
+"to complete the horizontal federated learning task in the ``molflow`` "
+"framework. The ``molflow`` framework provides a user-friendly API that"
 " makes it easy to apply your Keras or PyTorch model to a federated "
 "learning scenario as a federated learning model. In the rest of the "
 "tutorial we will show you how to turn your existing model into a "
-"federated model in ``moleculeflow`` to complete federated multi-party "
+"federated model in ``molflow`` to complete federated multi-party "
 "modeling tasks"
-msgstr "在这个教程中，我们将使用图像分类任务来介绍在moleculeflow框架下怎样来完成水平联邦学习任务。moleculeflow框架提供了一套用户友好的api，可以很方便的将您的keras模型或者pytorch模型应用到联邦学习场景，成为联邦学习模型。在接下来的教程中我们将手把手演示，如何将您已有的模型变成moleculeflow下的联邦模型，完成联邦多方建模任务"
+msgstr "在这个教程中，我们将使用图像分类任务来介绍在molflow框架下怎样来完成水平联邦学习任务。molflow框架提供了一套用户友好的api，可以很方便的将您的keras模型或者pytorch模型应用到联邦学习场景，成为联邦学习模型。在接下来的教程中我们将手把手演示，如何将您已有的模型变成molflow下的联邦模型，完成联邦多方建模任务"
 
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:43
 msgid "What is Federated Learning"
@@ -62,7 +62,7 @@ msgstr ""
 
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:68
 msgid "federate_learning.png"
-msgstr "使用moleculeflow进行联邦学习"
+msgstr "使用molflow进行联邦学习"
 
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:80
 msgid ""
@@ -80,16 +80,16 @@ msgstr ""
 " 3. 服务器将更新后的模型返回给各个参与方 4. 各个参与方更新各自的模型，准备下一次训练"
 
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:93
-msgid "Federated learning on moleculeflow"
-msgstr "使用moleculeflow进行联邦学习"
+msgid "Federated learning on molflow"
+msgstr "使用molflow进行联邦学习"
 
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:115
 msgid ""
-"Create 3 entities in the moleculeflow environment [Alice, Bob, Charlie] "
+"Create 3 entities in the molflow environment [Alice, Bob, Charlie] "
 "Alice, Bob and Charlie are the three PYUs. Alice and Bob to be the "
 "clients and Charlie to be the server"
 msgstr ""
-"在moleculeflow环境创造3个实体[Alice，Bob，Charlie]其中 alice, bob和charlie "
+"在molflow环境创造3个实体[Alice，Bob，Charlie]其中 alice, bob和charlie "
 "是三个PYU，alice和bob角色是client，charlie角色是server  "
 
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:178
@@ -153,7 +153,7 @@ msgstr "定义Aggregator"
 
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:430
 msgid ""
-"moleculeflow offer a variety of aggregation schemes, ``SecureAggregator`` "
+"molflow offer a variety of aggregation schemes, ``SecureAggregator`` "
 "and ``PPUAggregator``\\ can be used security aggregation, more "
 "information about aggregation,see `Secure Aggregator "
 "<../developer/algorithm/secure_aggregation.ipynb>`__."
@@ -205,8 +205,8 @@ msgstr "总结"
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:852
 msgid ""
 "This tutorial introduces what federated learning is and how to perform "
-"horizontal federated learning in ``moleculeflow``"
-msgstr "本篇我们介绍了什么是联邦学习，以及如何在moleculeflow框架下进行水平联邦学习"
+"horizontal federated learning in ``molflow``"
+msgstr "本篇我们介绍了什么是联邦学习，以及如何在molflow框架下进行水平联邦学习"
 
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:853
 msgid ""
@@ -217,11 +217,11 @@ msgstr "从实验数据可以看出，水平联邦通过扩充样本量，联合
 
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:854
 msgid ""
-"This tutorial uses a SecureAggregator to demonstrate, and moleculeflow "
+"This tutorial uses a SecureAggregator to demonstrate, and molflow "
 "provides a variety of aggregation schemes，for more infomation, see "
 "`Secure Aggregation <../developer/algorithm/secure_aggregation.ipynb>`__."
 msgstr ""
-"本文档使用了安全聚合（SecureAggregator）来做演示，moleculeflow提供了多种聚合方案，您可以在 `安全聚合 "
+"本文档使用了安全聚合（SecureAggregator）来做演示，molflow提供了多种聚合方案，您可以在 `安全聚合 "
 "<../developer/algorithm/secure_aggregation.ipynb>`__ 了解更多信息。"
 
 #: ../../tutorial/Federate_Learning_for_Image_Classification.ipynb:855

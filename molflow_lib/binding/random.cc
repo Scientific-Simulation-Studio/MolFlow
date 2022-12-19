@@ -6,7 +6,7 @@
 #include <optional>
 
 #include "binding.h"
-#include "moleculeflow_lib/differential_privacy/random/distributions.h"
+#include "molflow_lib/differential_privacy/random/distributions.h"
 
 namespace py = pybind11;
 
@@ -45,30 +45,30 @@ py::handle distribution(std::optional<std::vector<size_t>> size, Dist &dist) {
 
 py::handle uniform_real(float low, float high,
                         std::optional<std::vector<size_t>> size) {
-  moleculeflow::dp::UniformReal<float> dist(low, high);
+  molflow::dp::UniformReal<float> dist(low, high);
   return distribution<float>(size, dist);
 }
 
 py::handle bernoulli_neg_exp(float p, std::optional<std::vector<size_t>> size) {
-  moleculeflow::dp::BernoulliNegExp dist(p);
+  molflow::dp::BernoulliNegExp dist(p);
   return distribution<float>(size, dist);
 }
 
 py::handle secure_normal_real(float mean, float stdv,
                               std::optional<std::vector<size_t>> size) {
-  moleculeflow::dp::SecureNormalReal<float> dist(mean, stdv);
+  molflow::dp::SecureNormalReal<float> dist(mean, stdv);
   return distribution<float>(size, dist);
 }
 
 py::handle normal_discrete(float mean, float stdv,
                            std::optional<std::vector<size_t>> size) {
-  moleculeflow::dp::NormalDiscrete<int> dist(mean, stdv);
+  molflow::dp::NormalDiscrete<int> dist(mean, stdv);
   return distribution<int>(size, dist);
 }
 
 py::handle secure_laplace_real(float mean, float stdv,
                                std::optional<std::vector<size_t>> size) {
-  moleculeflow::dp::SecureLaplaceReal<float> dist(mean, stdv);
+  molflow::dp::SecureLaplaceReal<float> dist(mean, stdv);
   return distribution<float>(size, dist);
 }
 

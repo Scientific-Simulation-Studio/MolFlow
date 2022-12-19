@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-04 14:39+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -369,20 +369,20 @@ msgstr "`SPU Runtime <https://spu.readthedocs.io/en/beta/reference/py_api.html"
 "#runtime-setup>`__, 是一个读入SPU IR并执行MPC计算的库。"
 
 #: ../../developer/design/spu.rst:158 c6c7b18c17f14da2a300c63eda999b74
-msgid "SPU in moleculeflow"
-msgstr "moleculeflow中的SPU"
+msgid "SPU in molflow"
+msgstr "molflow中的SPU"
 
 #: ../../developer/design/spu.rst:160 945c90fa31f648eebc105040697bcd8b
 msgid ""
-"In moleculeflow, *SPU Device* encapsulates all the concepts of the above "
+"In molflow, *SPU Device* encapsulates all the concepts of the above "
 "SPU, providing a simpler programming interface upwards."
-msgstr "在moleculeflow中，SPU设备包装了上述所有SPU的概念，并提供了更简单的编程接口。"
+msgstr "在molflow中，SPU设备包装了上述所有SPU的概念，并提供了更简单的编程接口。"
 
 #: ../../developer/design/spu.rst:162 09b2eafef0954a7abc8c2ccdb52ea5c2
 msgid ""
-"Data owners are *PYU devices* in moleculeflow and plaintext of values are "
+"Data owners are *PYU devices* in molflow and plaintext of values are "
 "called *PYU Objects*."
-msgstr "数据所有者是moleculeflow中的PYU设备，明文并成为PYU Objects。"
+msgstr "数据所有者是molflow中的PYU设备，明文并成为PYU Objects。"
 
 #: ../../developer/design/spu.rst:163 4676e08f4ea54841a54ef8b099e439de
 msgid ""

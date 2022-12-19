@@ -17,14 +17,14 @@
 
 
 from typing import Tuple
-from moleculeflow.ml.nn.fl.backend.tensorflow.fl_base import BaseTFModel
+from molflow.ml.nn.fl.backend.tensorflow.fl_base import BaseTFModel
 import numpy as np
 import copy
 import collections
 import tensorflow as tf
 
-from moleculeflow.device import PYUObject, proxy
-from moleculeflow.ml.nn.fl.strategy_dispatcher import register_strategy
+from molflow.device import PYUObject, proxy
+from molflow.ml.nn.fl.strategy_dispatcher import register_strategy
 
 
 class FedAvgU(BaseTFModel):

@@ -20,9 +20,9 @@ import copy
 from typing import Tuple
 
 import numpy as np
-from moleculeflow.device import PYUObject, proxy
-from moleculeflow.ml.nn.fl.backend.torch.fl_base import BaseTorchModel
-from moleculeflow.ml.nn.fl.strategy_dispatcher import register_strategy
+from molflow.device import PYUObject, proxy
+from molflow.ml.nn.fl.backend.torch.fl_base import BaseTorchModel
+from molflow.ml.nn.fl.strategy_dispatcher import register_strategy
 
 
 class FedAvgU(BaseTorchModel):

@@ -18,12 +18,12 @@ from typing import Tuple, Union, List
 import jax.numpy as jnp
 import numpy as np
 
-from moleculeflow.data import FedNdarray, PartitionWay
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device import HEU, SPU, PYUObject, wait, SPUObject
-from moleculeflow.device.device.type_traits import spu_fxp_precision
-from moleculeflow.utils.sigmoid import SigType, sigmoid
-from moleculeflow.ml.linear.linear_model import RegType, LinearModel
+from molflow.data import FedNdarray, PartitionWay
+from molflow.data.vertical import VDataFrame
+from molflow.device import HEU, SPU, PYUObject, wait, SPUObject
+from molflow.device.device.type_traits import spu_fxp_precision
+from molflow.utils.sigmoid import SigType, sigmoid
+from molflow.ml.linear.linear_model import RegType, LinearModel
 
 
 # hess-lr

@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-09 08:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -22,20 +22,20 @@ msgid "Getting started"
 msgstr "快速开始"
 
 #: ../../getting_started/index.rst:6
-msgid "Welcome to moleculeflow!"
-msgstr "欢迎来到隐语moleculeflow！"
+msgid "Welcome to molflow!"
+msgstr "欢迎来到隐语molflow！"
 
 #: ../../getting_started/index.rst:8
 msgid ""
 "Please follow the :ref:`/getting_started/deployment.rst#deployment` and "
 ":ref:`getting_started/installation:installation` documentation to get "
-"moleculeflow ready."
+"molflow ready."
 msgstr "请根据 :ref:`/getting_started/deployment.rst#deployment` "
-"和 :ref:`getting_started/installation:installation` 准备好moleculeflow。"
+"和 :ref:`getting_started/installation:installation` 准备好molflow。"
 
 #: ../../getting_started/index.rst:10
-msgid "Then, we encourage you to check :ref:`tutorial` to play with moleculeflow."
-msgstr "然后，请参考 :ref:`tutorial` 尝试moleculeflow。"
+msgid "Then, we encourage you to check :ref:`tutorial` to play with molflow."
+msgstr "然后，请参考 :ref:`tutorial` 尝试molflow。"
 
 #: ../../getting_started/index.rst:12
 msgid ""
@@ -46,6 +46,6 @@ msgstr "接下来，请查看 :ref:`components` ，这里介绍了第一方的�
 #: ../../getting_started/index.rst:14
 msgid ""
 "Finally, please refer to :ref:`developer` and :ref:`api` when you write "
-"you own moleculeflow programs."
-msgstr "最后，在你编写moleculeflow程序时请参考 :ref:`developer` 和 :ref:`api`。"
+"you own molflow programs."
+msgstr "最后，在你编写molflow程序时请参考 :ref:`developer` 和 :ref:`api`。"
 

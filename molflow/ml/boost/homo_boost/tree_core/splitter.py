@@ -20,7 +20,7 @@ import logging
 from dataclasses import dataclass
 from typing import Dict, List
 
-from moleculeflow.ml.boost.homo_boost.tree_core.criterion import XgboostCriterion
+from molflow.ml.boost.homo_boost.tree_core.criterion import XgboostCriterion
 
 
 @dataclass()

@@ -22,15 +22,15 @@ from concurrent.futures import ThreadPoolExecutor
 from functools import reduce
 
 import numpy as np
-import moleculeflow.device.link as link
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.ml.boost.homo_boost.tree_core.decision_tree import DecisionTree
-from moleculeflow.ml.boost.homo_boost.tree_core.feature_histogram import (
+import molflow.device.link as link
+from molflow.data.horizontal import HDataFrame
+from molflow.ml.boost.homo_boost.tree_core.decision_tree import DecisionTree
+from molflow.ml.boost.homo_boost.tree_core.feature_histogram import (
     FeatureHistogram,
     HistogramBag,
 )
-from moleculeflow.ml.boost.homo_boost.tree_core.node import Node
-from moleculeflow.ml.boost.homo_boost.tree_param import TreeParam
+from molflow.ml.boost.homo_boost.tree_core.node import Node
+from molflow.ml.boost.homo_boost.tree_param import TreeParam
 
 
 class HomoDecisionTree(DecisionTree):

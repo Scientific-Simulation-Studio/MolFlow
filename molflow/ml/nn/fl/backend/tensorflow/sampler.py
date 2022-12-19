@@ -22,7 +22,7 @@ import math
 import numpy as np
 import tensorflow as tf
 
-from moleculeflow.data.horizontal.sampler import PoissonDataSampler
+from molflow.data.horizontal.sampler import PoissonDataSampler
 
 
 def batch_sampler(

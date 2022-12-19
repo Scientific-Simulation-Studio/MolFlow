@@ -1,7 +1,7 @@
 MPC Machine Learning
 ====================
 
-moleculeflow provides a variety of MPC modeling capabilities
+molflow provides a variety of MPC modeling capabilities
 through the MPC security protocol and HE homomorphic encryption.
 
 .. toctree::

@@ -22,7 +22,7 @@ import spu
 from heu import numpy as hnp
 from heu import phe
 
-from moleculeflow.utils.errors import PartyNotFoundError
+from molflow.utils.errors import PartyNotFoundError
 
 from .base import Device, DeviceType
 from .spu import SPUValueMeta

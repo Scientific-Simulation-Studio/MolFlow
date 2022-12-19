@@ -20,10 +20,10 @@ import pandas as pd
 import logging
 from sklearn.model_selection import train_test_split as _train_test_split
 
-from moleculeflow.data.base import Partition
-from moleculeflow.data.horizontal.dataframe import HDataFrame
-from moleculeflow.data.ndarray import FedNdarray
-from moleculeflow.data.vertical.dataframe import VDataFrame
+from molflow.data.base import Partition
+from molflow.data.horizontal.dataframe import HDataFrame
+from molflow.data.ndarray import FedNdarray
+from molflow.data.vertical.dataframe import VDataFrame
 
 
 def train_test_split(

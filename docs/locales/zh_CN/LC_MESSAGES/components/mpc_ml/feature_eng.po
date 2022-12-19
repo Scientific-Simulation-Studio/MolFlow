@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-15 17:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -36,24 +36,24 @@ msgstr "推荐使用 `jupyter <https://jupyter.org/>`__ 运行本教程。"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:53
 msgid ""
-"moleculeflow provides a variety of tools to analyze the statistics of the "
+"molflow provides a variety of tools to analyze the statistics of the "
 "dataset in order to improve the quality of results from a machine "
 "learning process."
-msgstr "moleculeflow 提供了多种工具来分析数据集，以提高机器学习结果的质量。"
+msgstr "molflow 提供了多种工具来分析数据集，以提高机器学习结果的质量。"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:65
 msgid "Preparation"
 msgstr "初始化"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:67
-msgid "Initialize moleculeflow and create two parties alice and bob."
-msgstr "初始化moleculeflow，并创建alice/bob两个计算参与方兼数据提供方。"
+msgid "Initialize molflow and create two parties alice and bob."
+msgstr "初始化molflow，并创建alice/bob两个计算参与方兼数据提供方。"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:78
 msgid ""
-"💡 Before using preprocessing, you may need to get to know moleculeflow's "
+"💡 Before using preprocessing, you may need to get to know molflow's "
 "`DataFrame <../preprocessing/DataFrame.ipynb>`__."
-msgstr "使用前请先了解moleculeflow的数据集设定 `DataFrame <../preprocessing/DataFrame.ipynb>`__。"
+msgstr "使用前请先了解molflow的数据集设定 `DataFrame <../preprocessing/DataFrame.ipynb>`__。"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:109
 msgid "Data Preparation"
@@ -132,10 +132,10 @@ msgstr "SSVertPearsonR"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:280
 msgid ""
-"moleculeflow provides ``SSVertPearsonR`` for calculating Pearson product-"
+"molflow provides ``SSVertPearsonR`` for calculating Pearson product-"
 "moment correlation coefficient of Vertical DataFrame using secret "
 "sharing."
-msgstr "moleculeflow 的 ``SSVertPearsonR`` 模块可以用于探查垂直划分数据集的皮尔逊积矩相关系数，计算过程使用秘密分享协议保护。"
+msgstr "molflow 的 ``SSVertPearsonR`` 模块可以用于探查垂直划分数据集的皮尔逊积矩相关系数，计算过程使用秘密分享协议保护。"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:282
 msgid ""
@@ -176,9 +176,9 @@ msgstr "SSVertVIF"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:378
 msgid ""
-"moleculeflow provides ``SSVertVIF`` for calculating variance inflation "
+"molflow provides ``SSVertVIF`` for calculating variance inflation "
 "factor of Vertical DataFrame using secret sharing."
-msgstr "moleculeflow 的 ``SSVertVIF`` 模块可以用于探查垂直划分数据集的方差扩大因子，计算过程使用秘密分享协议保护。"
+msgstr "molflow 的 ``SSVertVIF`` 模块可以用于探查垂直划分数据集的方差扩大因子，计算过程使用秘密分享协议保护。"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:380
 msgid "The vif value of the j-th feature is:"
@@ -454,9 +454,9 @@ msgstr "SSPValue"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:538
 msgid ""
-"moleculeflow provides ``SSPValue`` for calculating P-Value of hypothesis "
+"molflow provides ``SSPValue`` for calculating P-Value of hypothesis "
 "testing using secret sharing."
-msgstr "moleculeflow 的 ``SSPValue`` 模块可以用于探查模型的P-Value，计算过程使用秘密分享协议保护。"
+msgstr "molflow 的 ``SSPValue`` 模块可以用于探查模型的P-Value，计算过程使用秘密分享协议保护。"
 
 #: ../../components/mpc_ml/feature_eng.ipynb:540
 msgid "For linear regression:"

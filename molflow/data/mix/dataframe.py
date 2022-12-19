@@ -20,10 +20,10 @@ import numpy as np
 import pandas as pd
 from pandas.core.indexes.base import Index
 
-from moleculeflow.data.base import Partition
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.utils.errors import InvalidArgumentError, NotFoundError, UnexpectedError
+from molflow.data.base import Partition
+from molflow.data.horizontal import HDataFrame
+from molflow.data.vertical import VDataFrame
+from molflow.utils.errors import InvalidArgumentError, NotFoundError, UnexpectedError
 
 
 @unique

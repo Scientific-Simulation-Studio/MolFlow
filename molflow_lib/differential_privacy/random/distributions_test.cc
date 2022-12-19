@@ -11,7 +11,7 @@
 
 #include "yasl/crypto/pseudo_random_generator.h"
 
-namespace moleculeflow {
+namespace molflow {
 namespace dp {
 
 template <typename T>
@@ -143,4 +143,4 @@ TEST(LaplaceRealTest, Test) {
 }
 
 }  // namespace dp
-}  // namespace moleculeflow
+}  // namespace molflow

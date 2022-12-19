@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-05 14:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -22,16 +22,16 @@ msgstr "架构"
 
 #: ../../developer/design/architecture.md:3 3d33d9bf17874c82b7995090edbdd864
 msgid ""
-"moleculeflow is a unified framework for privacy preserving data analysis "
+"molflow is a unified framework for privacy preserving data analysis "
 "and machine learning."
 msgstr "隐语是一个开放的隐私保护数据分析和机器学习框架。"
 
 #: ../../developer/design/architecture.md:5 204c5064fec94d87bf7e3024b5f9a6cc
-msgid "![moleculeflow](../../_static/moleculeflow.svg)"
+msgid "![molflow](../../_static/molflow.svg)"
 msgstr ""
 
 #: ../../developer/design/architecture.md:5 05b3f4bd654342e5b22c001aa917a7d2
-msgid "moleculeflow"
+msgid "molflow"
 msgstr ""
 
 #: ../../developer/design/architecture.md:7 b6332773d64d48f49336b0323f1e34f5
@@ -63,17 +63,17 @@ msgstr "隐私计算涉及领域众多，需要领域专家共同协作"
 
 #: ../../developer/design/architecture.md:16 ae786072bbff4f3fae43ef72d76466eb
 msgid ""
-"The design goal of moleculeflow is to make it very easy for data scientists"
+"The design goal of molflow is to make it very easy for data scientists"
 " and machine learning developers to use private computing techniques for "
 "data analysis and machine learning without knowing the underlying "
-"technical details. To achieve this goal, moleculeflow provides a layer of "
+"technical details. To achieve this goal, molflow provides a layer of "
 "device abstraction that abstracts Multi-Party Secure Computing (MPC), "
 "Homomorphic Encryption (HE), and Trusted Execution Environment (TEE) into"
 " ciphertext devices. Based on this level of abstraction, data analysis "
 "and machine learning workflows can be represented as a computational "
 "graph, where nodes represent computations on a device and edges represent"
 " the data flow between devices. Data flow between different types of "
-"devices requires protocol conversion. In this regard, moleculeflow borrows "
+"devices requires protocol conversion. In this regard, molflow borrows "
 "from mainstream deep learning frameworks, which represent neural networks"
 " as a computational graph consisting of on-device operators and tensor "
 "flows between devices."
@@ -81,10 +81,10 @@ msgstr "隐语的设计目标是使得数据科学家和机器学习开发者可
 
 #: ../../developer/design/architecture.md:26 e967f98ab3824dba9f0e7288478ef40d
 msgid ""
-"moleculeflow is an open framework for developers at different levels. At "
+"molflow is an open framework for developers at different levels. At "
 "the device layer, we work with experts in cryptography, trusted hardware,"
 " hardware acceleration and other fields to continuously improve protocol "
-"security and computing performance. At the same time, moleculeflow provides"
+"security and computing performance. At the same time, molflow provides"
 " a good device interface, and the third-party privacy computing protocol "
 "can be plugged in as a device. At the algorithm layer, a flexible "
 "programming interface is provided for machine learning, and algorithm "
@@ -99,7 +99,7 @@ msgstr "设备"
 
 #: ../../developer/design/architecture.md:34 240448fba92744f989f289770a76a5f4
 msgid ""
-"The devices of the moleculeflow are divided into physical devices and "
+"The devices of the molflow are divided into physical devices and "
 "logical devices. The physical device is the physical machine of each "
 "participant in the privacy computing, and the logical device is composed "
 "of one or more physical devices. A logical device supports a specific set"
@@ -136,7 +136,7 @@ msgstr "设备"
 #: ../../developer/design/architecture.md:47 183afbfba15546ee8e9c87d251229b3c
 msgid ""
 "The following table is a list of devices currently supported by "
-"moleculeflow:"
+"molflow:"
 msgstr "下表是隐语目前暂定支持的设备列表："
 
 #: ../../developer/design/architecture.md:110 50077a9cf6b243c09ee8b45467d116cb
@@ -325,8 +325,8 @@ msgstr ""
 
 #: ../../developer/design/architecture.md:227 a35cf0f0b8ec41139714e44be1e1a62c
 msgid ""
-"In the end, we chose Ray as the distributed engine of moleculeflow, which "
-"satisfies the above requirements of moleculeflow very well. The distributed"
+"In the end, we chose Ray as the distributed engine of molflow, which "
+"satisfies the above requirements of molflow very well. The distributed"
 " primitives provided by Ray enable task scheduling and data transfer on "
 "logical devices to be easily mapped to physical devices. The asynchronous"
 " scheduling and dynamic execution capabilities provided by Ray make the "
@@ -414,7 +414,7 @@ msgstr "垂直拆分学习，将一个模型拆分至多个PYU，使用差分隐
 msgid ""
 "For the details of these algorithms, please refer to our tutorials and "
 "implementations, and look forward to your developing more interesting "
-"algorithms based on moleculeflow!"
+"algorithms based on molflow!"
 msgstr "关于这些算法的细节，请参考我们的教程和实现，也期待您基于隐语开发出更多有趣的算法！"
 
 

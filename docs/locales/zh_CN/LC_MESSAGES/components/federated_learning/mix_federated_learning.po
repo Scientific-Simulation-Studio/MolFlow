@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-15 13:44+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -37,11 +37,11 @@ msgstr "混合逻辑回归"
 
 #: ../../components/federated_learning/mix_federated_learning.rst:15
 msgid ""
-"moleculeflow provides "
-":py:class:`~moleculeflow.ml.linear.FlLogisticRegressionMix` for logistic "
+"molflow provides "
+":py:class:`~molflow.ml.linear.FlLogisticRegressionMix` for logistic "
 "regression with mix partitioned data. You can check the tutorial to have "
 "a try."
-msgstr "隐语提供了 :py:class:`~moleculeflow.ml.linear.FlLogisticRegressionMix` "
+msgstr "隐语提供了 :py:class:`~molflow.ml.linear.FlLogisticRegressionMix` "
 "可以对混合切分数据进行逻辑回归。 您可以跟着教程来学习。"
 
 #: ../../components/federated_learning/mix_federated_learning.rst:19

@@ -6,7 +6,7 @@ build:
     python: "3.8"
   jobs:
     pre_build:
-      - SPHINX_APIDOC_OPTIONS=members,autosummary sphinx-apidoc -f -d 2 -t docs/templates -o docs/source ./moleculeflow/
+      - SPHINX_APIDOC_OPTIONS=members,autosummary sphinx-apidoc -f -d 2 -t docs/templates -o docs/source ./molflow/
 
 sphinx:
   configuration: docs/conf.py

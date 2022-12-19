@@ -1,11 +1,11 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-15 17:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -26,17 +26,17 @@ msgstr "预处理"
 
 #: ../../components/index.rst:9
 msgid ""
-"moleculeflow provides serveral common utility functions/classes to change "
+"molflow provides serveral common utility functions/classes to change "
 "raw features into a representation for more suitable for the downstream "
 "pipeline."
 msgstr "隐语提供了多种工具方法和类，可以将原始特征转换为更适合后续流程（比如训练）的数据形式。"
 
 #: ../../components/index.rst:19
 msgid ""
-"moleculeflow provides federated data encapsulation in the form of "
+"molflow provides federated data encapsulation in the form of "
 "DataFrame. DataFrame is composed of data blocks of multiple parties and "
 "supports horizontal or vertical partitioned data."
-msgstr "moleculeflow通过DataFrame来封装联合数据。DataFrame包含了多方的数据，并且支持水平和垂直切分。"
+msgstr "molflow通过DataFrame来封装联合数据。DataFrame包含了多方的数据，并且支持水平和垂直切分。"
 
 #: ../../components/index.rst:24
 msgid "Private Set Intersection(PSI)"
@@ -44,10 +44,10 @@ msgstr "隐私求交"
 
 #: ../../components/index.rst:26
 msgid ""
-"moleculeflow SPU now supports ECDH-PSI, KKRT16-PSI, and BC22-PCG-PSI. "
+"molflow SPU now supports ECDH-PSI, KKRT16-PSI, and BC22-PCG-PSI. "
 "Please check :ref:`/components/psi.rst` for details."
 msgstr ""
-"moleculeflow SPU目前支持ECDH-PSI, KKRT16-PSI和BC22-PCG-PSI。 详情请查看 "
+"molflow SPU目前支持ECDH-PSI, KKRT16-PSI和BC22-PCG-PSI。 详情请查看 "
 ":ref:`/components/psi.rst`。"
 
 #: ../../components/index.rst:36
@@ -63,9 +63,9 @@ msgstr "MPC机器学习"
 
 #: ../../components/index.rst:44
 msgid ""
-"moleculeflow provides a variety of MPC modeling capabilities through the "
+"molflow provides a variety of MPC modeling capabilities through the "
 "MPC security protocol and HE homomorphic encryption."
-msgstr "通过多方安全计算技术和同态加密技术，moleculeflow提供了MPC建模能力。"
+msgstr "通过多方安全计算技术和同态加密技术，molflow提供了MPC建模能力。"
 
 #: ../../components/index.rst:54
 msgid ""

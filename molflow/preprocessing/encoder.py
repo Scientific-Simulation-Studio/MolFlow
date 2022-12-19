@@ -20,11 +20,11 @@ from sklearn.preprocessing import LabelEncoder as SkLabelEncoder
 from sklearn.preprocessing import OneHotEncoder as SkOneHotEncoder
 from sklearn.utils.validation import column_or_1d
 
-from moleculeflow.data.base import Partition
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.data.mix import MixDataFrame
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device import reveal
+from molflow.data.base import Partition
+from molflow.data.horizontal import HDataFrame
+from molflow.data.mix import MixDataFrame
+from molflow.data.vertical import VDataFrame
+from molflow.device import reveal
 
 
 def _check_dataframe(df):
@@ -43,7 +43,7 @@ class LabelEncoder:
         _encoder: the sklearn LabelEncoder instance.
 
     Examples:
-        >>> from moleculeflow.preprocessing import LabelEncoder
+        >>> from molflow.preprocessing import LabelEncoder
         >>> le = LabelEncoder()
         >>> le.fit(df)
         >>> le.transform(df)
@@ -149,7 +149,7 @@ class OneHotEncoder:
         _encoder: the sklearn OneHotEncoder instance.
 
     Examples:
-        >>> from moleculeflow.preprocessing import OneHotEncoder
+        >>> from molflow.preprocessing import OneHotEncoder
         >>> enc = OneHotEncoder()
         >>> enc.fit(df)
         >>> enc.transform(df)

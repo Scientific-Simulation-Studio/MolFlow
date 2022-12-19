@@ -19,11 +19,11 @@ import numpy as np
 import jax.numpy as jnp
 from scipy import stats
 
-import moleculeflow as sf
-from moleculeflow.utils.sigmoid import SigType
-from moleculeflow.device import SPUObject, SPU
-from moleculeflow.ml.linear import LinearModel, RegType, SSRegression
-from moleculeflow.data.vertical import VDataFrame
+import molflow as sf
+from molflow.utils.sigmoid import SigType
+from molflow.device import SPUObject, SPU
+from molflow.ml.linear import LinearModel, RegType, SSRegression
+from molflow.data.vertical import VDataFrame
 
 from .core.utils import newton_matrix_inverse
 

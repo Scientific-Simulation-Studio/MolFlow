@@ -3,7 +3,7 @@
 > This tutorial is only available in Chinese.
 
 ## 导语
-为了方便大家了解隐语的Benchmark，我们设计了10分钟上手手册，包含了亮点介绍、moleculeflow集群的易用搭建、Benchmark脚本、两方和三方的Benchmark，使相关业务方做调研时方便拿到可度量的性能数据和可复现的路径。
+为了方便大家了解隐语的Benchmark，我们设计了10分钟上手手册，包含了亮点介绍、molflow集群的易用搭建、Benchmark脚本、两方和三方的Benchmark，使相关业务方做调研时方便拿到可度量的性能数据和可复现的路径。
 
 ## 隐语PSI亮点
 隐私集合求交（Private Set Intersection，简写为：PSI）是一类特定的安全多方计算（Multi-Party Computation, 即MPC）问题，其问题可以简单理解为：Alice 输入集合 X，Bob 输入集合 Y，双方执行 PSI 协议可以得到 Alice 和 Bob 两者的交集，同时不在交集范围内的部分是受保护的，即 Alice 和 Bob 无法学习出交集以外的任何信息。
@@ -18,7 +18,7 @@
 隐私集合求交(PSI)协议按照设定安全模型分类，可分为：
 - 半诚实模型的PSI；
 - 恶意模型的PSI。
-moleculeflow SPU 实现了半诚实模型下的两方和三方PSI协议，密钥安全强度是128bit，统计安全参数是40bit。
+molflow SPU 实现了半诚实模型下的两方和三方PSI协议，密钥安全强度是128bit，统计安全参数是40bit。
 - 两方PSI(Private Set Intersection)协议：
   - 基于DDH的PSI协议，
     - 基于DDH的PSI协议先对简单易于理解和实现，依赖的密码技术已被广泛论证，通信量低，但计算量较大。
@@ -67,7 +67,7 @@ conda --version
 ![](./resources/4bded9b0-d913-48b2-b7a9-c05e0d2c7c81.png)
 
 
-### 三、安装moleculeflow
+### 三、安装molflow
 ```
 # 创建干净的python环境
 conda create -n sf-benchmark python=3.8
@@ -75,8 +75,8 @@ conda create -n sf-benchmark python=3.8
 # 进入benchmark 环境
 conda activate sf-benchmark
 
-# 安装moleculeflow
-pip install -U moleculeflow
+# 安装molflow
+pip install -U molflow
 
 # 创建一个sf-benchmark目录
 mkdir sf-benchmark
@@ -86,7 +86,7 @@ cd sf-benchmark
 验证安装是否成功
 root目录下输入python然后回车；
 ```
->>> import moleculeflow as sf
+>>> import molflow as sf
 >>> sf.init(['alice', 'bob', 'carol'], num_cpus=8, log_to_driver=True)
 >>> dev = sf.PYU('alice')
 >>> import numpy as np
@@ -118,7 +118,7 @@ ray start --address="192.168.0.1:9394" --resources='{"carol": 8}'
 #### 验证节点是否启动
 在python中测试节点是否启动成功，任意选一台机器输入python，执行下列代码，参数中address为头节点(alice)的地址，拿alice机器来验证，每输入一行下列代码回车一次：
 ```
->>> import moleculeflow as sf
+>>> import molflow as sf
 >>> sf.init(address='192.168.0.1:9394')
 >>> alice = sf.PYU('alice')
 >>> bob = sf.PYU('bob')
@@ -132,7 +132,7 @@ ray start --address="192.168.0.1:9394" --resources='{"carol": 8}'
 
 #### 生成数据
 
-把[generate_psi.py](https://github.com/moleculeflow/spu/blob/main/spu/psi/tools/generate_psi.py)脚本传到alice机器的root目录下
+把[generate_psi.py](https://github.com/molflow/spu/blob/main/spu/psi/tools/generate_psi.py)脚本传到alice机器的root目录下
 执行如下代码
 ```
 # 生成三份一千万数据
@@ -167,7 +167,7 @@ import logging
 
 from absl import app
 import spu
-import moleculeflow as sf
+import molflow as sf
 
 # init log
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)

@@ -14,7 +14,7 @@
 
 from spu import Visibility
 
-from moleculeflow.device import (
+from molflow.device import (
     HEU,
     PYU,
     SPU,

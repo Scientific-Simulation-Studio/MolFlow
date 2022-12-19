@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-09 08:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -35,7 +35,7 @@ msgid ""
 "to align the server side, etc.), how to transmit gradients or parameters "
 "upstream; the second part is the server part, It includes how to "
 "aggregate gradients or parameters uploaded by Clients, how to update "
-"them, and how to distribute them downstream. moleculeflow encapsulates a "
+"them, and how to distribute them downstream. molflow encapsulates a "
 "layer of Strategy under FLModel to control the learning strategy of the "
 "model in federated scenarios. The lingo provides Strategy Zoo, which "
 "currently supports various strategies covering Non-iid and communication "
@@ -45,11 +45,11 @@ msgid ""
 "the Strategy framework supports the development, registration, and use of"
 " user-defined strategies."
 msgstr "联邦学习策略是联邦学习区别于常规分布式机器学习的关键差别，对于模型训练效果影响非常关键。Strategy在联邦学习中主要由两部分组成，一部分是local部分的本地训练策略，其中包含对于loss函数的控制（和server端如何对齐等），梯度或者参数怎么上行传输；第二部分是server部分，包含如何对Clients上传的梯度或参数如何聚合，如何更新，如何下行分发等。"
-"moleculeflow在FLModel之下封装了一层Strategy，控制模型在联邦场景下的学习策略，隐语提供了Strategy Zoo，目前已支持涵盖Non-iid和通信优化等多种策略，而且在不断的迭代更新，用户只需要传递不同策略的alias name("fed_avg_w","fed_avg_g","fed_prox","fed_scr"等)，即可完成调用。同时Strategy框架支持用户自定义策略开发、注册、使用等。"
+"molflow在FLModel之下封装了一层Strategy，控制模型在联邦场景下的学习策略，隐语提供了Strategy Zoo，目前已支持涵盖Non-iid和通信优化等多种策略，而且在不断的迭代更新，用户只需要传递不同策略的alias name("fed_avg_w","fed_avg_g","fed_prox","fed_scr"等)，即可完成调用。同时Strategy框架支持用户自定义策略开发、注册、使用等。"
 
 #: ../../developer/design/strategy.md:6
-msgid "The positioning and characteristics of moleculeflow's Strategy"
-msgstr "moleculeflow的Strategy的定位以及特点"
+msgid "The positioning and characteristics of molflow's Strategy"
+msgstr "molflow的Strategy的定位以及特点"
 
 #: ../../developer/design/strategy.md:7
 msgid "Pull up different Workers according to the strategy name"
@@ -97,7 +97,7 @@ msgstr "上下行数据传输的压缩方法"
 #: ../../developer/design/strategy.md:16
 msgid ""
 "Aggregation logic in server part ![arch](resources/strategy_arc.jpg) Our "
-"moleculeflow framework also provides a friendly advanced development "
+"molflow framework also provides a friendly advanced development "
 "interface for high-level advanced developers, which can be easily "
 "extended to new custom strategy"
 msgstr "server部分的聚合逻辑"
@@ -149,10 +149,10 @@ msgstr "The local strategy"
 
 #: ../../developer/design/strategy.md:40
 msgid ""
-"The local strategy in moleculeflow is a framework on top of fl_base, "
+"The local strategy in molflow is a framework on top of fl_base, "
 "inherits all the properties and methods of BaseModel, and provides local "
 "calculation logic dedicated to a specific strategy"
-msgstr "moleculeflow中的local strategy是封装在fl_base之上的一层，继承BaseModel的所有属性和方法，并提供专属与特定strategy 的local 计算逻辑"
+msgstr "molflow中的local strategy是封装在fl_base之上的一层，继承BaseModel的所有属性和方法，并提供专属与特定strategy 的local 计算逻辑"
 
 #: ../../developer/design/strategy.md:72
 msgid "compressor definition"

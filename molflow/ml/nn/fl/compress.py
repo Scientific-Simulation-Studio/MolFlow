@@ -18,7 +18,7 @@
 
 import numpy as np
 from typing import List
-from moleculeflow.ml.nn.fl.sparse import STCSparse
+from molflow.ml.nn.fl.sparse import STCSparse
 
 COMPRESS_STRATEGY = ["fed_stc"]
 

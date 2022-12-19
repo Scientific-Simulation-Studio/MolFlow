@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2022 Ant Group Co., Ltd.
-# This file is distributed under the same license as the moleculeflow package.
+# This file is distributed under the same license as the molflow package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: moleculeflow \n"
+"Project-Id-Version: molflow \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-14 22:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -25,7 +25,7 @@ msgstr "线性回归模型"
 msgid ""
 "Linear model is a kind of statistical model with simple form and very "
 "widely used. Under the protection of a multi-party secure computing "
-"protocol, moleculeflow implements provably secure linear regression and "
+"protocol, molflow implements provably secure linear regression and "
 "binary classification regression through `batch Stochastic Gradient "
 "Descent (SGD) method <https://stats.stackexchange.com/questions/488017"
 "/understanding-mini-batch-gradient-descent>`_ for vertically partitioned "
@@ -68,7 +68,7 @@ msgstr ""
 "w^t_j = \\theta^t_j` :math:`j = 1, \\cdots, n`"
 
 #: ../../components/mpc_ml/linear_model.rst:24
-msgid "moleculeflow provides two provably security implementations of SGD:"
+msgid "molflow provides two provably security implementations of SGD:"
 msgstr "隐语提供了 SS-SGD/HESS-SGD 两种可证安全实现："
 
 #: ../../components/mpc_ml/linear_model.rst:26
@@ -111,11 +111,11 @@ msgstr "SS-SGD"
 #: ../../components/mpc_ml/linear_model.rst:42
 msgid ""
 "The SS-SGD module "
-":py:meth:`~moleculeflow.ml.linear.ss_sgd.model.SSRegression` provides both "
+":py:meth:`~molflow.ml.linear.ss_sgd.model.SSRegression` provides both "
 "linear and logistic regression linear models for vertical split dataset "
 "setting by using secret sharing with mini batch SGD training solver."
 msgstr ""
-":py:meth:`~moleculeflow.ml.linear.ss_sgd.model.SSRegression` "
+":py:meth:`~molflow.ml.linear.ss_sgd.model.SSRegression` "
 "使用秘密分享协议实现了针对垂直划分数据集的线性回归和二分类回归训练，求解方式为批量随机梯度下降。"
 
 #: ../../components/mpc_ml/linear_model.rst:47
@@ -162,8 +162,8 @@ msgstr ""
 #: ../../components/mpc_ml/linear_model.rst:66
 msgid ""
 "For more detail about parameter settings, see API "
-":py:meth:`~moleculeflow.ml.linear.ss_sgd.model.SSRegression`"
-msgstr "API详情：:py:meth:`~moleculeflow.ml.linear.ss_sgd.model.SSRegression`"
+":py:meth:`~molflow.ml.linear.ss_sgd.model.SSRegression`"
+msgstr "API详情：:py:meth:`~molflow.ml.linear.ss_sgd.model.SSRegression`"
 
 #: ../../components/mpc_ml/linear_model.rst:161
 msgid "algorithm details"
@@ -265,12 +265,12 @@ msgstr "HESS-SGD"
 #: ../../components/mpc_ml/linear_model.rst:195
 msgid ""
 "The HESS-SGD module "
-":py:meth:`~moleculeflow.ml.linear.hess_sgd.model.HESSLogisticRegression` "
+":py:meth:`~molflow.ml.linear.hess_sgd.model.HESSLogisticRegression` "
 "implements provably secure linear regression using homomorphic encryption"
 " and Secret Sharing."
 msgstr ""
 "HESS-SGD模块 "
-":py:meth:`~moleculeflow.ml.linear.hess_sgd.model.HESSLogisticRegression` "
+":py:meth:`~molflow.ml.linear.hess_sgd.model.HESSLogisticRegression` "
 "混合使用同态加密和Secret Sharing实现了可证安全的线性回归."
 
 #: ../../components/mpc_ml/linear_model.rst:198
@@ -292,10 +292,10 @@ msgstr ""
 #: ../../components/mpc_ml/linear_model.rst:212
 msgid ""
 "For more details about API, see "
-":py:meth:`~moleculeflow.ml.linear.hess_sgd.model.HESSLogisticRegression`"
+":py:meth:`~molflow.ml.linear.hess_sgd.model.HESSLogisticRegression`"
 msgstr ""
 "API详情 "
-":py:meth:`~moleculeflow.ml.linear.hess_sgd.model.HESSLogisticRegression`"
+":py:meth:`~molflow.ml.linear.hess_sgd.model.HESSLogisticRegression`"
 
 #: ../../components/mpc_ml/linear_model.rst:310
 msgid "Algorithm Details"

@@ -20,11 +20,11 @@ from enum import Enum, unique
 import jax.numpy as jnp
 from typing import Union, List, Tuple
 
-from moleculeflow.utils.sigmoid import sigmoid, SigType
-from moleculeflow.data import FedNdarray, PartitionWay
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device import SPU, SPUObject, wait, PYUObject, PYU
-from moleculeflow.ml.linear.linear_model import RegType, LinearModel
+from molflow.utils.sigmoid import sigmoid, SigType
+from molflow.data import FedNdarray, PartitionWay
+from molflow.data.vertical import VDataFrame
+from molflow.device import SPU, SPUObject, wait, PYUObject, PYU
+from molflow.ml.linear.linear_model import RegType, LinearModel
 
 
 @unique

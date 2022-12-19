@@ -99,21 +99,21 @@ class BuildBazelExtension(build_ext.build_ext):
 
 
 setup(
-    name='moleculeflow',
+    name='molflow',
     version='0.7.11b3',
     license='Apache 2.0',
     description='Secret Flow',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='SCI Center',
-    author_email='moleculeflow-contact@service.alipay.com',
-    url='https://github.com/moleculeflow/moleculeflow',
+    author_email='molflow-contact@service.alipay.com',
+    url='https://github.com/molflow/molflow',
     packages=find_packages(
         exclude=('examples', 'examples.*', 'tests', 'tests.*')),
     install_requires=read_requirements(),
     ext_modules=[
         BazelExtension(
-            '//moleculeflow_lib/binding:_lib', 'moleculeflow/security/privacy/_lib'
+            '//molflow_lib/binding:_lib', 'molflow/security/privacy/_lib'
         ),
     ],
     extras_require={'dev': ['pylint']},

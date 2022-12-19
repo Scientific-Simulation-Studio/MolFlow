@@ -1,12 +1,12 @@
 # Installation
 
-The simplist way to try moleculeflow is to use [offical docker image](#option-2-from-docker) which shipps with moleculeflow binary.
+The simplist way to try molflow is to use [offical docker image](#option-2-from-docker) which shipps with molflow binary.
 
-Or you could [install moleculeflow via Python Package Index](#option-1-from-pypi).
+Or you could [install molflow via Python Package Index](#option-1-from-pypi).
 
-For advanced users, you could [install moleculeflow from source](#option-3-from-source).
+For advanced users, you could [install molflow from source](#option-3-from-source).
 
-After installation, don't forget to [have a quick try](#a-quick-try) to check if moleculeflow is good to go.
+After installation, don't forget to [have a quick try](#a-quick-try) to check if molflow is good to go.
 
 
 ## Environment
@@ -19,27 +19,27 @@ OS: CentOS 7, Ubuntu 18.04
 CPU/Memory: recommended minimum requirement is 8C16G.
 
 ## Option 1: from pypi
-For users who want to try moleculeflow, you can install [the current release](https://pypi.org/project/moleculeflow/)
-from [pypi](https://pypi.org/project/moleculeflow/). Note that it requires python version == 3.8, you can create a virtual environment with conda if not satisfied.
+For users who want to try molflow, you can install [the current release](https://pypi.org/project/molflow/)
+from [pypi](https://pypi.org/project/molflow/). Note that it requires python version == 3.8, you can create a virtual environment with conda if not satisfied.
 
 ```
 conda create -n sf python=3.8
 conda activate sf
 ```
 
-After that, please use pip to install moleculeflow.
+After that, please use pip to install molflow.
 
 ```bash
-pip install -U moleculeflow
+pip install -U molflow
 ```
 
 ## Option 2: from docker
-You can also use moleculeflow Docker image to give moleculeflow a quick try.
+You can also use molflow Docker image to give molflow a quick try.
 
-The latest version can be obtained from [moleculeflow tags](https://hub.docker.com/r/moleculeflow/moleculeflow-anolis8/tags).
+The latest version can be obtained from [molflow tags](https://hub.docker.com/r/molflow/molflow-anolis8/tags).
 
 ```
-export version={moleculeflow version}
+export version={molflow version}
 ```
 
 for example
@@ -49,7 +49,7 @@ export version=0.7.11b0
 
 then run the image.
 ```bash
-docker run -it moleculeflow/moleculeflow-anolis8:${version}
+docker run -it molflow/molflow-anolis8:${version}
 
 ```
 
@@ -58,14 +58,14 @@ docker run -it moleculeflow/moleculeflow-anolis8:${version}
 1. Download code and set up Python virtual environment.
 
 ```sh
-git clone https://github.com/moleculeflow/moleculeflow.git
-cd moleculeflow
+git clone https://github.com/molflow/molflow.git
+cd molflow
 
-conda create -n moleculeflow python=3.8
-conda activate moleculeflow
+conda create -n molflow python=3.8
+conda activate molflow
 ```
 
-2. Install moleculeflow
+2. Install molflow
 ```sh
 
 python setup.py bdist_wheel
@@ -74,14 +74,14 @@ pip install dist/*.whl
 ```
 
 ## A quick try
-Try your first moleculeflow program.
+Try your first molflow program.
 
 ```python
->>> import moleculeflow as sf
+>>> import molflow as sf
 >>> sf.init(['alice', 'bob', 'carol'], num_cpus=8, log_to_driver=True)
 >>> dev = sf.PYU('alice')
 >>> import numpy as np
 >>> data = dev(np.random.rand)(3, 4)
 >>> data
-<moleculeflow.device.device.pyu.PYUObject object at 0x7fdec24a15b0>
+<molflow.device.device.pyu.PYUObject object at 0x7fdec24a15b0>
 ```

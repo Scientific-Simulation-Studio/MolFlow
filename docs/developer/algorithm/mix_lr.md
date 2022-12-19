@@ -19,7 +19,7 @@ The vertical data 0 is consist of (data0 of A, data0 of B, data of C, label0) co
 
 ## Algorithm
 
-moleculeflow provides SDG based `Federated Logistic Regression` to handle mix partitioned data,
+molflow provides SDG based `Federated Logistic Regression` to handle mix partitioned data,
 and each participant holds its weights.
 
 The high level overview of the algorithm:

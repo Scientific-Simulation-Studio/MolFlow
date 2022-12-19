@@ -20,7 +20,7 @@ import numpy as np
 import math
 import jax
 
-from moleculeflow.utils import sigmoid as appr_sig
+from molflow.utils import sigmoid as appr_sig
 
 
 @unique

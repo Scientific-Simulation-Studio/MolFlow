@@ -1,7 +1,7 @@
 Private Set Intersection(PSI)
 =============================
 
-moleculeflow SPU implements the following PSI protocols,
+molflow SPU implements the following PSI protocols,
 
 - Semi-honest ECDH-based two-party PSI protocol [HFH99]_
 - Semi-honest ECDH-based three-party PSI protocol
@@ -54,7 +54,7 @@ Protocol:
 5. Alice compares two set :math:`{\{\{H(x_i)\}^{\alpha\beta}\}}_{i=1}^{n_1}`
    and :math:`{\{\{H(y_i)\}^{\beta\alpha}\}}_{i=1}^{n_2}` and gets intersection.
 
-The Elliptic Curve groups, supported in moleculeflow SPU PSI moudule.
+The Elliptic Curve groups, supported in molflow SPU PSI moudule.
 
 +-------------+------------------------+------------------------------------------------------+
 | EC group    | Reference              | CryptoLib                                            |

@@ -16,7 +16,7 @@ import tensorflow as tf
 from typing import List
 import numpy as np
 
-from moleculeflow.security.privacy.accounting.rdp_accountant import (
+from molflow.security.privacy.accounting.rdp_accountant import (
     get_rdp,
     get_privacy_spent_rdp,
 )
@@ -76,7 +76,7 @@ class GaussianModelDP:
 
                 # add noise
                 if self.is_secure_generator:
-                    import moleculeflow.security.privacy._lib.random as random
+                    import molflow.security.privacy._lib.random as random
 
                     noise = random.secure_normal_real(
                         0,
@@ -101,7 +101,7 @@ class GaussianModelDP:
 
                 # add noise
                 if self.is_secure_generator:
-                    import moleculeflow.security.privacy._lib.random as random
+                    import molflow.security.privacy._lib.random as random
 
                     noise = random.secure_normal_real(
                         0,

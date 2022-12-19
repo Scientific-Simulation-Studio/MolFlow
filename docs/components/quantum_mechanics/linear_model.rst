@@ -2,7 +2,7 @@ Linear Models
 ==============
 
 Linear model is a kind of statistical model with simple form and very widely used.
-Under the protection of a multi-party secure computing protocol, moleculeflow
+Under the protection of a multi-party secure computing protocol, molflow
 implements provably secure linear regression and binary classification
 regression through
 `batch Stochastic Gradient Descent (SGD) method <https://stats.stackexchange.com/questions/488017/understanding-mini-batch-gradient-descent>`_
@@ -21,7 +21,7 @@ where
 :math:`w^t_0 = 0, w^t_j = \theta^t_j`
 :math:`j = 1, \cdots, n`
 
-moleculeflow provides two provably security implementations of SGD:
+molflow provides two provably security implementations of SGD:
 
 - SS-SGD: SS-SGD is short for secret sharing SGD training, uses Secret Sharing to calculate the gradient.
 
@@ -39,7 +39,7 @@ According to the different CPU/bandwidth of the running environment, you can cho
 SS-SGD
 -------
 
-The SS-SGD module :py:meth:`~moleculeflow.ml.linear.ss_sgd.model.SSRegression`
+The SS-SGD module :py:meth:`~molflow.ml.linear.ss_sgd.model.SSRegression`
 provides both linear and logistic regression linear models
 for vertical split dataset setting by using secret sharing with mini
 batch SGD training solver.
@@ -63,7 +63,7 @@ Example
 A local cluster(Standalone Mode) needs to be initialized as the running environment for this example.
 See `Deployment <../../getting_started/deployment.html>`_ and refer to the 'Cluster Mode'.
 
-For more detail about parameter settings, see API :py:meth:`~moleculeflow.ml.linear.ss_sgd.model.SSRegression`
+For more detail about parameter settings, see API :py:meth:`~molflow.ml.linear.ss_sgd.model.SSRegression`
 
 .. code-block:: python
 
@@ -72,10 +72,10 @@ For more detail about parameter settings, see API :py:meth:`~moleculeflow.ml.lin
     import logging
 
     import spu
-    import moleculeflow as sf
-    from moleculeflow.device.driver import wait, reveal
-    from moleculeflow.data import FedNdarray, PartitionWay
-    from moleculeflow.ml.linear.ss_sgd import SSRegression
+    import molflow as sf
+    from molflow.device.driver import wait, reveal
+    from molflow.data import FedNdarray, PartitionWay
+    from molflow.ml.linear.ss_sgd import SSRegression
 
     from sklearn.metrics import roc_auc_score
 
@@ -192,7 +192,7 @@ so it is impossible to infer the information of the plaintext data through the i
 HESS-SGD
 ---------
 
-The HESS-SGD module :py:meth:`~moleculeflow.ml.linear.hess_sgd.model.HESSLogisticRegression` implements provably
+The HESS-SGD module :py:meth:`~molflow.ml.linear.hess_sgd.model.HESSLogisticRegression` implements provably
 secure linear regression using homomorphic encryption and Secret Sharing.
 
 The biggest difference from SS-SGD is that the gradient calculation which has the largest communication cost in SS-SGD
@@ -209,7 +209,7 @@ Example
 A local cluster(Standalone Mode) needs to be initialized as the running environment for this example.
 See `Deployment <../../getting_started/deployment.html>`_ and refer to the 'Cluster Mode'.
 
-For more details about API, see :py:meth:`~moleculeflow.ml.linear.hess_sgd.model.HESSLogisticRegression`
+For more details about API, see :py:meth:`~molflow.ml.linear.hess_sgd.model.HESSLogisticRegression`
 
 .. code-block:: python
 
@@ -219,10 +219,10 @@ For more details about API, see :py:meth:`~moleculeflow.ml.linear.hess_sgd.model
     import logging
 
     import spu
-    import moleculeflow as sf
-    from moleculeflow.device.driver import wait, reveal
-    from moleculeflow.data import FedNdarray, PartitionWay
-    from moleculeflow.ml.linear.hess_sgd import HESSLogisticRegression
+    import molflow as sf
+    from molflow.device.driver import wait, reveal
+    from molflow.data import FedNdarray, PartitionWay
+    from molflow.ml.linear.hess_sgd import HESSLogisticRegression
 
     from sklearn.metrics import roc_auc_score
 

@@ -1,7 +1,7 @@
 # Contribution guide
 
 ## Build
-Please check [INSTALLATION.md](./INSTALLATION.md) to build moleculeflow from source.
+Please check [INSTALLATION.md](./INSTALLATION.md) to build molflow from source.
 
 ## Test
 

@@ -17,8 +17,8 @@ from typing import List, Union
 
 import jax.numpy as jnp
 
-from moleculeflow.device import SPU, PYU, DeviceObject
-from moleculeflow.security.compare.comparator import Comparator
+from molflow.device import SPU, PYU, DeviceObject
+from molflow.security.compare.comparator import Comparator
 
 
 @dataclass

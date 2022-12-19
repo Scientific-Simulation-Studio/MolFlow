@@ -14,11 +14,11 @@
 
 from typing import Dict, List, Union
 
-from moleculeflow.data.base import Partition
-from moleculeflow.data.io import read_csv_wrapper
-from moleculeflow.data.vertical.dataframe import VDataFrame
-from moleculeflow.device import PYU, SPU, Device
-from moleculeflow.utils.errors import InvalidArgumentError
+from molflow.data.base import Partition
+from molflow.data.io import read_csv_wrapper
+from molflow.data.vertical.dataframe import VDataFrame
+from molflow.device import PYU, SPU, Device
+from molflow.utils.errors import InvalidArgumentError
 
 
 def read_csv(

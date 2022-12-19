@@ -13,9 +13,9 @@
 # limitations under the License.
 
 
-from moleculeflow.device import SPU
-from moleculeflow.data import FedNdarray
-from moleculeflow.data.ndarray import (
+from molflow.device import SPU
+from molflow.data import FedNdarray
+from molflow.data.ndarray import (
     mean,
     r2_score,
     rss,

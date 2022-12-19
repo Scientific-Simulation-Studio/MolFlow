@@ -28,14 +28,14 @@ from typing import Callable, Dict, List, Tuple, Union
 import numpy as np
 from tqdm import tqdm
 
-from moleculeflow.data.horizontal.dataframe import HDataFrame
-from moleculeflow.data.ndarray import FedNdarray
-from moleculeflow.device import PYU, reveal, wait
-from moleculeflow.device.device.pyu import PYUObject
-from moleculeflow.ml.nn.fl.compress import COMPRESS_STRATEGY, do_compress
-from moleculeflow.ml.nn.fl.metrics import Metric, aggregate_metrics
-from moleculeflow.ml.nn.fl.strategy_dispatcher import dispatch_strategy
-from moleculeflow.ml.nn.fl.utils import History
+from molflow.data.horizontal.dataframe import HDataFrame
+from molflow.data.ndarray import FedNdarray
+from molflow.device import PYU, reveal, wait
+from molflow.device.device.pyu import PYUObject
+from molflow.ml.nn.fl.compress import COMPRESS_STRATEGY, do_compress
+from molflow.ml.nn.fl.metrics import Metric, aggregate_metrics
+from molflow.ml.nn.fl.strategy_dispatcher import dispatch_strategy
+from molflow.ml.nn.fl.utils import History
 
 
 class FLModel:
@@ -52,9 +52,9 @@ class FLModel:
         **kwargs,  # other parameters specific to strategies
     ):
         if backend == "tensorflow":
-            import moleculeflow.ml.nn.fl.backend.tensorflow.strategy  # noqa
+            import molflow.ml.nn.fl.backend.tensorflow.strategy  # noqa
         elif backend == "torch":
-            import moleculeflow.ml.nn.fl.backend.torch.strategy  # noqa
+            import molflow.ml.nn.fl.backend.torch.strategy  # noqa
         else:
             raise Exception(f"Invalid backend = {backend}")
         self.init_workers(

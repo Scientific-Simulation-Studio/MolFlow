@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from moleculeflow.security.privacy.mechanism.tensorflow.mechanism_fl import (
+from molflow.security.privacy.mechanism.tensorflow.mechanism_fl import (
     GaussianModelDP,
 )
 

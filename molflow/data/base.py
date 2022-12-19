@@ -20,8 +20,8 @@ import pandas as pd
 from pandas.core.indexes.base import Index
 from jax.tree_util import tree_map
 
-from moleculeflow.data.io.util import to_csv_wrapper
-from moleculeflow.device import PYUObject, reveal
+from molflow.data.io.util import to_csv_wrapper
+from molflow.device import PYUObject, reveal
 
 
 class DataFrameBase(ABC):

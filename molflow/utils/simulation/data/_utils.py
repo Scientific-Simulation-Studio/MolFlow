@@ -1,9 +1,9 @@
 from typing import Dict, List, Tuple, Union
 
-from moleculeflow.device.device.pyu import PYU
+from molflow.device.device.pyu import PYU
 import numpy as np
 
-from moleculeflow.utils.errors import InvalidArgumentError
+from molflow.utils.errors import InvalidArgumentError
 
 
 def cal_indexes(

@@ -26,54 +26,54 @@ import pandas as pd
 import requests
 import scipy
 
-from moleculeflow.data.horizontal import HDataFrame
-from moleculeflow.data.ndarray import FedNdarray, PartitionWay
-from moleculeflow.data.vertical import VDataFrame
-from moleculeflow.device.device.pyu import PYU
-from moleculeflow.security.aggregation import Aggregator
-from moleculeflow.security.compare import Comparator
-from moleculeflow.utils.hash import sha256sum
-from moleculeflow.utils.simulation.data.dataframe import create_df, create_vdf
-from moleculeflow.utils.simulation.data.ndarray import create_ndarray
+from molflow.data.horizontal import HDataFrame
+from molflow.data.ndarray import FedNdarray, PartitionWay
+from molflow.data.vertical import VDataFrame
+from molflow.device.device.pyu import PYU
+from molflow.security.aggregation import Aggregator
+from molflow.security.compare import Comparator
+from molflow.utils.hash import sha256sum
+from molflow.utils.simulation.data.dataframe import create_df, create_vdf
+from molflow.utils.simulation.data.ndarray import create_ndarray
 
-_CACHE_DIR = os.path.join(os.path.expanduser('~'), '.moleculeflow/datasets')
+_CACHE_DIR = os.path.join(os.path.expanduser('~'), '.molflow/datasets')
 
 _Dataset = namedtuple('_Dataset', ['filename', 'url', 'sha256'])
 
 _DATASETS = {
     'iris': _Dataset(
         'iris.csv',
-        'https://moleculeflow-data.oss-accelerate.aliyuncs.com/datasets/iris/iris.csv',
+        'https://molflow-data.oss-accelerate.aliyuncs.com/datasets/iris/iris.csv',
         '92cae857cae978e0c25156265facc2300806cf37eb8700be094228b374f5188c',
     ),
     'dermatology': _Dataset(
         'dermatology.csv',
-        'https://moleculeflow-data.oss-accelerate.aliyuncs.com/datasets/dermatology/dermatology.csv',
+        'https://molflow-data.oss-accelerate.aliyuncs.com/datasets/dermatology/dermatology.csv',
         '76b63f6c2be12347b1b76f485c6e775e36d0ab5412bdff0e9df5a9885f5ae11e',
     ),
     'bank_marketing': _Dataset(
         'bank.csv',
-        'https://moleculeflow-data.oss-accelerate.aliyuncs.com/datasets/bank_marketing/bank.csv',
+        'https://molflow-data.oss-accelerate.aliyuncs.com/datasets/bank_marketing/bank.csv',
         'dc8d576e9bda0f41ee891251bd84bab9a39ce576cba715aac08adc2374a01fde',
     ),
     'mnist': _Dataset(
         'mnist.npz',
-        'https://moleculeflow-data.oss-accelerate.aliyuncs.com/datasets/mnist/mnist.npz',
+        'https://molflow-data.oss-accelerate.aliyuncs.com/datasets/mnist/mnist.npz',
         '731c5ac602752760c8e48fbffcf8c3b850d9dc2a2aedcf2cc48468fc17b673d1',
     ),
     'linear': _Dataset(
         'linear.csv',
-        'https://moleculeflow-data.oss-accelerate.aliyuncs.com/datasets/linear/linear.csv',
+        'https://molflow-data.oss-accelerate.aliyuncs.com/datasets/linear/linear.csv',
         'bf269b267eb9e6985ae82467a4e1ece420de90f3107633cb9b9aeda6632c0052',
     ),
     'cora': _Dataset(
         'cora.zip',
-        'https://moleculeflow-data.oss-accelerate.aliyuncs.com/datasets/cora/cora.zip',
+        'https://molflow-data.oss-accelerate.aliyuncs.com/datasets/cora/cora.zip',
         'd7018f2d7d2b693abff6f6f7ccaf9d70e2e428ca068830863f19a37d8575fd01',
     ),
     'bank_marketing_full': _Dataset(
         'bank-full.csv',
-        'https://moleculeflow-data.oss-accelerate.aliyuncs.com/datasets/bank_marketing/bank-full.csv',
+        'https://molflow-data.oss-accelerate.aliyuncs.com/datasets/bank_marketing/bank-full.csv',
         'd1513ec63b385506f7cfce9f2c5caa9fe99e7ba4e8c3fa264b3aaf0f849ed32d',
     ),
 }
@@ -161,9 +161,9 @@ def load_iris(
             federated DataFrame. 1 means split by column returns a vertical
             partitioning federated DataFrame.
         aggregator: optional, shall be provided only when axis is 0. For details,
-            please refer to `moleculeflow.data.horizontal.HDataFrame`.
+            please refer to `molflow.data.horizontal.HDataFrame`.
         comparator:  optional, shall be provided only when axis is 0. For details,
-            please refer to `moleculeflow.data.horizontal.HDataFrame`.
+            please refer to `molflow.data.horizontal.HDataFrame`.
 
     Returns:
         return a HDataFrame if axis is 0 else VDataFrame.
@@ -204,9 +204,9 @@ def load_dermatology(
             partitioning federated DataFrame.
         class_starts_from_zero: optional, class starts from zero if True.
         aggregator: optional, shall be provided only when axis is 0. For details,
-            please refer to `moleculeflow.data.horizontal.HDataFrame`.
+            please refer to `molflow.data.horizontal.HDataFrame`.
         comparator:  optional, shall be provided only when axis is 0. For details,
-            please refer to `moleculeflow.data.horizontal.HDataFrame`.
+            please refer to `molflow.data.horizontal.HDataFrame`.
 
     Returns:
         return a HDataFrame if axis is 0 else VDataFrame.
@@ -250,9 +250,9 @@ def load_bank_marketing(
             partitioning federated DataFrame.
         full: optional. indicates whether to load to full version of dataset.
         aggregator: optional, shall be provided only when axis is 0. For details,
-            please refer to `moleculeflow.data.horizontal.HDataFrame`.
+            please refer to `molflow.data.horizontal.HDataFrame`.
         comparator:  optional, shall be provided only when axis is 0. For details,
-            please refer to `moleculeflow.data.horizontal.HDataFrame`.
+            please refer to `molflow.data.horizontal.HDataFrame`.
 
     Returns:
         return a HDataFrame if axis is 0 else VDataFrame.

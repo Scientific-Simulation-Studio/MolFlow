@@ -7,7 +7,7 @@ Tutorial
    The following codes are demos only. It's **NOT for production** due to system security concerns,
    please **DO NOT** use it directly in production.
 
-We hope you enjoy these toturials from moleculeflow developers.
+We hope you enjoy these toturials from molflow developers.
 
 .. toctree::
    :maxdepth: 1

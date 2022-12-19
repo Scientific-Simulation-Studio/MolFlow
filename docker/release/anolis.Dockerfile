@@ -1,6 +1,6 @@
 FROM openanolis/anolisos:8.4-x86_64
 
-LABEL maintainer="moleculeflow-contact@service.alipay.com"
+LABEL maintainer="molflow-contact@service.alipay.com"
 
 RUN yum install -y git wget unzip which vim \
     && yum clean all
@@ -18,7 +18,7 @@ RUN conda env create -f /tmp/environment.yml \
     && conda clean --all -f --yes \
     && rm -rf /root/.cache
 
-RUN echo "source /root/miniconda3/bin/activate moleculeflow" > ~/.bashrc
+RUN echo "source /root/miniconda3/bin/activate molflow" > ~/.bashrc
 
 WORKDIR /root
 
